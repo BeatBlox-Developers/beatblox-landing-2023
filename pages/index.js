@@ -130,10 +130,10 @@ export default function Home () {
           </video>
         </SwiperSlide>
       </Swiper>
-      <div class="bottomNav py-3">
+      <div className="bottomNav py-3">
         <div className='container d-flex justify-content-between py-5'>
-          <button class="btn btn-outline-light rounded-pill">Video</button>
-          <button class="btn btn-outline-light rounded-pill">Discord</button>
+          <button className="btn btn-outline-light rounded-pill">Video</button>
+          <button className="btn btn-outline-light rounded-pill">Discord</button>
         </div>
       </div>
 

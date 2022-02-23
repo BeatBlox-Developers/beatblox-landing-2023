@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className="container h-100 d-flex align-items-center">
       <div className="row px-5 px-md-0 align-items-center align-items-md-start">
-        <div class="col-12 col-md-5">
+        <div className="col-12 col-md-5">
           <h4>
             Complete our survey to gain access to our closed Beta Auction House.
           </h4>
@@ -23,16 +23,16 @@ const Contact = () => {
             Send us a message
           </p>
           <form>
-            <div class="mb-3">
-              <input type="text" placeholder="Name" class="form-control rounded-0 border-0 border-bottom border-white" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+            <div className="mb-3">
+              <input type="text" placeholder="Name" className="form-control rounded-0 border-0 border-bottom border-white" id="exampleInputEmail1" aria-describedby="emailHelp"/>
             </div>
-            <div class="mb-3">
-              <input type="email" placeholder="Email" class="form-control rounded-0 border-0 border-bottom border-white" id="exampleInputPassword1"/>
+            <div className="mb-3">
+              <input type="email" placeholder="Email" className="form-control rounded-0 border-0 border-bottom border-white" id="exampleInputPassword1"/>
             </div>
-            <div class="mb-3">
-              <textarea placeholder="Message" class="form-control rounded-0 border-0 border-bottom border-white" id="exampleInputPassword1"/>
+            <div className="mb-3">
+              <textarea placeholder="Message" className="form-control rounded-0 border-0 border-bottom border-white" id="exampleInputPassword1"/>
             </div>
-            <button type="submit" class="btn btn-outline-light rounded-pill">Send</button>
+            <button type="submit" className="btn btn-outline-light rounded-pill">Send</button>
           </form>
         </div>
       </div>
