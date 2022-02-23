@@ -1,0 +1,219 @@
+
+@font-face {
+  font-family: 'NuckleBold';
+  src: url('/fonts/Nuckle/Nuckle-Bold.woff2') format('woff2'),
+      url('/fonts/Nuckle/Nuckle-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NuckleMedium';
+  src: url('/fonts/Nuckle/Nuckle-Medium.woff2') format('woff2'),
+      url('/fonts/Nuckle/Nuckle-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NuckleSemiBold';
+  src: url('/fonts/Nuckle/Nuckle-Semibold.woff2') format('woff2'),
+      url('/fonts/Nuckle/Nuckle-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nuckle';
+  src: url('/fonts/Nuckle/Nuckle-Book.woff2') format('woff2'),
+      url('/fonts/Nuckle/Nuckle-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Default variable overrides
+$body-bg: #000;
+$body-color: #fff;
+$font-size-root:              null !default;
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * .875 !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+$h1-font-size:                $font-size-base * 4.875;
+$h2-font-size:                $font-size-base * 3.75;
+$h3-font-size:                $font-size-base * 1.873;
+$h4-font-size:                $font-size-base * 1.436;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+$p-font-size:                 $font-size-base * 1.188;
+
+
+$font-size-sm:                $font-size-base * .875 !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+
+$font-family-sans-serif:      "Nuckle", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$border-radius-lg:            1rem;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1900px,
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1200px,
+  xxxl: 1720px
+) !default;
+
+.w-80{
+  width: 80%;
+}
+.w-90{
+  width: 90%;
+}
+.bg-dark-30{
+  background-color: rgba(0,0,0,0.3);
+}
+$gray-900: #141515;
+.img-icon{
+  width: 3.125rem !important;
+}
+
+.bottomNav{
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+}
+p{
+  font-size: $p-font-size;
+}
+h1, h2, h3, h4{
+  font-family: 'Nuckle';
+}
+h4{
+  font-family: 'Nuckle';
+}
+
+$font-size-root: 11px;
+$nav-link-font-size: 1.124rem;
+
+.navbar-brand img{
+  width: 8.052rem;
+  height: auto;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 1rem !important;
+}
+.navbar-expand-lg .navbar-nav button {
+  margin-left: 1rem !important;
+}
+
+@media (min-width: 992px) {  
+  $font-size-root: 12px;
+}
+@media (min-width: 1900px) {  
+  $font-size-root: 16px;
+}
+
+form{
+  font-size: $p-font-size;
+  input, textarea{
+    padding-left: 0 !important;
+    color: #fff;
+    background-color: transparent !important;
+  }
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+#__next{
+  height: 100%;
+  position: relative;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.section{
+  height:63%;
+}
+section .row{
+  height: 100%;
+}
+.wrapper{
+  padding: 5rem !important;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.main-swiper{
+  position: absolute !important;
+  z-index: 2 !important;
+  top: 0;
+  left: 0;
+}
+.video-swiper{
+  position: absolute !important;
+  top: 0;
+  left: 0;
+}
+.roadmap-swiper .swiper-pagination{
+  display: flex !important;
+  justify-content: space-evenly !important;
+  margin-bottom: 5%;
+  background-image: url('/line.png');
+  background-repeat: repeat-x;
+  background-position: center;
+}
+.roadmap-swiper .swiper-pagination-bullet{
+  background-color: #000 !important;
+  border: 1px solid #fff !important;
+  width: 12px !important;
+  height: 12px !important;
+  opacity: 1 !important;
+}
+.roadmap-swiper .swiper-pagination-bullet-active{
+  background-color: red !important;
+  border: 1px solid red !important;
+}
