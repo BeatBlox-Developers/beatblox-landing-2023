@@ -3,32 +3,32 @@ import { Container, Navbar, Button, Nav } from 'react-bootstrap';
 
 const Navigation = () => {
   return (
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark border-0 py-5">
-      <div class="container">
-        <a class="navbar-brand" href="#">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-dark border-0 py-5">
+      <div className="container">
+        <a className="navbar-brand" href="#">
           <img src="/images/logo.svg" alt=""/>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">About Us</a>
+        <div className="collapse navbar-collapse" id="navbarScroll">
+            <ul className="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="#">About Us</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Roadmap</a>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Roadmap</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" tabIndex="-1" aria-disabled="true">Decentraland</a>
+            <li className="nav-item">
+              <a className="nav-link" href="#" tabIndex="-1" aria-disabled="true">Decentraland</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" tabIndex="-1" aria-disabled="true">Auction House</a>
+            <li className="nav-item">
+              <a className="nav-link" href="#" tabIndex="-1" aria-disabled="true">Auction House</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" tabIndex="-1" aria-disabled="true">FAQs</a>
+            <li className="nav-item">
+              <a className="nav-link" href="#" tabIndex="-1" aria-disabled="true">FAQs</a>
             </li>
-            <button class="btn btn-light rounded-pill">Early Acces NFT</button>
+            <button className="btn btn-light rounded-pill">Early Acces NFT</button>
           </ul>
         </div>
       </div>

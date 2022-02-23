@@ -6,7 +6,7 @@ const Features = () => {
   return (
     <div className="container h-100 d-flex align-items-center">
       <div className="row section px-5 px-md-0">
-        <div class="col-12 col-md-4 d-flex flex-column justify-content-center">
+        <div className="col-12 col-md-4 d-flex flex-column justify-content-center">
           <div className='row w-90'>
             <img className="img-icon" src="/images/metaverse.svg"></img>
             <h4 className="text-uppercase mb-4 mt-3">
@@ -19,7 +19,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div class="col-12 col-md-4  d-flex flex-column justify-content-center">
+        <div className="col-12 col-md-4  d-flex flex-column justify-content-center">
           <div className='row w-90'>
             <img className="img-icon" src="/images/marketplace.svg"></img>
             <h4 className="text-uppercase mb-4 mt-3">
@@ -32,7 +32,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div class="col-12 col-md-4  d-flex flex-column justify-content-center">
+        <div className="col-12 col-md-4  d-flex flex-column justify-content-center">
           <div className='row w-90'>
             <img className="img-icon" src="/images/academy.svg"></img>
             <h4 className="text-uppercase mb-4 mt-3">
