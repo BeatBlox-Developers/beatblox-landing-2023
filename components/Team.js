@@ -79,9 +79,9 @@ const Team = () => {
             </div>
           </div>
           <div className='col-md-4'>
-            <a href="https://www.instagram.com/thebeatblox/" target="_blank">Instagram</a><br/>
-            <a href="https://twitter.com/The_Beatblox" target="_blank">Twitter</a><br/>
-            <a href="https://discord.gg/fQR74Z8S" target="_blank">Discord</a>
+            <a href="https://www.instagram.com/thebeatblox/" target="_blank" rel="noreferrer">Instagram</a><br/>
+            <a href="https://twitter.com/The_Beatblox" target="_blank" rel="noreferrer">Twitter</a><br/>
+            <a href="https://discord.gg/fQR74Z8S" target="_blank" rel="noreferrer">Discord</a>
           </div>
         </div>
       </div>

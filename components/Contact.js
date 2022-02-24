@@ -27,7 +27,7 @@ const Contact = () => {
           <p className="mt-4 text-muted">
             We believe it is essential to maintain an open community. That is why we offer the possibility of accessing our closed Beta Auction House one month after its opening with the Early Supporter just by completing the survey below. 
           </p>
-          <a href="https://www.surveymonkey.com/r/3DT35YJ" target="_blank" className="btn btn-lg btn-outline-light rounded-pill mt-4">
+          <a href="https://www.surveymonkey.com/r/3DT35YJ" target="_blank" rel="noreferrer" className="btn btn-lg btn-outline-light rounded-pill mt-4">
             Complete Survey
           </a>
         </div>
