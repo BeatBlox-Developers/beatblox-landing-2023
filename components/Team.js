@@ -12,7 +12,7 @@ const Team = () => {
               <h4 className="text-uppercase">
                 Emiliano Zapata
               </h4>
-              <p className="mt-1 text-muted text-small">
+              <p className="text-muted text-small">
                 Founder, Electrical Engineer<br/>
                 & Music Producer
               </p>
@@ -21,7 +21,7 @@ const Team = () => {
               <h4 className="text-uppercase">
                 Walter Nogara
               </h4>
-              <p className="mt-1 text-muted text-small">
+              <p className="text-muted text-small">
                 Head of Business Development,<br/>
                 Finance & Legal affairs
               </p>
@@ -30,8 +30,8 @@ const Team = () => {
               <h4 className="text-uppercase">
                 Emanuel Dobao
               </h4>
-              <p className="mt-1 text-muted text-small">
-                Interactive Devoloper,<br/>
+              <p className="text-muted text-small">
+                CTO, Interactive Devoloper,<br/>
                 Musician & Event Producer
               </p>
             </div>
@@ -39,7 +39,7 @@ const Team = () => {
               <h4 className="text-uppercase">
                 Brian Rial
               </h4>
-              <p className="mt-1 text-muted text-small">
+              <p className="text-muted text-small">
                 Co founder, Head of Onboarding <br/>
                 & Artist recruitment
               </p>
@@ -51,15 +51,14 @@ const Team = () => {
               <h4 className="text-uppercase">
                 Uno Mas Uno
               </h4>
-              <p className="mt-1">
-                TIMOTEO LACROZE  <span className="text-muted text-small">Founder & Director</span><br />
-                DIEGO LISTA  <span className="text-muted text-small">Visual Artist & 3D Modeling</span><br />
-                JUAN I. SCHELLER  <span className="text-muted text-small">Art Director & PM</span><br />
-                LUCILA SUTTON  <span className="text-muted text-small">Graphic Designer</span><br />
-                VALERIA QUIROS  <span className="text-muted text-small">Strategist</span><br />
-                MANUEL BELEN  <span className="text-muted text-small">RRSS Specialist</span><br />
-                LEONARDO LAURENZA Data <span className="text-muted text-small">Specialist</span>
-              </p>
+              
+              <p className="m-0 mt-1">TIMOTEO LACROZE  <span className="text-muted text-small">Founder & Director</span></p>
+              <p className="m-0 mt-1">DIEGO LISTA  <span className="text-muted text-small">Visual Artist & 3D Modeling</span></p>
+              <p className="m-0 mt-1">JUAN I. SCHELLER  <span className="text-muted text-small">Art Director & PM</span></p>
+              <p className="m-0 mt-1">LUCILA SUTTON  <span className="text-muted text-small">Graphic Designer</span></p>
+              <p className="m-0 mt-1">VALERIA QUIROS  <span className="text-muted text-small">Strategist</span></p>
+              <p className="m-0 mt-1">MANUEL BELEN  <span className="text-muted text-small">RRSS Specialist</span></p>
+              <p className="m-0 mt-1">LEONARDO LAURENZA <span className="text-muted text-small">Data Specialist</span></p>
             </div>
           </div>
         </div>
@@ -69,7 +68,7 @@ const Team = () => {
               <div className='col-6'>
                 <p>
                   CONTACT<br/>
-                  info@beatblox.org
+                  hello@beatblox.org
                 </p>
               </div>
               <div className='col-6'>
@@ -80,9 +79,9 @@ const Team = () => {
             </div>
           </div>
           <div className='col-md-4'>
-            <a>Instagram</a><br/>
-            <a>Youtube</a><br/>
-            <a>Twitter</a>
+            <a href="https://www.instagram.com/thebeatblox/" target="_blank">Instagram</a><br/>
+            <a href="https://twitter.com/The_Beatblox" target="_blank">Twitter</a><br/>
+            <a href="https://discord.gg/fQR74Z8S" target="_blank">Discord</a>
           </div>
         </div>
       </div>
