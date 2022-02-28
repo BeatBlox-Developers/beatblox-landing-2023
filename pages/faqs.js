@@ -170,7 +170,7 @@ export default function Faqs () {
                     <Tab.Pane eventKey="faq-11">
                       <h3 className="mb-3">What is Ethereum?</h3>
                       <p>
-                        Ethereum is a blockchain which provides open access to digital money and data-friendly services for everyone – no matter your background or location. It's a community-built technology behind the cryptocurrency ether (ETH) and thousands of applications you can use today. However, nowadays the fees to operate in this network might be really high, that is one of the reasons why BeatBlox was developed over a Ethereum's Layer 2 solution called Polygon. 
+                        Ethereum is a blockchain which provides open access to digital money and data-friendly services for everyone – no matter your background or location. It&apos;s a community-built technology behind the cryptocurrency ether (ETH) and thousands of applications you can use today. However, nowadays the fees to operate in this network might be really high, that is one of the reasons why BeatBlox was developed over a Ethereum&apos;s Layer 2 solution called Polygon. 
                       </p>
                     </Tab.Pane>
                     <Tab.Pane eventKey="faq-12">
