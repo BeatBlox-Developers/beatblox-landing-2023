@@ -17,12 +17,13 @@ const Features = () => {
               <Accordion.Item eventKey="0">
                 <Accordion.Header>
                   <p>
-                    Our Music District is composed of 34 lots in Decentraland destined for the development of music related activities. Join the most relevant metaverse of the crypto space through our virtual record store.
+                    We have deployed our first Metaverse District, built along 34 parcels in Decentraland. BeatBlox Decentraland music district will be destined to the development of a musical arts ecosystem.<br/> 
+                    Join the most relevant Metaverse of the crypto space through our virtual record store.
                   </p>
                 </Accordion.Header>
                 <Accordion.Body>
-                  + Access Decentraland´s free and navigable universe through any browser creating a personalized avatar that represents your virtual identity.
-                  + Organize and participate in virtual events like gigs, Q&A and release parties in the district. These are open to all communities around the world simultaneously.
+                  + Access Decentraland´s free and navigable universe through any browser creating a personalized avatar that represents your virtual identity.<bt/>
+                  + Organize or participate in virtual events like gigs, Q&A and release parties in the district. These are open to all communities around the world simultaneously.
                 </Accordion.Body>
                 <hr/>
               </Accordion.Item>
@@ -37,12 +38,13 @@ const Features = () => {
               <Accordion.Item eventKey="1">
                 <Accordion.Header>
                   <p>
-                    Our NFT Marketplace allows for the commercialization of music in NFT format. Be a part of and explore our curated catalog with a variety of genres specifically designed to fit the music scene worldwide. 
+                    Our NFT marketplace will be a curated showcase for musicians to offer their content. Fans will be able to discover, listen, buy and share their collection across our platform.
                   </p>
                 </Accordion.Header>
                 <Accordion.Body>
-                  + Sell your art directly to our audience and turn it into a valuable endorsement and speculative asset.
-                  + Promote and amplify your content on all our channels such as Instagram, Telegram, Twitter, Discord and through the banners in our districts.
+                  + Sell your art directly to our audience and turn it into a valuable collectible.<br/>
+                  + Promote and amplify your content through our cross channel presence.<br/>
+                  + Purchase, collect and sell NFTs from your favorite artists. 
                 </Accordion.Body>
                 <hr/>
               </Accordion.Item>
@@ -57,13 +59,13 @@ const Features = () => {
               <Accordion.Item eventKey="2">
                 <Accordion.Header>
                   <p>
-                    The Beatblox Academy is an educational space linked to the world of blockchain, where you can get premium access to specific lectures and participate in a collaborative space within a community of artists.
+                    The Beatblox Academy is an educational link to the world of blockchain, where you can get premium access to specific lectures and participate in a collaborative space that includes both fans and artists. 
                   </p>
                 </Accordion.Header>
                 <Accordion.Body>
-                  + Management training workshops within the crypto space to enhance your career. 
-                  + Special lectures from a set of experts that will focus on the diverse assets that blockchain technology provides.
-                  + A collaborative space within a community of artists who seek to expand the possibilities of the link between technology and art.
+                  + Management training workshops within the crypto space to enhance your career. <br/>
+                  + Special lectures from a set of experts that will focus on the added value that blockchain technology provides.<br/>
+                  + A collaborative space within a community of artists and fans who seek to expand the bond between technology and art.
                 </Accordion.Body>
                 <hr/>
               </Accordion.Item>

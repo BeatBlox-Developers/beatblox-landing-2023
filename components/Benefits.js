@@ -48,6 +48,11 @@ const Benefits = () => {
                   </SwiperSlide>
                   <SwiperSlide>
                     <h4 className="m-0">
+                      BeatBlox Genesis Tokenized Track.
+                    </h4>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <h4 className="m-0">
                       Voting power for future governance system over platform catalog and activities.
                     </h4>
                   </SwiperSlide>
@@ -69,11 +74,6 @@ const Benefits = () => {
                   <SwiperSlide>
                     <h4 className="m-0">
                       Preferential access to future BeatBlox products.
-                    </h4>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <h4 className="m-0">
-                      Participate on physical packs raffles (containing brand book, t shirt and souvenirs)
                     </h4>
                   </SwiperSlide>
                   <SwiperSlide>

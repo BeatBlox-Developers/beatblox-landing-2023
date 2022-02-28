@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react';
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
 import About from '../components/About';
 import Features from '../components/Features';
 import Roadmap from '../components/Roadmap';
@@ -38,11 +38,11 @@ export default function Home () {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto my-2 my-lg-0">
               <Nav.Link href="#" onClick={() => mainSwiper.slideTo(0)}>About Us</Nav.Link>
-              <Nav.Link href="#" onClick={() => mainSwiper.slideTo(2)}>Roadmap</Nav.Link>
+              <Nav.Link href="#" onClick={() => mainSwiper.slideTo(3)}>Roadmap</Nav.Link>
               <Nav.Link href="#">Decentraland</Nav.Link>
               <Nav.Link href="#">Auction House</Nav.Link>
-              <Nav.Link href="#">FAQs</Nav.Link>
-              <Nav.Link className="btn btn-light text-dark rounded-pill" href="#" onClick={() => mainSwiper.slideTo(3)}>Early Supporters NFT</Nav.Link>
+              <Nav.Link href="/faqs">FAQs</Nav.Link>
+              <Nav.Link className="btn btn-light text-dark rounded-pill" href="#" onClick={() => mainSwiper.slideTo(2)}>Early Supporters NFT</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -63,8 +63,8 @@ export default function Home () {
       >
         <SwiperSlide><About mainSwiper={mainSwiper}/></SwiperSlide>
         <SwiperSlide><Features/></SwiperSlide>
-        <SwiperSlide><Roadmap/></SwiperSlide>
         <SwiperSlide><Benefits/></SwiperSlide>
+        <SwiperSlide><Roadmap/></SwiperSlide>
         <SwiperSlide><Contact/></SwiperSlide>
         <SwiperSlide><Team/></SwiperSlide>
       </Swiper>
@@ -102,7 +102,7 @@ export default function Home () {
             controls={false}
             loop
             muted
-            src="/videos/roadmap.mp4"
+            src="/videos/early-supporters.mp4"
             type="video/mp4">
           </video>
         </SwiperSlide>
@@ -112,7 +112,7 @@ export default function Home () {
             controls={false}
             loop
             muted
-            src="/videos/auction-house.mp4"
+            src="/videos/roadmap.mp4"
             type="video/mp4">
           </video>
         </SwiperSlide>
