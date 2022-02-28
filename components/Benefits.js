@@ -20,7 +20,7 @@ const Benefits = () => {
           </div>
           <div className="row">
             <div className="col">
-              <div className='bg-dark rounded-3 p-5'>
+              <div className='border border-white rounded-3 bg-dark-30 p-5'>
                 <h4 className="text-uppercase mb-3">
                   Benefits
                 </h4>
