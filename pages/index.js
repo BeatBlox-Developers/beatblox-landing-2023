@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react';
-import Image from 'next/image'
+import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 import About from '../components/About';
 import Features from '../components/Features';
@@ -8,19 +7,23 @@ import Roadmap from '../components/Roadmap';
 import Contact from '../components/Contact';
 import Benefits from '../components/Benefits';
 import Team from '../components/Team';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Mousewheel, EffectFade, Controller } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/mousewheel';
 import 'swiper/css/effect-fade';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal } from 'react-bootstrap';
 
 
 export default function Home () {
   
   const [controlledSwiper, setControlledSwiper] = useState(null);
   const [mainSwiper, setMainSwiper] = useState();
+  
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div className={styles.container}>
@@ -39,10 +42,10 @@ export default function Home () {
             <Nav className="ms-auto my-2 my-lg-0">
               <Nav.Link href="#" onClick={() => mainSwiper.slideTo(0)}>About Us</Nav.Link>
               <Nav.Link href="#" onClick={() => mainSwiper.slideTo(3)}>Roadmap</Nav.Link>
-              <Nav.Link href="#">Decentraland</Nav.Link>
-              <Nav.Link href="#">Auction House</Nav.Link>
+              <Nav.Link href="https://play.decentraland.org/?island=I1cequ&position=41%2C43&realm=unicorn" target="_blank" rel="noreferrer">Decentraland</Nav.Link>
+              <Nav.Link href="/auction-house">Auction House</Nav.Link>
               <Nav.Link href="/faqs">FAQs</Nav.Link>
-              <Nav.Link className="btn btn-light text-dark rounded-pill" href="#" onClick={() => mainSwiper.slideTo(2)}>Early Supporters NFT</Nav.Link>
+              <Nav.Link className="btn btn-light text-dark rounded-pill" href="#" onClick={() => mainSwiper.slideTo(2)}>Early Supporter NFT</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -140,13 +143,26 @@ export default function Home () {
       <div className="bottomNav py-3 px-5 px-md-0">
         <div className='container d-flex justify-content-between py-5'>
           <div>
-            <button className="btn btn-outline-light rounded-pill">Video</button>
+            <button className="btn btn-outline-light rounded-pill" onClick={handleShow}>Video</button>
           </div>
+          <Modal
+            show={show}
+            onHide={handleClose}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Body className="p-0">
+              <div className="embed-container">
+                <iframe src="https://player.vimeo.com/video/652685945?h=0fe6572dd5" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </Modal.Body>
+          </Modal>
           <div>
             <button className="btn btn-outline-light rounded-pill btn-icon btn-music">
               <img src="/images/music.svg"/>
             </button>
-            <a href="https://discord.gg/fQR74Z8S" target="_blank" rel="noreferrer" className="btn btn-outline-light rounded-pill btn-icon ml-1">
+            <a href="https://discord.gg/puBEtcKF" target="_blank" rel="noreferrer" className="btn btn-outline-light rounded-pill btn-icon ml-1">
               <img src="/images/discord.svg"/>
               Discord
             </a>

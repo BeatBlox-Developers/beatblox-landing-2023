@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from '../styles/Faq.module.css';
-import { Navbar, Nav, Container, Row, Col, Tab, Sonnet } from 'react-bootstrap';
+import { Navbar, Nav, Container, Row, Col, Tab } from 'react-bootstrap';
 
 
 export default function Faqs () {

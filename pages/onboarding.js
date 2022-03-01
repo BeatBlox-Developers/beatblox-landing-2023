@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import { useState } from 'react';
 import styles from '../styles/Faq.module.css';
-import { Navbar, Nav, Container, Row, Col, Tab, Sonnet } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 
 export default function Onboarding () {
@@ -109,7 +108,7 @@ export default function Onboarding () {
                 We will contacting you soon for further instructions. On the meantime please join our discord or social media:<br/><br/>
                 <a href="https://www.instagram.com/thebeatblox/" target="_blank" rel="noreferrer">Instagram</a><br/>
                 <a href="https://twitter.com/The_Beatblox" target="_blank" rel="noreferrer">Twitter</a><br/>
-                <a href="https://discord.gg/fQR74Z8S" target="_blank" rel="noreferrer">Discord</a>
+                <a href="https://discord.gg/puBEtcKF" target="_blank" rel="noreferrer">Discord</a>
                 <br/><br/>
                 Thanks for reaching oout and remember to stay on the beat!
               </p>

@@ -4,6 +4,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Countdown from 'react-countdown';
 
 const Benefits = () => {
   return (
@@ -14,7 +15,7 @@ const Benefits = () => {
             <div className='col'>
               <h1 className='p-0'>
                 Beatblox<br />
-                Early Supporters NFT
+                Early Supporter NFT
               </h1>
             </div>
           </div>
@@ -28,6 +29,7 @@ const Benefits = () => {
                   modules={[Navigation, Pagination, Autoplay]}
                   spaceBetween={20}
                   slidesPerView={1}
+                  loop={true}
                   navigation
                   className="benefits-swiper"
                 >
@@ -97,9 +99,12 @@ const Benefits = () => {
           </div>
           <div className="row">
             <div className='col-md-4'>
-              <button className="mt-5 btn btn-lg btn-light rounded-pill d-block">
+              {/* <button className="mt-5 btn btn-lg btn-light rounded-pill d-block">
                 Mint Early Supporter
-              </button>
+              </button> */}
+              <h3 class="mt-4">
+                <Countdown date='2022-03-15T00:00:00' />
+              </h3>
             </div>
           </div>
         </div>

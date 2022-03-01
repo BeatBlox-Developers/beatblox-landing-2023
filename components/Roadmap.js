@@ -16,6 +16,7 @@ const Roadmap = () => {
         disableOnInteraction: false,
       }}
       speed={800}
+      loop={true}
       pagination={{ clickable: true }}
       className="roadmap-swiper px-5 px-md-0"
     >
