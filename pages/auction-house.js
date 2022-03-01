@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from 'next/link';
 import styles from "../styles/Faq.module.css";
 import { Navbar, Nav, Container, Row, Col, Tab } from "react-bootstrap";
 
@@ -52,9 +53,9 @@ export default function auctionHouse() {
               <p className="mt-4 text-muted">
                 Get your early access to our closed Beta Auction House
               </p>
-              <a href="/" className="btn btn-lg btn-outline-light rounded-pill mt-4">
+              <Link href="/" className="btn btn-lg btn-outline-light rounded-pill mt-4">
                 Get yours!
-              </a>
+              </Link>
             </div>
           </div>
         </div>

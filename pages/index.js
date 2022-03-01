@@ -154,7 +154,7 @@ export default function Home () {
           >
             <Modal.Body className="p-0">
               <div className="embed-container">
-                <iframe src="https://player.vimeo.com/video/652685945?h=0fe6572dd5" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://player.vimeo.com/video/652685945?h=0fe6572dd5" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
               </div>
             </Modal.Body>
           </Modal>

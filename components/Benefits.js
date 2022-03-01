@@ -102,7 +102,7 @@ const Benefits = () => {
               {/* <button className="mt-5 btn btn-lg btn-light rounded-pill d-block">
                 Mint Early Supporter
               </button> */}
-              <h3 class="mt-4">
+              <h3 className="mt-4">
                 <Countdown date='2022-03-15T00:00:00' />
               </h3>
             </div>

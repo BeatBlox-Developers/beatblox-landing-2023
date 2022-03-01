@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   else {
     return (
       <React.Fragment>
-        <div class="loading h-100 w-100 d-flex justify-content-center">
+        <div className="loading h-100 w-100 d-flex justify-content-center">
           <video
             autoPlay={true}
             controls={false}
