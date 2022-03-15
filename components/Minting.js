@@ -8,7 +8,8 @@ import 'swiper/css/pagination';
 import { Modal, Button } from 'react-bootstrap';
 import Earlysup from '../utils/Earlysup.json';
 const CONTRACT_ADDRESS = '0xd3A3F2Be9FB936479ed5370D085bA4b6f1e29487';
-const contractABI = Earlysup.abi
+const contractABI = Earlysup.abi;
+import { isMobile, browserName } from "react-device-detect";
 
 const Minting = () => {
   const [loader, setLoader] = useState(false);
