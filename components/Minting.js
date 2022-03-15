@@ -198,53 +198,59 @@ const Minting = () => {
       >
         <Modal.Header closeButton className="bg-light">
           <Modal.Title className="w-100" id="contained-modal-title-vcenter">
-            {mintingProcess === 0 && (
+            {isMobile && (
+              <p className="m-0">Sorry, desktop only</p>
+            )}
+            {(mintingProcess === 0 && !isMobile) && (
               <p className="m-0">Step 1 of 3</p>
             )}
-            {mintingProcess === 1 && (
+            {(mintingProcess === 1 && !isMobile) && (
               <p className="m-0">Step 2 of 3</p>
             )}
-            {mintingProcess === 2 && (
+            {(mintingProcess === 2 && !isMobile) && (
               <p className="m-0">Step 3 of 3</p>
             )}
-            {mintingProcess === 3 && (
+            {(mintingProcess === 3 && !isMobile) && (
               <p className="m-0">Minting...</p>
             )}
-            {mintingProcess === 4 && (
+            {(mintingProcess === 4 && !isMobile) && (
               <p className="m-0">Congratulations!</p>
             )}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-light">
-          {mintingProcess === 0 && (
+          {isMobile && (
+            <p className="m-0">Early Supporter is only accessible on desktop</p>
+          )}
+          {(mintingProcess === 0 && !isMobile) && (
             <>
               <p>To start you need to connect your wallet</p>
               <small>You will need 10 Matic in your account to mint our Early Supporter NFT.</small>
               <p className="text-danger mt-3">{error}</p>
             </>
           )}
-          {mintingProcess === 1 && (
+          {(mintingProcess === 1 && !isMobile) && (
             <>
               <p>You must be connected to Polygon Network</p>
               <small>BeatBlox operates on the Polygon network, a popular Ethereum L2 solution. Metamask does not have this network configured by default. Click the following button to set it up.</small>
               <p className="text-danger mt-3">{error}</p>
             </>
           )}
-          {mintingProcess === 2 && (
+          {(mintingProcess === 2 && !isMobile) && (
             <>
               <p>You are ready.<br/>Become part of BeatBlox now!</p>
               <small>Early Supporter NFT - 10 MATIC</small>
               <p className="text-danger mt-3">{error}</p>
             </>
           )}
-          {mintingProcess === 3 && (
+          {(mintingProcess === 3 && !isMobile) && (
             <>
               <p>Please wait a few seconds</p>
               <small><a>The transaction should be confirmned soon</a></small>
               <p className="text-danger mt-3">{error}</p>
             </>
           )}
-          {mintingProcess === 4 && (
+          {(mintingProcess === 4 && !isMobile) && (
             <>
               <p>Welcome to BeatBlox!</p>
               <small>Thank you for supporting our community!</small>
@@ -253,19 +259,22 @@ const Minting = () => {
           )}
         </Modal.Body>
         <Modal.Footer className="bg-light justify-content-center">
-          {mintingProcess === 0 && (
+          {isMobile && (
+            <Button onClick={props.onHide} className="btn bg-black text-white rounded-pill">Back</Button>
+          )}
+          {(mintingProcess === 0 && !isMobile) && (
             <Button onClick={() => connectWallet()} className="bg-black text-white rounded-pill">Connect to Metamask</Button>
           )}
-          {mintingProcess === 1 && (
+          {(mintingProcess === 1 && !isMobile) && (
             <Button onClick={() => changeNetwork()} className="bg-black text-white rounded-pill">Add Polygon Network</Button>
           )}
-          {mintingProcess === 2 && (
+          {(mintingProcess === 2 && !isMobile) && (
             <Button onClick={() => mintEarlySup()} className="bg-black text-white rounded-pill">MINT!</Button>
           )}
-          {mintingProcess === 3 && (
+          {(mintingProcess === 3 && !isMobile) && (
             <Button className="btn bg-black text-white rounded-pill" disabled>MINTING...</Button>
           )}
-          {mintingProcess === 4 && (
+          {(mintingProcess === 4 && !isMobile) && (
             <Button onClick={props.onHide} className="btn bg-black text-white rounded-pill">Close</Button>
           )}
         </Modal.Footer>
