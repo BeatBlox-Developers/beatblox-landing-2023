@@ -5,7 +5,7 @@ import About from '../components/About';
 import Features from '../components/Features';
 import Roadmap from '../components/Roadmap';
 import Contact from '../components/Contact';
-import Benefits from '../components/Benefits';
+import Minting from '../components/Minting';
 import Team from '../components/Team';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Mousewheel, EffectFade, Controller } from 'swiper';
@@ -66,7 +66,7 @@ export default function Home () {
       >
         <SwiperSlide><About mainSwiper={mainSwiper}/></SwiperSlide>
         <SwiperSlide><Features/></SwiperSlide>
-        <SwiperSlide><Benefits/></SwiperSlide>
+        <SwiperSlide><Minting/></SwiperSlide>
         <SwiperSlide><Roadmap/></SwiperSlide>
         <SwiperSlide><Contact/></SwiperSlide>
         <SwiperSlide><Team/></SwiperSlide>
@@ -140,7 +140,7 @@ export default function Home () {
           </video>
         </SwiperSlide>
       </Swiper>
-      <div className="bottomNav py-3 px-5 px-md-0">
+      <div className="bottomNav py-3 px-5 px-md-0 d-none d-md-flex">
         <div className='container d-flex justify-content-between py-5'>
           <div>
             <button className="btn btn-outline-light rounded-pill" onClick={handleShow}>Video</button>
@@ -162,7 +162,7 @@ export default function Home () {
             <button className="btn btn-outline-light rounded-pill btn-icon btn-music">
               <img src="/images/music.svg"/>
             </button>
-            <a href="https://discord.gg/puBEtcKF" target="_blank" rel="noreferrer" className="btn btn-outline-light rounded-pill btn-icon ml-1">
+            <a href="https://discord.gg/qrdD7UNpgd" target="_blank" rel="noreferrer" className="btn btn-outline-light rounded-pill btn-icon ml-1">
               <img src="/images/discord.svg"/>
               Discord
             </a>

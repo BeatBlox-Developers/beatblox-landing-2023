@@ -12,7 +12,7 @@ const Team = () => {
                 Emiliano Zapata
               </h4>
               <p className="text-muted text-small">
-                Founder, Electrical Engineer<br/>
+                Founder, Electrical Enginee
                 & Music Producer
               </p>
             </div>
@@ -21,7 +21,7 @@ const Team = () => {
                 Walter Nogara
               </h4>
               <p className="text-muted text-small">
-                Head of Business Development,<br/>
+                Head of Business Development
                 Finance & Legal affairs
               </p>
             </div>
@@ -30,7 +30,7 @@ const Team = () => {
                 Emanuel Dobao
               </h4>
               <p className="text-muted text-small">
-                CTO, Interactive Devoloper,<br/>
+                CTO, Interactive Devoloper
                 Musician & Event Producer
               </p>
             </div>
@@ -39,7 +39,7 @@ const Team = () => {
                 Brian Rial
               </h4>
               <p className="text-muted text-small">
-                Co founder, Head of Onboarding <br/>
+                Co founder, Head of Onboarding
                 & Artist recruitment
               </p>
             </div>
@@ -61,7 +61,7 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <div className="row pt-5 px-5 px-md-0">
+        <div className="row pt-5 px-5 px-md-0 d-none d-md-flex">
           <div className='col-md-4'>
             <div className='row'>
               <div className='col-6'>

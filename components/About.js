@@ -22,7 +22,7 @@ const About = (mainSwiper) => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6 d-flex flex-column justify-content-md-end">
+        <div className="col-12 col-md-6 pt-3 pt-md-0 d-flex flex-column justify-content-md-end">
           <div className="row">
             <div className='col'>
               <div className='p-5 col-md-8 offset-md-4 border border-white rounded-3 bg-dark-30'>

@@ -12,8 +12,8 @@ const Roadmap = () => {
       spaceBetween={0}
       slidesPerView={1}
       autoplay={{
-        delay: 3200,
-        disableOnInteraction: false,
+        delay: 5200,
+        disableOnInteraction: true,
       }}
       speed={800}
       loop={true}

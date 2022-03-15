@@ -81,7 +81,7 @@ export default function Faqs () {
                     </Nav.Item>
                   </Nav>
                 </Col>
-                <Col sm={9}>
+                <Col sm={8}>
                   <Tab.Content>
                     <Tab.Pane eventKey="faq-1">
                       <h3 className="mb-3">What is BeatBlox?</h3>

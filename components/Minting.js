@@ -1,0 +1,398 @@
+import React, { useState, useEffect } from "react";
+import { ethers } from "ethers";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Modal, Button } from 'react-bootstrap';
+import Earlysup from '../utils/Earlysup.json';
+const CONTRACT_ADDRESS = '0xd3A3F2Be9FB936479ed5370D085bA4b6f1e29487'
+const contractABI = Earlysup.abi
+
+const Minting = () => {
+  const [loader, setLoader] = useState(false);
+  const [newTokenId, setNewTokenId] = useState(null);
+  const [currentAccount, setCurrentAccount] = useState("");
+  const [chainIdOk, setChainIdOk] = useState(false);
+  const [mintingProcess, setMintingProcess] = useState(0);
+  const [modalShow, setModalShow] = useState(false);
+
+  const checkIfWalletIsConnected = async () => {
+    try {
+      const { ethereum } = window;
+      if (!ethereum) {
+        alert("Make sure you have metamask!");
+        return;
+      } else {
+        console.log("We have the ethereum object", ethereum);
+      }
+
+      const accounts = await ethereum.request({
+        method: "eth_accounts"
+      });
+
+      if (accounts.length !== 0) {
+        const account = accounts[0];
+        setCurrentAccount(account);
+        setMintingProcess(1);
+        setupEventListener();
+        checkIfChainIsCorrect();
+      } else {
+        // shows connect wallet button
+      }
+    } catch (error) {
+      console.log(new Error(error));
+    }
+  };
+
+  const connectWallet = async () => {
+    try {
+      const { ethereum } = window;
+      if (!ethereum) {
+        alert("Get MetaMask!");
+        return;
+      }
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      setCurrentAccount(accounts[0]);
+      setMintingProcess(1);
+      setupEventListener();
+      checkIfChainIsCorrect();
+    } catch (error) {
+      console.log(new Error(error));
+    }
+  };
+
+  const handleDisconnect = async () => {
+    console.log("Disconnecting MetaMask...");
+    setCurrentAccount("");
+  };
+
+  const checkIfChainIsCorrect = async () => {
+    try {
+      const { ethereum } = window;
+      const chainId = await ethereum.request({ method: "eth_chainId" });
+      const rinkebyChainId = "0x4";
+      if (chainId !== rinkebyChainId) {
+        setChainIdOk(false);
+        setMintingProcess(1);
+      } else {
+        setChainIdOk(true);
+        setMintingProcess(2);
+      }
+    } catch (error) {
+      console.log(new Error(error));
+    }
+  };
+
+  // > Funcion que permite escuchar los eventos del contrato.
+  const setupEventListener = async () => {
+    try {
+      const { ethereum } = window;
+
+      if (ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const connectedContract = new ethers.Contract(
+          CONTRACT_ADDRESS,
+          Earlysup.abi,
+          signer
+        );
+
+        // > Capturo el evento
+        // TODO: mostrar el tokenID.
+        connectedContract.on("Transfer", (from, to, tokenId) => {
+          setNewTokenId(tokenId.toNumber());
+          console.log(from, tokenId.toNumber());
+        });
+        console.log("Setup event listener!");
+      } else {
+        console.log("Ethereum object doesn't exist!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const changeNetwork = async () => {
+    try {
+      await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0x13881" }], // Hexadecimal version of 80001, prefixed with 0x 0x13881
+      });
+    } catch (error) {
+      if (error.code === 4902) {
+        try {
+          await window.ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                chainId: "0x13881", // Hexadecimal version of 80001, prefixed with 0x
+                chainName: "POLYGON Mumbai",
+                nativeCurrency: {
+                  name: "MATIC",
+                  symbol: "MATIC",
+                  decimals: 18,
+                },
+                rpcUrls: [
+                  "https://speedy-nodes-nyc.moralis.io/cebf590f4bcd4f12d78ee1d4/polygon/mumbai",
+                ],
+                blockExplorerUrls: ["https://explorer-mumbai.maticvigil.com/"],
+                iconUrls: [""],
+              },
+            ],
+          });
+        } catch (addError) {
+          console.log("Did not add network");
+        }
+      }
+    }
+  };
+
+  const mintEarlySup = async () => {
+    try {
+      const { ethereum } = window;
+
+      if (ethereum) {
+        // > Un "provider" es lo que usamos para comunicarnos con los nodos de Ethereum.
+        // En este caso usamos nodos que Metamask proporciona en segundo plano para enviar/recibir datos de nuestro contrato implementado.
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        // > info: https://docs.ethers.io/v5/api/signer/#signers
+        const signer = provider.getSigner();
+        // > Crea la conexión con nuestro contrato
+        const connectedContract = new ethers.Contract(
+          CONTRACT_ADDRESS,
+          contractABI,
+          signer
+        );
+        const price = await connectedContract.price();
+
+        console.log(ethers.utils.formatEther(price));
+
+        // let tx = {
+        //     from: '0x3AccAA02a6aDe46545B45fa986D461eb94a087cC',
+        //     to : CONTRACT_ADDRESS,
+        //     data : connectedContract.encodeABI(),
+        //     value: w3.utils.numberToHex(_price)
+        // }
+        // const gasEstimate = await _contractMethod.estimateGas(tx).catch((err) => alert(err['message']));   // improved gas estimation as suggested by wetcircle
+        // if (gasEstimate == undefined) {return false};                                           // Terminates the function upon error
+        // tx = {
+        //     ...tx,
+        //     gas: parseInt(1.2 * gasEstimate).toString()
+        // };
+
+        console.log("Going to pop wallet now to pay gas...");
+        // const cost = await connectedContract.cost();
+        // console.log(cost);
+        const nftTxn = await connectedContract.mint({ value: price });
+        console.log("Minting...please wait.");
+        setMintingProcess(3);
+        await nftTxn.wait();
+        console.log(
+          `Minted, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
+        );
+        setMintingProcess(4);
+      } else {
+        console.log("Ethereum object doesn't exist!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const MintingModal = (props) => {
+    return (
+      <Modal
+        {...props}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        className="text-black text-center"
+      >
+        <Modal.Header closeButton className="bg-light">
+          <Modal.Title className="w-100" id="contained-modal-title-vcenter">
+            {mintingProcess === 0 && (
+              <p className="m-0">Step 1 of 3</p>
+            )}
+            {mintingProcess === 1 && (
+              <p className="m-0">Step 2 of 3</p>
+            )}
+            {mintingProcess === 2 && (
+              <p className="m-0">Step 3 of 3</p>
+            )}
+            {mintingProcess >= 3 && (
+              <p className="m-0">Congratulations!</p>
+            )}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="bg-light">
+          {mintingProcess === 0 && (
+            <>
+              <p>To start you need to connect your wallet</p>
+              <small>You will need 10 Matic in your account to mint our Early Supporter NFT.</small>
+            </>
+          )}
+          {mintingProcess === 1 && (
+            <>
+              <p>You must be connected to Polygon Network</p>
+              <small>BeatBlox operates on the Polygon network, the most popular Ethereum L2 solution. Metamask does not have this network configured by default, so we leave you this button so that it is added automatically.</small>
+            </>
+          )}
+          {mintingProcess === 2 && (
+            <>
+              <p>You are ready.<br/>Become part of BeatBlox now!</p>
+              <small>Early Supporter NFT - 10 MATIC</small>
+            </>
+          )}
+          {mintingProcess === 3 && (
+            <>
+              <p>Please wait a few seconds</p>
+              <small><a>The transaction should be confirmned soon</a></small>
+            </>
+          )}
+          {mintingProcess === 4 && (
+            <>
+              <p>Welcome to BeatBlox!<br/>Your Token is the #{newTokenId}</p>
+              <small><a>Thank you for support our community!</a></small>
+            </>
+          )}
+        </Modal.Body>
+        <Modal.Footer className="bg-light justify-content-center">
+          {mintingProcess === 0 && (
+            <Button onClick={() => connectWallet()} className="bg-black text-white rounded-pill">Connect to Metamask</Button>
+          )}
+          {mintingProcess === 1 && (
+            <Button onClick={() => changeNetwork()} className="bg-black text-white rounded-pill">Add Polygon Network</Button>
+          )}
+          {mintingProcess === 2 && (
+            <Button onClick={() => mintEarlySup()} className="bg-black text-white rounded-pill">MINT!</Button>
+          )}
+          {mintingProcess === 3 && (
+            <Button className="btn bg-black text-white rounded-pill" disabled>MINTING...</Button>
+          )}
+          {mintingProcess === 4 && (
+            <Button onClick={props.onHide} className="btn bg-black text-white rounded-pill" disabled>Button</Button>
+          )}
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+  useEffect(() => {
+    checkIfWalletIsConnected();
+  }, [])
+  1384
+  return (
+    <React.Fragment>
+      <div className="container h-100">
+        <div className="row section h-100 p-5">
+          <div className="col-md-6 offset-md-6 d-flex flex-column justify-content-center">
+            <div className="row">
+              <div className='col'>
+                <h1 className='p-0'>
+                  Beatblox<br />
+                  Early Supporter NFT
+                </h1>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <div className='border border-white rounded-3 bg-dark-30 p-md-5'>
+                  <h4 className="text-uppercase mb-3">
+                    Benefits
+                  </h4>
+                  <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    loop={true}
+                    navigation
+                    className="benefits-swiper"
+                  >
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        Early access to Closed Beta Auction House.
+                      </h4>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        BeatBlox Collectable Credential Artwork.
+                      </h4>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        BeatBlox Wearable for Decentraland.
+                      </h4>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        BeatBlox Genesis Tokenized Track.
+                      </h4>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        Voting power for future governance system over platform catalog and activities.
+                      </h4>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        BeatBlox Airdrops. 
+                      </h4>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        Membership for BeatBlox Decentraland District Mountain Club.
+                      </h4>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        Access to early supporters only virtual events and meet & greets.
+                      </h4>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        Preferential access to future BeatBlox products.
+                      </h4>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        1 out of 1000 will randomly receive an extremely rare Credential.  
+                      </h4>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        Decentraland District Games and Installations credits. 
+                      </h4>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h4 className="m-0">
+                        Token compatible with every major marketplace for secondary sales, no commission added. 
+                      </h4>
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className='col-md-4'>
+                <button className="mt-5 btn btn-lg btn-light rounded-pill d-block" onClick={() => setModalShow(true)}>
+                  Mint Early Supporter
+                </button>
+                {/* <h3 className="mt-4">
+                  <Countdown date='2022-03-15T00:00:00' />
+                </h3> */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <MintingModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </React.Fragment>
+    
+  )
+};
+
+export default Minting;

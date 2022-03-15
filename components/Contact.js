@@ -56,11 +56,12 @@ const Contact = () => {
                 onChange={e => setEmail(e.target.value)}
               />
             </div>
-            <div className="mb-3">
+            <div className="mb-4">
               <textarea
                 placeholder="Message"
                 className="form-control rounded-0 border-0 border-bottom border-white"
                 onChange={e => setMessage(e.target.value)}
+                rows="4"
               />
             </div>
             <button type="submit" className="btn btn-lg btn-outline-light rounded-pill">Send</button>
