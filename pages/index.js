@@ -13,7 +13,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/mousewheel';
 import 'swiper/css/effect-fade';
-import { Navbar, Nav, Container, Modal } from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Button } from 'react-bootstrap';
 
 
 export default function Home () {
@@ -24,6 +24,25 @@ export default function Home () {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [showNav, setShowNav] = useState(false);
+
+  const NavModal = (props) => {
+    return (
+      <Modal
+        {...props}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        className="navModal text-black text-center"
+      >
+        <button className="btn text-white" href="#" onClick={() => mainSwiper.slideTo(0)}>About Us</button>
+        <button className="btn text-white" href="#" onClick={() => mainSwiper.slideTo(3)}>Roadmap</button>
+        <button className="btn text-white" href="https://play.decentraland.org/?island=I1cequ&position=41%2C43&realm=unicorn" target="_blank" rel="noreferrer">Decentraland</button>
+        <button className="btn text-white" href="/auction-house">Auction House</button>
+        <button className="btn text-white" href="/faqs">FAQs</button>
+        <button className="btn text-white" href="#" onClick={() => mainSwiper.slideTo(2)}>Early Supporter NFT</button>
+      </Modal>
+    );
+  }
 
   return (
     <div className={styles.container}>
@@ -37,9 +56,9 @@ export default function Home () {
           <Navbar.Brand href="#home">
             <img src="/images/logo.svg" alt=""/>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Button variant="outline-light" onClick={() => setShowNav(prevCheck => !prevCheck)}>menu</Button>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto my-2 my-lg-0">
+            <Nav className="ms-md-auto my-2 my-lg-0">
               <Nav.Link href="#" onClick={() => mainSwiper.slideTo(0)}>About Us</Nav.Link>
               <Nav.Link href="#" onClick={() => mainSwiper.slideTo(3)}>Roadmap</Nav.Link>
               <Nav.Link href="https://play.decentraland.org/?island=I1cequ&position=41%2C43&realm=unicorn" target="_blank" rel="noreferrer">Decentraland</Nav.Link>
@@ -50,6 +69,10 @@ export default function Home () {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <NavModal
+        show={showNav}
+        onHide={() => setShowNav(false)}
+      />
       <Swiper
         modules={[Pagination, A11y, Mousewheel, Controller]}
         spaceBetween={0}
@@ -80,6 +103,7 @@ export default function Home () {
       >
         <SwiperSlide>
           <video
+            className="video-about"
             autoPlay={true}
             controls={false}
             loop
@@ -102,6 +126,7 @@ export default function Home () {
         </SwiperSlide>
         <SwiperSlide>
           <video
+            className="video-nft"
             autoPlay={true}
             controls={false}
             loop
@@ -113,6 +138,7 @@ export default function Home () {
         </SwiperSlide>
         <SwiperSlide>
           <video
+            className="video-roadmap"
             autoPlay={true}
             controls={false}
             loop
@@ -124,6 +150,7 @@ export default function Home () {
         </SwiperSlide>
         <SwiperSlide>
           <video
+            className="video-contact"
             autoPlay={true}
             controls={false}
             loop
@@ -135,6 +162,7 @@ export default function Home () {
         </SwiperSlide>
         <SwiperSlide>
           <video
+            className="video-team"
             autoPlay={true}
             controls={false}
             loop

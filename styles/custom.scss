@@ -157,8 +157,31 @@ h6{
   font-size: 1.2rem !important;
 }
 
+// Navbar 
+
+.navModal{
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: transparent !important;
+    background-clip: padding-box;
+    border: none !important;
+    padding: 3rem;
+    .btn{
+      font-size: 3rem;
+      text-align: left;
+    }
+  }
+}
+
 $nav-link-font-size: 1.124rem;
 
+.navbar-collapse.collapse{
+  display: none;
+}
 .navbar-brand img{
   width: 9rem;
   height: auto;
@@ -179,10 +202,38 @@ video{
   height: 100%;
   width: auto;
 }
+.video-about{
+  opacity: 0.7;
+}
+.video-nft, .video-contact{
+  position: relative;
+  left: 58%;
+  opacity: 0.7;
+}
+.video-roadmap{
+  position: relative;
+  right: 58%;
+  opacity: 0.7;
+}
+.video-team{
+  position: relative;
+  right: 58%;
+  opacity: 0.3;
+}
 @media (min-width: 992px) {  
   video{
     width: 100%;
     height: auto;
+  }
+  .video-about,
+  .video-nft,
+  .video-roadmap,
+  .video-contact,
+  .video-team{
+    position: relative;
+    left: 0 !important;
+    right: auto !important;
+    opacity: 1 !important;
   }
 }
 @media (min-width: 1200px) {  
@@ -315,6 +366,9 @@ section .row{
   position: absolute !important;
   top: 0;
   left: 0;
+  .swiper-slide{
+    background-color: #000;
+  }
 }
 .nft-bg{
   background-image: url('/images/early-supporter-nft.jpg');
