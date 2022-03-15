@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ethers } from "ethers";
+import { ethers, utils } from "ethers";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/css';
@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Modal, Button } from 'react-bootstrap';
 import Earlysup from '../utils/Earlysup.json';
-const CONTRACT_ADDRESS = '0xd3A3F2Be9FB936479ed5370D085bA4b6f1e29487'
+const CONTRACT_ADDRESS = '0xd3A3F2Be9FB936479ed5370D085bA4b6f1e29487';
 const contractABI = Earlysup.abi
 
 const Minting = () => {
@@ -74,8 +74,8 @@ const Minting = () => {
     try {
       const { ethereum } = window;
       const chainId = await ethereum.request({ method: "eth_chainId" });
-      const rinkebyChainId = "0x4";
-      if (chainId !== rinkebyChainId) {
+      const correctChainId = utils.hexValue(137);
+      if (chainId !== correctChainId) {
         setChainIdOk(false);
         setMintingProcess(1);
       } else {
@@ -120,7 +120,7 @@ const Minting = () => {
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x13881" }], // Hexadecimal version of 80001, prefixed with 0x 0x13881
+        params: [{ chainId: utils.hexValue(137) }], // Hexadecimal version of 137
       });
     } catch (error) {
       if (error.code === 4902) {
@@ -129,17 +129,17 @@ const Minting = () => {
             method: "wallet_addEthereumChain",
             params: [
               {
-                chainId: "0x13881", // Hexadecimal version of 80001, prefixed with 0x
-                chainName: "POLYGON Mumbai",
+                chainId: utils.hexValue(137), // Hexadecimal version of 137
+                chainName: "Polygon",
                 nativeCurrency: {
                   name: "MATIC",
                   symbol: "MATIC",
                   decimals: 18,
                 },
                 rpcUrls: [
-                  "https://speedy-nodes-nyc.moralis.io/cebf590f4bcd4f12d78ee1d4/polygon/mumbai",
+                  "https://rpc-mainnet.maticvigil.com",
                 ],
-                blockExplorerUrls: ["https://explorer-mumbai.maticvigil.com/"],
+                blockExplorerUrls: ["https://polygonscan.com/"],
                 iconUrls: [""],
               },
             ],
