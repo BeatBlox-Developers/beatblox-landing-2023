@@ -22,10 +22,10 @@ const Minting = () => {
     try {
       const { ethereum } = window;
       if (!ethereum) {
-        alert("Make sure you have metamask!");
+        //alert("Make sure you have metamask!");
         return;
       } else {
-        console.log("We have the ethereum object", ethereum);
+        //console.log("We have the ethereum object", ethereum);
       }
 
       const accounts = await ethereum.request({
@@ -50,7 +50,7 @@ const Minting = () => {
     try {
       const { ethereum } = window;
       if (!ethereum) {
-        alert("Get MetaMask!");
+        alert("Make sure you have metamask!");
         return;
       }
       const accounts = await ethereum.request({
@@ -66,7 +66,7 @@ const Minting = () => {
   };
 
   const handleDisconnect = async () => {
-    console.log("Disconnecting MetaMask...");
+    //console.log("Disconnecting MetaMask...");
     setCurrentAccount("");
   };
 
@@ -105,14 +105,14 @@ const Minting = () => {
         // TODO: mostrar el tokenID.
         connectedContract.on("Transfer", (from, to, tokenId) => {
           setNewTokenId(tokenId.toNumber());
-          console.log(from, tokenId.toNumber());
+          //console.log(from, tokenId.toNumber());
         });
-        console.log("Setup event listener!");
+        //console.log("Setup event listener!");
       } else {
-        console.log("Ethereum object doesn't exist!");
+        //console.log("Ethereum object doesn't exist!");
       }
     } catch (error) {
-      console.log(error);
+      console.log(new Error(error));
     }
   };
 
@@ -145,7 +145,7 @@ const Minting = () => {
             ],
           });
         } catch (addError) {
-          console.log("Did not add network");
+          console.log(new Error("Error trying to add network"));
         }
       }
     }
@@ -169,37 +169,21 @@ const Minting = () => {
         );
         const price = await connectedContract.price();
 
-        console.log(ethers.utils.formatEther(price));
-
-        // let tx = {
-        //     from: '0x3AccAA02a6aDe46545B45fa986D461eb94a087cC',
-        //     to : CONTRACT_ADDRESS,
-        //     data : connectedContract.encodeABI(),
-        //     value: w3.utils.numberToHex(_price)
-        // }
-        // const gasEstimate = await _contractMethod.estimateGas(tx).catch((err) => alert(err['message']));   // improved gas estimation as suggested by wetcircle
-        // if (gasEstimate == undefined) {return false};                                           // Terminates the function upon error
-        // tx = {
-        //     ...tx,
-        //     gas: parseInt(1.2 * gasEstimate).toString()
-        // };
-
-        console.log("Going to pop wallet now to pay gas...");
-        // const cost = await connectedContract.cost();
-        // console.log(cost);
+        //console.log(ethers.utils.formatEther(price));
+        //console.log("Going to pop wallet now to pay gas...");
         const nftTxn = await connectedContract.mint({ value: price });
-        console.log("Minting...please wait.");
+        //console.log("Minting...please wait.");
         setMintingProcess(3);
         await nftTxn.wait();
-        console.log(
-          `Minted, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
-        );
+        // console.log(
+        //   `Minted, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
+        // );
         setMintingProcess(4);
       } else {
-        console.log("Ethereum object doesn't exist!");
+        //console.log("Ethereum object doesn't exist!");
       }
     } catch (error) {
-      console.log(error);
+      console.log(new Error(error));
     }
   };
   const MintingModal = (props) => {
