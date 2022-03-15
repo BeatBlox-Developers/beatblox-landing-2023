@@ -80,7 +80,7 @@ const Team = () => {
           <div className='col-md-4'>
             <a href="https://www.instagram.com/thebeatblox/" target="_blank" rel="noreferrer">Instagram</a><br/>
             <a href="https://twitter.com/The_Beatblox" target="_blank" rel="noreferrer">Twitter</a><br/>
-            <a href="https://discord.gg/fQR74Z8S" target="_blank" rel="noreferrer">Discord</a>
+            <a href="https://discord.gg/GcQjuUvwbm" target="_blank" rel="noreferrer">Discord</a>
           </div>
         </div>
       </div>

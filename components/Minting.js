@@ -237,7 +237,7 @@ const Minting = () => {
           )}
           {mintingProcess === 4 && (
             <>
-              <p>Welcome to BeatBlox!<br/>Your Token is the #{newTokenId}</p>
+              <p>Welcome to BeatBlox!</p>
               <small><a>Thank you for support our community!</a></small>
             </>
           )}

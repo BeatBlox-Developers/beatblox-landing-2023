@@ -162,7 +162,7 @@ export default function Home () {
             <button className="btn btn-outline-light rounded-pill btn-icon btn-music">
               <img src="/images/music.svg"/>
             </button>
-            <a href="https://discord.gg/qrdD7UNpgd" target="_blank" rel="noreferrer" className="btn btn-outline-light rounded-pill btn-icon ml-1">
+            <a href="https://discord.gg/GcQjuUvwbm" target="_blank" rel="noreferrer" className="btn btn-outline-light rounded-pill btn-icon ml-1">
               <img src="/images/discord.svg"/>
               Discord
             </a>
