@@ -56,17 +56,10 @@ export default function Home () {
           <Navbar.Brand href="#home">
             <img src="/images/logo.svg" alt=""/>
           </Navbar.Brand>
-          <Button variant="outline-light" onClick={() => setShowNav(prevCheck => !prevCheck)}>menu</Button>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-md-auto my-2 my-lg-0">
-              <Nav.Link href="#" onClick={() => mainSwiper.slideTo(0)}>About Us</Nav.Link>
-              <Nav.Link href="#" onClick={() => mainSwiper.slideTo(3)}>Roadmap</Nav.Link>
-              <Nav.Link href="https://play.decentraland.org/?island=I1cequ&position=41%2C43&realm=unicorn" target="_blank" rel="noreferrer">Decentraland</Nav.Link>
-              <Nav.Link href="/auction-house">Auction House</Nav.Link>
-              <Nav.Link href="/faqs">FAQs</Nav.Link>
-              <Nav.Link className="btn btn-light text-dark rounded-pill" href="#" onClick={() => mainSwiper.slideTo(2)}>Early Supporter NFT</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
+          <Nav className="ms-md-auto my-2 my-lg-0">
+            <Nav.Link className="btn btn-light text-dark rounded-pill d-none d-md-block" href="#" onClick={() => mainSwiper.slideTo(2)}>Early Supporter NFT</Nav.Link>
+            <Nav.Link className="btn btn-outline-light rounded-pill" onClick={() => setShowNav(prevCheck => !prevCheck)}>menu</Nav.Link>
+          </Nav>
         </Container>
       </Navbar>
       <NavModal

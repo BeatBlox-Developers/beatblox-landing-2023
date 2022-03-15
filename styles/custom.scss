@@ -207,7 +207,7 @@ video{
 }
 .video-nft, .video-contact{
   position: relative;
-  left: 58%;
+  left: 65%;
   opacity: 0.7;
 }
 .video-roadmap{
@@ -217,7 +217,7 @@ video{
 }
 .video-team{
   position: relative;
-  right: 58%;
+  right: 65%;
   opacity: 0.3;
 }
 @media (min-width: 992px) {  
@@ -237,6 +237,18 @@ video{
   }
 }
 @media (min-width: 1200px) {  
+  .modal-dialog {
+    max-width: 1140px !important;
+    margin: 1.75rem auto;
+  }
+  .navModal{
+    .modal-content {
+      padding: 0rem;
+      .btn{
+        font-size: 4.875rem;
+      }
+    }
+  }
   html, body{
     font-size: 10px !important;
   }
