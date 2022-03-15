@@ -13,6 +13,7 @@ const contractABI = Earlysup.abi
 const Minting = () => {
   const [loader, setLoader] = useState(false);
   const [newTokenId, setNewTokenId] = useState(null);
+  const [error, setError] = useState("");
   const [currentAccount, setCurrentAccount] = useState("");
   const [chainIdOk, setChainIdOk] = useState(false);
   const [mintingProcess, setMintingProcess] = useState(0);
@@ -61,7 +62,7 @@ const Minting = () => {
       setupEventListener();
       checkIfChainIsCorrect();
     } catch (error) {
-      console.log(new Error(error));
+      setError(error.data.message);
     }
   };
 
@@ -83,7 +84,7 @@ const Minting = () => {
         setMintingProcess(2);
       }
     } catch (error) {
-      console.log(new Error(error));
+      setError(error.data.message);
     }
   };
 
@@ -112,7 +113,7 @@ const Minting = () => {
         //console.log("Ethereum object doesn't exist!");
       }
     } catch (error) {
-      console.log(new Error(error));
+      setError(error.data.message);
     }
   };
 
@@ -145,7 +146,7 @@ const Minting = () => {
             ],
           });
         } catch (addError) {
-          console.log(new Error("Error trying to add network"));
+          setError(addError.data.message);
         }
       }
     }
@@ -183,7 +184,7 @@ const Minting = () => {
         //console.log("Ethereum object doesn't exist!");
       }
     } catch (error) {
-      console.log(new Error(error));
+      setError(error.data.message);
     }
   };
   const MintingModal = (props) => {
@@ -215,30 +216,35 @@ const Minting = () => {
             <>
               <p>To start you need to connect your wallet</p>
               <small>You will need 10 Matic in your account to mint our Early Supporter NFT.</small>
+              <p className="text-danger mt-3">{error}</p>
             </>
           )}
           {mintingProcess === 1 && (
             <>
               <p>You must be connected to Polygon Network</p>
               <small>BeatBlox operates on the Polygon network, the most popular Ethereum L2 solution. Metamask does not have this network configured by default, so we leave you this button so that it is added automatically.</small>
+              <p className="text-danger mt-3">{error}</p>
             </>
           )}
           {mintingProcess === 2 && (
             <>
               <p>You are ready.<br/>Become part of BeatBlox now!</p>
               <small>Early Supporter NFT - 10 MATIC</small>
+              <p className="text-danger mt-3">{error}</p>
             </>
           )}
           {mintingProcess === 3 && (
             <>
               <p>Please wait a few seconds</p>
               <small><a>The transaction should be confirmned soon</a></small>
+              <p className="text-danger mt-3">{error}</p>
             </>
           )}
           {mintingProcess === 4 && (
             <>
               <p>Welcome to BeatBlox!</p>
               <small><a>Thank you for support our community!</a></small>
+              <p className="text-danger mt-3">{error}</p>
             </>
           )}
         </Modal.Body>
