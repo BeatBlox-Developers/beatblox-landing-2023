@@ -12,7 +12,7 @@ const contractABI = Earlysup.abi
 
 const Minting = () => {
   const [loader, setLoader] = useState(false);
-  const [newTokenId, setNewTokenId] = useState(null);
+  // const [newTxId, setNewTxId] = useState(null);
   const [error, setError] = useState("");
   const [currentAccount, setCurrentAccount] = useState("");
   const [chainIdOk, setChainIdOk] = useState(false);
@@ -105,7 +105,7 @@ const Minting = () => {
         // > Capturo el evento
         // TODO: mostrar el tokenID.
         connectedContract.on("Transfer", (from, to, tokenId) => {
-          setNewTokenId(tokenId.toNumber());
+          // setNewTokenId(tokenId.toNumber());
           //console.log(from, tokenId.toNumber());
         });
         //console.log("Setup event listener!");
@@ -176,6 +176,7 @@ const Minting = () => {
         //console.log("Minting...please wait.");
         setMintingProcess(3);
         await nftTxn.wait();
+        // setNewTxId(nftTxn.hash);
         // console.log(
         //   `Minted, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
         // );
@@ -206,7 +207,10 @@ const Minting = () => {
             {mintingProcess === 2 && (
               <p className="m-0">Step 3 of 3</p>
             )}
-            {mintingProcess >= 3 && (
+            {mintingProcess === 3 && (
+              <p className="m-0">Minting...</p>
+            )}
+            {mintingProcess === 4 && (
               <p className="m-0">Congratulations!</p>
             )}
           </Modal.Title>
@@ -243,7 +247,7 @@ const Minting = () => {
           {mintingProcess === 4 && (
             <>
               <p>Welcome to BeatBlox!</p>
-              <small><a>Thank you for support our community!</a></small>
+              <small>Thank you for support our community!</small>
               <p className="text-danger mt-3">{error}</p>
             </>
           )}
@@ -262,7 +266,7 @@ const Minting = () => {
             <Button className="btn bg-black text-white rounded-pill" disabled>MINTING...</Button>
           )}
           {mintingProcess === 4 && (
-            <Button onClick={props.onHide} className="btn bg-black text-white rounded-pill" disabled>Button</Button>
+            <Button onClick={props.onHide} className="btn bg-black text-white rounded-pill">Close</Button>
           )}
         </Modal.Footer>
       </Modal>
