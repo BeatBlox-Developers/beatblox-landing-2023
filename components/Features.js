@@ -5,10 +5,10 @@ import { Accordion } from 'react-bootstrap';
 const Features = () => {
 
   return (
-    <div className="container h-100 d-flex align-items-center">
-      <div className="row section px-5 px-md-0">
+    <div className="container d-flex align-items-center">
+      <div className="row px-5 px-md-0">
         <Accordion className="d-flex flex-column flex-md-row">
-          <div className="col-12 col-md-4 d-flex flex-column justify-content-center">
+          <div className="col-12 col-md-4 d-flex flex-column justify-content-start">
             <div className='row'>
               <div className="col col-md-10">
                 <img className="img-icon d-none d-md-flex" src="/images/metaverse.svg"></img>
@@ -19,8 +19,7 @@ const Features = () => {
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>
                     <p>
-                      We have deployed our first Metaverse District, built along 34 parcels in Decentraland. BeatBlox Decentraland music district will be destined to the development of a musical arts ecosystem.<br/> 
-                      Join the most relevant Metaverse of the crypto space through our virtual record store.
+                      We have deployed our first Metaverse District, built along 34 parcels in Decentraland. BeatBlox Decentraland music district will be destined to the development of a musical arts ecosystem. 
                     </p>
                   </Accordion.Header>
                   <Accordion.Body>
@@ -32,7 +31,7 @@ const Features = () => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-4  d-flex flex-column justify-content-center">
+          <div className="col-12 col-md-4  d-flex flex-column justify-content-start">
             <div className='row'>
               <div className="col col-md-10">
                 <img className="img-icon d-none d-md-flex" src="/images/marketplace.svg"></img>
@@ -56,7 +55,7 @@ const Features = () => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-4  d-flex flex-column justify-content-center">
+          <div className="col-12 col-md-4  d-flex flex-column justify-content-start">
             <div className='row'>
               <div className="col col-md-10">
                 <img className="img-icon d-none d-md-flex" src="/images/academy.svg"></img>
@@ -67,7 +66,7 @@ const Features = () => {
                 <Accordion.Item eventKey="2">
                   <Accordion.Header>
                     <p>
-                      The Beatblox Academy is an educational link to the world of blockchain, where you can get premium access to specific lectures and participate in a collaborative space that includes both fans and artists. 
+                      BeatBlox Academy is an educational link to the blockchain world, where you can get premium access to specific reading and participate in a collaborative space which includes fans and artists. 
                     </p>
                   </Accordion.Header>
                   <Accordion.Body>

@@ -60,9 +60,11 @@ $container-max-widths: (
 ) !default;
 
 html, body{
-  font-size: 10px;
+  font-size: 9px;
 }
-
+.container, .container-fluid{
+  height: 63%;
+}
 .w-80{
   width: 80%;
 }
@@ -75,6 +77,7 @@ html, body{
 $gray-900: #141515;
 .img-icon{
   width: 2rem !important;
+  margin-right: 1rem;
 }
 @media (min-width: 992px) {  
   html, body{
@@ -82,6 +85,16 @@ $gray-900: #141515;
   }
   .img-icon{
     width: 3.125rem !important;
+  }
+  .main-swiper{
+    .swiper-pagination{
+      display: block !important;
+    }
+  }
+  .roadmap-swiper{
+    .swiper-wrapper{
+      padding: 0 !important;
+    }
   }
 }
 
@@ -120,7 +133,7 @@ p{
 }
 h1{
   font-family: 'Nuckle';
-  font-size: 4.875rem !important;
+  font-size: 3.5rem !important;
 }
 h2{
   font-family: 'Nuckle';
@@ -128,7 +141,7 @@ h2{
 }
 h3{
   font-family: 'Nuckle';
-  font-size: 1.873rem !important;
+  font-size: 1.5rem !important;
 }
 h4{
   font-family: 'Nuckle';
@@ -172,9 +185,25 @@ video{
     height: auto;
   }
 }
+@media (min-width: 1200px) {  
+  html, body{
+    font-size: 10px !important;
+  }
+  h1{
+    font-size: 4.875rem !important;
+  }
+  h3{
+    font-size: 1.873rem !important;
+  }
+}
+@media (min-width: 1400px) {  
+  html, body{
+    font-size: 11px !important;
+  }
+}
 @media (min-width: 1900px) {  
   html, body{
-    font-size: 14px;
+    font-size: 16px !important;
   }
 }
 
@@ -273,6 +302,9 @@ section .row{
   top: 0;
   left: 0;
 }
+.main-swiper .swiper-pagination:not(.swiper-pagination-progressbar){
+  display: none;
+}
 .main-swiper .swiper-pagination-bullets{
   right: 2rem !important;
 }
@@ -284,39 +316,65 @@ section .row{
   top: 0;
   left: 0;
 }
-.roadmap-swiper .swiper-pagination{
-  display: flex !important;
-  justify-content: space-evenly !important;
-  top: 80%;
-  bottom: auto !important;
-  background-image: url('/line.png');
-  background-repeat: repeat-x;
+.nft-bg{
+  background-image: url('/images/early-supporter-nft.jpg');
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.roadmap-swiper .swiper-pagination-bullet{
-  background-color: #000 !important;
-  border: 1px solid #fff !important;
-  width: 12px !important;
-  height: 12px !important;
-  opacity: 1 !important;
-}
-.roadmap-swiper .swiper-pagination-bullet-active{
-  background-color: #ef4208 !important;
-  border: 1px solid #ef4208 !important;
+.roadmap-swiper{
+  .swiper-wrapper{
+    padding: 0 3rem;
+  }
+  .swiper-pagination{
+    display: flex !important;
+    justify-content: space-evenly !important;
+    bottom: 0 !important;
+    background-image: url('/line.png');
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+  .swiper-pagination-bullet{
+    background-color: #000 !important;
+    border: 1px solid #fff !important;
+    width: 12px !important;
+    height: 12px !important;
+    opacity: 1 !important;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: #ef4208 !important;
+    border: 1px solid #ef4208 !important;
+  }
 }
 .benefits-swiper{
   .swiper-wrapper{
-    align-items: center;
+    margin-top: 1.5rem;
   }
   .swiper-slide{
-    padding: 0 5rem;
+    padding: 0;
+    justify-content: start;
+    align-items: initial;
   }
   .swiper-button-next, .swiper-button-prev {
     color: #fff !important;
     margin-top: -2rem;
   }
+  .swiper-button-prev{
+    left: 0 !important;
+  }
+  .swiper-button-next{
+    right: 0 !important;
+  }
   .swiper-button-next:after, .swiper-button-prev:after{
     font-size: 2rem !important;
+  }
+  .swiper-pagination-progressbar{
+    height: 1px !important;
+    background-color: #474747 !important;
+    .swiper-pagination-progressbar-fill{
+      background-color: #fff !important;
+    }
+
   }
 }
 .not-fullscreen{

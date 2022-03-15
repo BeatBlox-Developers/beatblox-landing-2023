@@ -59,7 +59,6 @@ export default function Home () {
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         onSwiper={(swiper) => setMainSwiper(swiper)}
-        onSlideChange={() => console.log('slide change')}
         className="main-swiper"
         controller={{ control: controlledSwiper }}
         speed={800}
@@ -85,6 +84,7 @@ export default function Home () {
             controls={false}
             loop
             muted
+            playsInline
             src="/videos/about.mp4"
             type="video/mp4">
           </video>
@@ -95,6 +95,7 @@ export default function Home () {
             controls={false}
             loop
             muted
+            playsInline
             src="/videos/features.mp4"
             type="video/mp4">
           </video>
@@ -105,6 +106,7 @@ export default function Home () {
             controls={false}
             loop
             muted
+            playsInline
             src="/videos/early-supporters.mp4"
             type="video/mp4">
           </video>
@@ -115,6 +117,7 @@ export default function Home () {
             controls={false}
             loop
             muted
+            playsInline
             src="/videos/roadmap.mp4"
             type="video/mp4">
           </video>
@@ -125,6 +128,7 @@ export default function Home () {
             controls={false}
             loop
             muted
+            playsInline
             src="/videos/contact.mp4"
             type="video/mp4">
           </video>
@@ -135,6 +139,7 @@ export default function Home () {
             controls={false}
             loop
             muted
+            playsInline
             src="/videos/team.mp4"
             type="video/mp4">
           </video>

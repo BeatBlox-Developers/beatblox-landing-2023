@@ -226,7 +226,7 @@ const Minting = () => {
           {mintingProcess === 1 && (
             <>
               <p>You must be connected to Polygon Network</p>
-              <small>BeatBlox operates on the Polygon network, the most popular Ethereum L2 solution. Metamask does not have this network configured by default, so we leave you this button so that it is added automatically.</small>
+              <small>BeatBlox operates on the Polygon network, a popular Ethereum L2 solution. Metamask does not have this network configured by default. Click the following button to set it up.</small>
               <p className="text-danger mt-3">{error}</p>
             </>
           )}
@@ -247,7 +247,7 @@ const Minting = () => {
           {mintingProcess === 4 && (
             <>
               <p>Welcome to BeatBlox!</p>
-              <small>Thank you for support our community!</small>
+              <small>Thank you for supporting our community!</small>
               <p className="text-danger mt-3">{error}</p>
             </>
           )}
@@ -280,7 +280,7 @@ const Minting = () => {
     <React.Fragment>
       <div className="container h-100">
         <div className="row section h-100 p-5">
-          <div className="col-md-6 offset-md-6 d-flex flex-column justify-content-center">
+          <div className="col-md-6 offset-md-6 d-flex flex-column justify-content-end justify-content-md-center">
             <div className="row">
               <div className='col'>
                 <h1 className='p-0'>
@@ -291,7 +291,7 @@ const Minting = () => {
             </div>
             <div className="row">
               <div className="col">
-                <div className='border border-white rounded-3 bg-dark-30 p-md-5'>
+                <div className="mt-5">
                   <h4 className="text-uppercase mb-3">
                     Benefits
                   </h4>
@@ -299,8 +299,10 @@ const Minting = () => {
                     modules={[Navigation, Pagination, Autoplay]}
                     spaceBetween={20}
                     slidesPerView={1}
+                    pagination={{
+                      type: "progressbar",
+                    }}
                     loop={true}
-                    navigation
                     className="benefits-swiper"
                   >
                     <SwiperSlide>
@@ -369,7 +371,7 @@ const Minting = () => {
             </div>
             <div className="row">
               <div className='col-md-4'>
-                <button className="mt-5 btn btn-lg btn-light rounded-pill d-block" onClick={() => setModalShow(true)}>
+                <button className="mt-3 btn btn-lg btn-light rounded-pill d-block" onClick={() => setModalShow(true)}>
                   Mint Early Supporter
                 </button>
                 {/* <h3 className="mt-4">
