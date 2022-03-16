@@ -96,6 +96,7 @@ export default function Home () {
             controls={false}
             loop
             muted
+            playsInline
             src="/videos/loading.mp4"
             type="video/mp4">
           </video>
