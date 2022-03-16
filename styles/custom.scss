@@ -79,26 +79,25 @@ $gray-900: #141515;
   width: 2rem !important;
   margin-right: 1rem;
 }
+
+.main-swiper{
+  & > .swiper-pagination-progressbar{
+    width: 1px !important;
+    right: 0 !important;
+    left: auto !important;
+    background-color: transparent !important;
+    .swiper-pagination-progressbar-fill{
+      background-color: #fff !important;
+    }
+  }
+}
+
 @media (min-width: 992px) {  
   html, body{
     font-size: 11px;
   }
   .img-icon{
     width: 3.125rem !important;
-  }
-  .main-swiper{
-    .swiper-pagination{
-      display: block !important;
-    }
-    .swiper-pagination-progressbar{
-      width: 1px !important;
-      right: 0 !important;
-      left: auto !important;
-      background-color: transparent !important;
-      .swiper-pagination-progressbar-fill{
-        background-color: #fff !important;
-      }
-    }
   }
   .roadmap-swiper{
     .swiper-wrapper{
@@ -234,22 +233,13 @@ video{
   height: 100%;
   width: auto;
 }
-.video-about{
-  opacity: 0.7;
-}
-.video-nft, .video-contact{
-  position: relative;
-  left: 65%;
-  opacity: 0.7;
-}
+.video-about,
+.video-nft,
+.video-contact,
 .video-roadmap{
-  position: relative;
-  right: 58%;
   opacity: 0.7;
 }
 .video-team{
-  position: relative;
-  right: 65%;
   opacity: 0.3;
 }
 @media (min-width: 992px) {  
@@ -397,9 +387,6 @@ section .row{
   top: 0;
   left: 0;
 }
-.main-swiper .swiper-pagination:not(.swiper-pagination-progressbar){
-  display: none;
-}
 .main-swiper .swiper-pagination-bullets{
   right: 2rem !important;
 }
@@ -428,9 +415,17 @@ section .row{
     display: flex !important;
     justify-content: space-evenly !important;
     bottom: 0 !important;
-    background-image: url('/line.png');
-    background-repeat: repeat-x;
-    background-position: center;
+    &:after{
+      content: " ";
+      display: block;
+      background: #fff;
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      margin-top: -0.6px;
+      z-index: -1;
+    }
   }
   .swiper-pagination-bullet{
     background-color: #000 !important;

@@ -294,7 +294,7 @@ const Minting = () => {
             <div className="row">
               <div className='col'>
                 <h1 className='p-0'>
-                  Beatblox<br />
+                  BeatBlox<br />
                   Early Supporter <span className="text-outline">NFT</span>
                 </h1>
               </div>
@@ -322,7 +322,7 @@ const Minting = () => {
                   >
                     <SwiperSlide>
                       <h4 className="m-0">
-                        Early access to Closed Beta Auction House.
+                        Early access to Closed Beta Marketplace.
                       </h4>
                     </SwiperSlide>
                     <SwiperSlide>

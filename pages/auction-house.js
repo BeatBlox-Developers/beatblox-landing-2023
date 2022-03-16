@@ -33,7 +33,7 @@ export default function auctionHouse() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className="video-swiper">
+      <div className="video-swiper w-100">
         <video
           autoPlay={true}
           controls={false}
@@ -45,7 +45,7 @@ export default function auctionHouse() {
       </div>
       <div className="main-swiper h-100 w-100 d-flex align-items-center">
         <div className="container d-flex justify-content-center">
-          <div className="row h-100 px-5 px-md-0">
+          <div className="row h-100 px-5 px-md-0 d-flex align-items-center">
             <div className="col-12 text-center">
               <h4>
                 Coming Soon
@@ -53,8 +53,8 @@ export default function auctionHouse() {
               <p className="mt-4 text-muted">
                 Get your early access to our closed Beta Auction House
               </p>
-              <Link href="/" className="btn btn-lg btn-outline-light rounded-pill mt-4">
-                Get yours!
+              <Link href="/">
+                <a className="btn btn-lg btn-outline-light rounded-pill mt-4">Get yours!</a>
               </Link>
             </div>
           </div>

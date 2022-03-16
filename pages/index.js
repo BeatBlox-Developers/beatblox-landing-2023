@@ -15,7 +15,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/mousewheel';
 import 'swiper/css/effect-fade';
 import { Navbar, Nav, Container, Modal, Button } from 'react-bootstrap';
-
+import { isMobile, browserName } from "react-device-detect";
 
 export default function Home () {
   
@@ -29,6 +29,20 @@ export default function Home () {
   const goToSection = (section) => {
     mainSwiper.slideTo(section);
     setShowNav(false);
+  }
+  const RenderVideo = (props) => {
+    const src = '/videos/' + props.video + '.mp4';
+    return (
+      <video
+        className="video-about"
+        autoPlay={true}
+        controls={false}
+        loop
+        muted
+        playsInline
+        src={src}
+        type="video/mp4"/>
+    );
   }
 
   const NavModal = (props) => {
@@ -108,75 +122,22 @@ export default function Home () {
         onSwiper={setControlledSwiper}
       >
         <SwiperSlide>
-          <video
-            className="video-about"
-            autoPlay={true}
-            controls={false}
-            loop
-            muted
-            playsInline
-            src="/videos/about.mp4"
-            type="video/mp4">
-          </video>
+          <RenderVideo video="about"/>
         </SwiperSlide>
         <SwiperSlide>
-          <video
-            autoPlay={true}
-            controls={false}
-            loop
-            muted
-            playsInline
-            src="/videos/features.mp4"
-            type="video/mp4">
-          </video>
+          <RenderVideo video="features"/>
         </SwiperSlide>
         <SwiperSlide>
-          <video
-            className="video-nft"
-            autoPlay={true}
-            controls={false}
-            loop
-            muted
-            playsInline
-            src="/videos/early-supporters.mp4"
-            type="video/mp4">
-          </video>
+          <RenderVideo video={ isMobile ? "early-supporters-mobile" : "early-supporters"}/>
         </SwiperSlide>
         <SwiperSlide>
-          <video
-            className="video-roadmap"
-            autoPlay={true}
-            controls={false}
-            loop
-            muted
-            playsInline
-            src="/videos/roadmap.mp4"
-            type="video/mp4">
-          </video>
+          <RenderVideo video={ isMobile ? "roadmap-mobile" : "roadmap"}/>
         </SwiperSlide>
         <SwiperSlide>
-          <video
-            className="video-contact"
-            autoPlay={true}
-            controls={false}
-            loop
-            muted
-            playsInline
-            src="/videos/contact.mp4"
-            type="video/mp4">
-          </video>
+          <RenderVideo video="contact"/>
         </SwiperSlide>
         <SwiperSlide>
-          <video
-            className="video-team"
-            autoPlay={true}
-            controls={false}
-            loop
-            muted
-            playsInline
-            src="/videos/team.mp4"
-            type="video/mp4">
-          </video>
+          <RenderVideo video={ isMobile ? "team-mobile" : "team"}/>
         </SwiperSlide>
       </Swiper>
       <div className="bottomNav py-3 px-5 px-md-0 d-none d-md-flex">
