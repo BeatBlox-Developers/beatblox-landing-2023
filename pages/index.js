@@ -31,7 +31,7 @@ export default function Home () {
     setShowNav(false);
   }
   const RenderVideo = (props) => {
-    const vidSrc = '/videos/' + props.video + '.webm';
+    const vidSrc = '/videos/' + props.video + '.mp4';
     const vidClass = 'video-'+ props.video;
     return (
       <video
@@ -42,7 +42,7 @@ export default function Home () {
         muted
         playsInline
         src={vidSrc}
-        type="video/webm"/>
+        type="video/mp4"/>
     );
   }
 

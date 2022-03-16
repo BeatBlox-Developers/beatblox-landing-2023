@@ -25,8 +25,8 @@ function MyApp({ Component, pageProps }) {
             controls={false}
             loop
             muted
-            src="/videos/loading.webm"
-            type="video/webm">
+            src="/videos/loading.mp4"
+            type="video/mp4">
           </video>
         </div>
       </React.Fragment>
