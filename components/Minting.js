@@ -247,7 +247,7 @@ const Minting = () => {
           {(mintingProcess === 3 && !isMobile) && (
             <>
               <p>Please wait a few seconds</p>
-              <small><a>The transaction should be confirmned soon</a></small>
+              <small><a>The transaction should be confirmed soon</a></small>
               <p className="text-danger mt-3">{error}</p>
             </>
           )}
