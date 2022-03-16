@@ -195,7 +195,7 @@ const Minting = () => {
         {...props}
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        className="text-black text-center"
+        className="text-black text-center minting-modal"
       >
         <Modal.Header closeButton className="bg-light">
           <Modal.Title className="w-100" id="contained-modal-title-vcenter">
