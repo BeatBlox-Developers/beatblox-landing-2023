@@ -235,12 +235,18 @@ video{
 }
 .video-about,
 .video-nft,
-.video-contact,
-.video-roadmap{
+.video-features,
+.video-roadmap,
+.video-contact{
   opacity: 0.7;
 }
 .video-team{
   opacity: 0.3;
+}
+.video-contact{
+  position: relative;
+  left: 65%;
+  opacity: 0.7;
 }
 @media (min-width: 992px) {  
   video{
@@ -250,6 +256,7 @@ video{
   .video-about,
   .video-nft,
   .video-roadmap,
+  .video-features,
   .video-contact,
   .video-team{
     position: relative;
@@ -514,6 +521,7 @@ section .row{
   position: absolute !important;
   top: 0;
   left: 0;
+  z-index: 9999;
   video{
     height: 100%;
     width: auto;
