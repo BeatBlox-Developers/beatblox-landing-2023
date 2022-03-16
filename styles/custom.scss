@@ -518,7 +518,7 @@ section .row{
   opacity: 0.8;
 }
 .loading{
-  position: absolute !important;
+  position: fixed !important;
   top: 0;
   left: 0;
   z-index: 9999;
