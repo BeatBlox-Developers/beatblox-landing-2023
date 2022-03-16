@@ -90,6 +90,15 @@ $gray-900: #141515;
     .swiper-pagination{
       display: block !important;
     }
+    .swiper-pagination-progressbar{
+      width: 1px !important;
+      right: 0 !important;
+      left: auto !important;
+      background-color: transparent !important;
+      .swiper-pagination-progressbar-fill{
+        background-color: #fff !important;
+      }
+    }
   }
   .roadmap-swiper{
     .swiper-wrapper{
@@ -156,6 +165,11 @@ h6{
   font-family: 'Nuckle';
   font-size: 1.2rem !important;
 }
+.text-outline{
+  color: #000;
+  -webkit-text-stroke: 1px #fff;
+  text-stroke: 1px #fff;
+}
 
 // Navbar 
 
@@ -170,9 +184,27 @@ h6{
     background-clip: padding-box;
     border: none !important;
     padding: 3rem;
-    .btn{
+    a, button{
+      color: #fff;
       font-size: 3rem;
       text-align: left;
+      background: transparent;
+      outline: 0;
+      border: none;
+      padding: 0;
+      -webkit-transition: all 0.3s 0s ease-in;
+      -moz-transition: all 0.3s 0s ease-in;
+      -o-transition: all 0.3s 0s ease-in;
+      transition: all 0.3s 0s ease-in;
+      &:hover{
+        color: #000;
+        -webkit-text-stroke: 1px #fff;
+        text-stroke: 1px #fff;
+        -webkit-transition: all 0.3s 0s ease-out;
+        -moz-transition: all 0.3s 0s ease-out;
+        -o-transition: all 0.3s 0s ease-out;
+        transition: all 0.3s 0s ease-out;
+      }
     }
   }
 }
@@ -244,7 +276,7 @@ video{
   .navModal{
     .modal-content {
       padding: 0rem;
-      .btn{
+      a, button{
         font-size: 4.875rem;
       }
     }
@@ -440,7 +472,6 @@ section .row{
     .swiper-pagination-progressbar-fill{
       background-color: #fff !important;
     }
-
   }
 }
 .not-fullscreen{

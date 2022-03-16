@@ -25,6 +25,10 @@ export default function Home () {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [showNav, setShowNav] = useState(false);
+  const goToSection = (section) => {
+    mainSwiper.slideTo(section);
+    setShowNav(false);
+  }
 
   const NavModal = (props) => {
     return (
@@ -34,12 +38,12 @@ export default function Home () {
         centered
         className="navModal text-black text-center"
       >
-        <button className="btn text-white" href="#" onClick={() => mainSwiper.slideTo(0)}>About Us</button>
-        <button className="btn text-white" href="#" onClick={() => mainSwiper.slideTo(3)}>Roadmap</button>
-        <button className="btn text-white" href="https://play.decentraland.org/?island=I1cequ&position=41%2C43&realm=unicorn" target="_blank" rel="noreferrer">Decentraland</button>
-        <button className="btn text-white" href="/auction-house">Auction House</button>
-        <button className="btn text-white" href="/faqs">FAQs</button>
-        <button className="btn text-white" href="#" onClick={() => mainSwiper.slideTo(2)}>Early Supporter NFT</button>
+        <button className="" href="#" onClick={() => goToSection(0)}>About Us</button>
+        <button className="" href="#" onClick={() => goToSection(3)}>Roadmap</button>
+        <a className="" href="https://play.decentraland.org/?island=I1cequ&position=41%2C43&realm=unicorn" target="_blank" rel="noreferrer">Decentraland</a>
+        <a className="" href="/auction-house">Auction House</a>
+        <a className="" href="/faqs">FAQs</a>
+        <button className="" href="#" onClick={() => goToSection(2)}>Early Supporter NFT</button>
       </Modal>
     );
   }
@@ -57,8 +61,8 @@ export default function Home () {
             <img src="/images/logo.svg" alt=""/>
           </Navbar.Brand>
           <Nav className="ms-md-auto my-2 my-lg-0">
-            <Nav.Link className="btn btn-light text-dark rounded-pill d-none d-md-block" href="#" onClick={() => mainSwiper.slideTo(2)}>Early Supporter NFT</Nav.Link>
-            <Nav.Link className="btn btn-outline-light rounded-pill" onClick={() => setShowNav(prevCheck => !prevCheck)}>menu</Nav.Link>
+            <button className="btn btn-light text-dark rounded-pill d-none d-md-block" href="#" onClick={() => mainSwiper.slideTo(2)}>Early Supporter NFT</button>
+            <button className="btn btn-outline-light rounded-pill" onClick={() => setShowNav(prevCheck => !prevCheck)}>menu</button>
           </Nav>
         </Container>
       </Navbar>
@@ -72,7 +76,9 @@ export default function Home () {
         slidesPerView={1}
         direction={"vertical"}
         mousewheel={true}
-        pagination={{ clickable: true }}
+        pagination={{
+          type: "progressbar",
+        }}
         scrollbar={{ draggable: true }}
         onSwiper={(swiper) => setMainSwiper(swiper)}
         className="main-swiper"

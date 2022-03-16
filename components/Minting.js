@@ -295,7 +295,7 @@ const Minting = () => {
               <div className='col'>
                 <h1 className='p-0'>
                   Beatblox<br />
-                  Early Supporter NFT
+                  Early Supporter <span className="text-outline">NFT</span>
                 </h1>
               </div>
             </div>
@@ -312,6 +312,11 @@ const Minting = () => {
                     pagination={{
                       type: "progressbar",
                     }}
+                    autoplay={{
+                      delay: 5200,
+                      disableOnInteraction: true,
+                    }}
+                    speed={800}
                     loop={true}
                     className="benefits-swiper"
                   >
