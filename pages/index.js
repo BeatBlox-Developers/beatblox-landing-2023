@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 import About from '../components/About';
@@ -38,12 +39,18 @@ export default function Home () {
         centered
         className="navModal text-black text-center"
       >
-        <button className="" href="#" onClick={() => goToSection(0)}>About Us</button>
-        <button className="" href="#" onClick={() => goToSection(3)}>Roadmap</button>
-        <a className="" href="https://play.decentraland.org/?island=I1cequ&position=41%2C43&realm=unicorn" target="_blank" rel="noreferrer">Decentraland</a>
-        <a className="" href="/auction-house">Auction House</a>
-        <a className="" href="/faqs">FAQs</a>
-        <button className="" href="#" onClick={() => goToSection(2)}>Early Supporter NFT</button>
+        <button href="#" onClick={() => goToSection(0)}>About Us</button>
+        <button href="#" onClick={() => goToSection(3)}>Roadmap</button>
+        <Link href="https://play.decentraland.org/?island=I1cequ&position=41%2C43&realm=unicorn">
+          <a target="_blank" rel="noreferrer">Decentraland</a>
+        </Link>
+        <Link href="/auction-house">
+          <a>Auction House</a>
+        </Link>
+        <Link href="/faqs">
+          <a>FAQs</a>
+        </Link>
+        <button href="#" onClick={() => goToSection(2)}>Early Supporter NFT</button>
       </Modal>
     );
   }
