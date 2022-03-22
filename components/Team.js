@@ -30,7 +30,7 @@ const Team = () => {
                 Emanuel Dobao
               </h4>
               <p className="text-muted text-small">
-                CTO, Interactive Devoloper
+                CTO, Interactive Developer
                 Musician & Event Producer
               </p>
             </div>

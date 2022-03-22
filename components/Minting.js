@@ -15,7 +15,7 @@ const Minting = () => {
   const [loader, setLoader] = useState(false);
   // const [newTxId, setNewTxId] = useState(null);
   const [error, setError] = useState("");
-  const [currentAccount, setCurrentAccount] = useState("");
+  const [currentAccount, setCurrentAccount] = useState(0);
   const [chainIdOk, setChainIdOk] = useState(false);
   const [mintingProcess, setMintingProcess] = useState(0);
   const [modalShow, setModalShow] = useState(false);
@@ -247,7 +247,10 @@ const Minting = () => {
           {(mintingProcess === 3 && !isMobile) && (
             <>
               <p>Please wait a few seconds</p>
-              <small><a>The transaction should be confirmed soon</a></small>
+              <small>
+                The transaction should be confirmed soon.<br/>
+                You can <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-speed-up-or-cancel-a-pending-transaction">speed up</a> your transaction on Metamask.
+              </small>
               <p className="text-danger mt-3">{error}</p>
             </>
           )}
@@ -276,7 +279,9 @@ const Minting = () => {
             <Button className="btn bg-black text-white rounded-pill" disabled>MINTING...</Button>
           )}
           {(mintingProcess === 4 && !isMobile) && (
-            <Button onClick={props.onHide} className="btn bg-black text-white rounded-pill">Close</Button>
+            <Link href="/collection">
+              <a className="btn bg-black text-white rounded-pill">View My Token</a>
+            </Link>
           )}
         </Modal.Footer>
       </Modal>

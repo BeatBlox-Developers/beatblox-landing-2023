@@ -84,6 +84,11 @@ export default function Home () {
           </Navbar.Brand>
           <Nav className="ms-md-auto my-2 my-lg-0">
             <button className="btn btn-light text-dark rounded-pill d-none d-md-block" href="#" onClick={() => mainSwiper.slideTo(2)}>Early Supporter NFT</button>
+            <Link href="/collection">
+              <a className="d-none d-md-flex btn btn-outline-light btn-icon rounded-pill">
+                <img className="m-0" src="/images/nft.svg"></img>
+              </a>
+            </Link>
             <button className="btn btn-outline-light rounded-pill" onClick={() => setShowNav(prevCheck => !prevCheck)}>menu</button>
           </Nav>
         </Container>
