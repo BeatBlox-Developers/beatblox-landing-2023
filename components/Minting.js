@@ -250,7 +250,7 @@ const Minting = () => {
               <p>Please wait a few seconds</p>
               <small>
                 The transaction should be confirmed soon.<br/>
-                You can <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-speed-up-or-cancel-a-pending-transaction">speed up</a> your transaction on Metamask.
+                You can <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-speed-up-or-cancel-a-pending-transaction" target="_blank" rel="noreferrer" >speed up</a> your transaction on Metamask.
               </small>
               <p className="text-danger mt-3">{error}</p>
             </>
