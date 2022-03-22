@@ -87,13 +87,13 @@ const Collection = () => {
           <div className="row section h-100 p-5 text-center align-items-center">
             { balance === 0 && (
               <div className="col-10 mx-auto">
-                <h4>You don't have any Early Supporter Token</h4>
+                <h4>You dont have any Early Supporters Token</h4>
                   <p className="mt-4 text-muted text-center">
                   Get your early access to our closed Beta Auction House
                 </p>
                 <Link href="/">
                   <a className="btn btn-lg btn-outline-light rounded-pill mt-4">
-                    Back Home
+                    Get Now!
                   </a>
                 </Link>
               </div>
