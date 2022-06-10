@@ -301,10 +301,12 @@ video{
 
 form{
   font-size: 1rem;
-  input, textarea{
+  input.form-control, textarea.form-control{
     padding-left: 0 !important;
     color: #fff;
     background-color: transparent !important;
+    border: none;
+    border-bottom: 1px solid #acacac !important;
   }
 }
 
@@ -526,4 +528,56 @@ section .row{
     height: 100%;
     width: auto;
   }
+}
+
+section.section-video {
+  position: relative;
+  background-color: black;
+  width: 100%;
+}
+
+@media (min-width: 992px) { 
+  section.section-video {
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  section.section-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: auto;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+section.section-video video {
+  min-width: 100%;
+  min-height: auto;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+section.section-video .container {
+  position: relative;
+  z-index: 2;
+}
+
+section.section-video .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
 }
