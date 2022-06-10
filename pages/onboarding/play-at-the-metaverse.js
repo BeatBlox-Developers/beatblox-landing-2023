@@ -77,8 +77,8 @@ export default function Onboarding () {
           type="video/mp4"
           className="d-none d-md-block">
         </video>
-        <div class="container d-flex align-items-center py-5">
-          <div class="d-flex flex-column">
+        <div className="container d-flex align-items-center py-5">
+          <div className="d-flex flex-column">
             <div className="row mb-5 d-block d-md-none">
               <video
                 autoPlay={true}
@@ -184,7 +184,7 @@ export default function Onboarding () {
                   />
                 </div>
                 <div className="mb-3">
-                  <h4>Preview of Content<small class="text-muted"> (Youtube or Vimeo)</small></h4>
+                  <h4>Preview of Content<small className="text-muted"> (Youtube or Vimeo)</small></h4>
                   <input
                     placeholder="Write something"
                     className="form-control rounded-0"
