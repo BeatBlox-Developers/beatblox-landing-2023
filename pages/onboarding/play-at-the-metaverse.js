@@ -14,8 +14,9 @@ export default function Onboarding () {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('Sending')
-
+    var action = 'Play at the Metaverse'
     let data = {
+        action,
         name,
         email,
         rrss,
@@ -35,7 +36,6 @@ export default function Onboarding () {
         console.log('Response received')
         if (res.status === 200) {
             console.log('Response succeeded!')
-            setSubmitted(true) 
             setName('')
             setEmail('')
             setRRSS('')
@@ -154,7 +154,7 @@ export default function Onboarding () {
           </div>
           <div className="row px-5 px-md-0 py-5">
             <div className="col-12 col-md-4 pt-3">
-              <form onSubmit={handleSubmit}>
+              <form>
                 <div className="mb-3">
                   <h4>Name</h4>
                   <input
@@ -207,7 +207,7 @@ export default function Onboarding () {
                     onChange={e => setAbout(e.target.value)}
                   />
                 </div>
-                <button type="submit" className="btn btn-lg btn-outline-light rounded-pill mt-3 mb-5">Submit</button>
+                <button type="submit" onClick={(e)=>{handleSubmit(e)}} className="btn btn-lg btn-outline-light rounded-pill mt-3 mb-5">Submit</button>
               </form>
             </div>
           </div>
