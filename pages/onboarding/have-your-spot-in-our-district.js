@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { haveYourSpotData } from '../../data/onboarding';
-import { Navigation, Switcher } from './common';
+import { Navigation, Switcher } from '../../components/Common';
 
 export default function Onboarding() {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
