@@ -20,12 +20,12 @@ export default function Onboarding() {
   }
   const benefits = haveYourSpotData.benefits.map((benefit) => {
     return (
-      <p>{benefit}</p>
+      <p key={benefit.key}>{benefit.value}</p>
     );
   });
   const fields = haveYourSpotData.fields.map((item) => {
     return (
-      <div className="mb-3">
+      <div key={item.name} className="mb-3">
         <h4>{item.label}</h4>
         <input className="form-control rounded-0" {...register(`${item.name}`)} />    
       </div> 

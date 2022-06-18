@@ -20,12 +20,12 @@ export default function Onboarding() {
   }
   const benefits = joinOurCatalogData.benefits.map((benefit) => {
     return (
-      <p>{benefit}</p>
+      <p key={benefit.key}>{benefit.value}</p>
     );
   });
   const fields = joinOurCatalogData.fields.map((item) => {
     return (
-      <div className="mb-3">
+      <div key={item.name} className="mb-3">
         <h4>{item.label}</h4>
         <input className="form-control rounded-0" {...register(`${item.name}`)} />    
       </div> 
