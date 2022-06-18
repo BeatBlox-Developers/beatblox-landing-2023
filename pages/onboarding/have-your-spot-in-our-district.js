@@ -18,14 +18,14 @@ export default function Onboarding() {
       }
     });
   }
-  const benefits = haveYourSpotData.benefits.map((benefit) => {
+  const benefits = haveYourSpotData.benefits.map((benefit, index) => {
     return (
-      <p key={benefit.key}>{benefit.value}</p>
+      <p key={index}>{benefit}</p>
     );
   });
-  const fields = haveYourSpotData.fields.map((item) => {
+  const fields = haveYourSpotData.fields.map((item, index) => {
     return (
-      <div key={item.name} className="mb-3">
+      <div key={index} className="mb-3">
         <h4>{item.label}</h4>
         <input className="form-control rounded-0" {...register(`${item.name}`)} />    
       </div> 
