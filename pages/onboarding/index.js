@@ -11,7 +11,7 @@ export default function Onboarding() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navigation />
-      <section className="section-video d-flex align-items-center py-5 py-md-0">
+      <section className="section-onboarding d-flex align-items-center py-5 py-md-0">
         <div className="container py-5">
           <div className="d-flex flex-column">
             <div className="row py-5 my-3 d-block d-md-none"></div>
