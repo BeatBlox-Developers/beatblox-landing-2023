@@ -64,7 +64,7 @@ export default function Onboarding() {
             </div>
             <Switcher />
             <div className="row px-5 px-md-0 mt-5">
-              <div className="col-12">
+              <div className="col-12 col-md-8">
                 <h1>{joinOurCatalogData.title}</h1>
                 <h3 className="text-uppercase">{joinOurCatalogData.subtitle}</h3>
                 <h4 className="mt-5">{joinOurCatalogData.description}</h4>
@@ -80,13 +80,13 @@ export default function Onboarding() {
         <div className="container not-fullscreen py-5 mt-5">
           <Switcher />
           <div className="row pb-5 my-5 px-5 px-md-0">
-            <div className="col-12 col-md-6 pt-3 text-black py-5 mb-5">
+            <div className="col-12 col-md-5 pt-3 text-black py-5 mb-5">
               <button className="btn btn-dark rounded-pill mb-5">
                 <h4 className="m-0 p-1">BENEFITS</h4>
               </button>
               {benefits}
             </div>
-            <div className="col-12 col-md-6 pt-3 text-center">
+            <div className="col-12 col-md-6 offset-md-1 pt-3 text-center">
               <img
                 className="img-fluid"
                 src={joinOurCatalogData.image}
