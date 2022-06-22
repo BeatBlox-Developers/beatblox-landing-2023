@@ -42,20 +42,11 @@ export default function Onboarding() {
       </Head>
       <Navigation />
       <section className="section-video d-flex align-items-center">
-        <RenderVideo video={ isMobile ? '' : playAtTheMetaverseData.video }/>
+        { !isMobile && ( <RenderVideo video={ playAtTheMetaverseData.video }/> )}
         <div className="container d-flex align-items-center py-5">
           <div className="d-flex flex-column">
             <div className="row mb-5 d-block d-md-none">
-              { isMobile && (
-                <video
-                autoPlay={true}
-                controls={false}
-                loop
-                muted
-                src={playAtTheMetaverseData.video_mobile}
-                type="video/mp4"
-                ></video>
-              )}
+              { isMobile && ( <RenderVideo video={ playAtTheMetaverseData.video_mobile }/> )}
             </div>
             <Switcher theme="white"/>
             <div className="row px-5 px-md-0 mt-0 mt-md-5">
