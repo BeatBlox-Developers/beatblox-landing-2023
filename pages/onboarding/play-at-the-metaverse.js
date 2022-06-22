@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { playAtTheMetaverseData } from '../../data/onboarding';
-import { Navigation, Switcher, renderVideo } from '../../components/Common';
+import { Navigation, Switcher, RenderVideo } from '../../components/Common';
 import { isMobile } from "react-device-detect";
 
 export default function Onboarding() {
