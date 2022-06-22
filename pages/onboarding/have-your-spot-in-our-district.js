@@ -63,7 +63,7 @@ export default function Onboarding() {
               ></video>
             </div>
             <Switcher />
-            <div className="row px-5 px-md-0 mt-5">
+            <div className="row px-5 px-md-0 mt-0 mt-md-5">
               <div className="col-12 col-md-8">
                 <h1>{haveYourSpotData.title}</h1>
                 <h3 className="text-uppercase">{haveYourSpotData.subtitle}</h3>
