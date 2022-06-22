@@ -39,7 +39,7 @@ export const Navigation = () => {
 export const Switcher = (props) => {
   const router = useRouter();
   return(
-    <div className="row pb-5 px-5 px-md-0 switcher">
+    <div className="row pb-5 px-5 px-md-0 switcher d-none d-md-block">
       <div className={ props.theme === 'black' ? 'text-black' : 'text-white' }>
         <Link href="play-at-the-metaverse">
           <a className={ router.pathname === '/onboarding/play-at-the-metaverse' ? 'text-decoration-underline' : '' }
@@ -64,4 +64,20 @@ export const Switcher = (props) => {
       </div>
     </div>
   )
+}
+
+export const RenderVideo = (props) => {
+  const vidSrc = '/videos/' + props.video + '.mp4';
+  const vidClass = 'video-'+ props.video;
+  return (
+    <video
+      className={vidClass}
+      autoPlay={true}
+      controls={false}
+      loop
+      muted
+      playsInline
+      src={vidSrc}
+      type="video/mp4"/>
+  );
 }

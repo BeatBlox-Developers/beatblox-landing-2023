@@ -2,7 +2,8 @@ import Head from "next/head";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { playAtTheMetaverseData } from '../../data/onboarding';
-import { Navigation, Switcher } from '../../components/Common';
+import { Navigation, Switcher, renderVideo } from '../../components/Common';
+import { isMobile } from "react-device-detect";
 
 export default function Onboarding() {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -41,29 +42,23 @@ export default function Onboarding() {
       </Head>
       <Navigation />
       <section className="section-video d-flex align-items-center">
-        <video
-          autoPlay={true}
-          controls={false}
-          loop
-          muted
-          src={playAtTheMetaverseData.video}
-          type="video/mp4"
-          className="d-none d-md-block"
-        ></video>
+        <RenderVideo video={ isMobile ? '' : playAtTheMetaverseData.video }/>
         <div className="container d-flex align-items-center py-5">
           <div className="d-flex flex-column">
             <div className="row mb-5 d-block d-md-none">
-              <video
+              { isMobile && (
+                <video
                 autoPlay={true}
                 controls={false}
                 loop
                 muted
                 src={playAtTheMetaverseData.video_mobile}
                 type="video/mp4"
-              ></video>
+                ></video>
+              )}
             </div>
             <Switcher theme="white"/>
-            <div className="row px-5 px-md-0 mt-5">
+            <div className="row px-5 px-md-0 mt-0 mt-md-5">
               <div className="col-12 col-md-8">
                 <h1>{playAtTheMetaverseData.title}</h1>
                 <h3 className="text-uppercase">{playAtTheMetaverseData.subtitle}</h3>
