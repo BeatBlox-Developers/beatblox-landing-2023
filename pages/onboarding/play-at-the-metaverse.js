@@ -86,7 +86,7 @@ export default function Onboarding() {
               </button>
               {benefits}
             </div>
-            <div className="col-12 col-md-6 offset-md-1 pt-3 text-center">
+            <div className="col-12 col-md-6 offset-md-1 pt-3">
               <img
                 className="img-fluid"
                 src={playAtTheMetaverseData.image}
@@ -106,6 +106,7 @@ export default function Onboarding() {
           muted
           src="/videos/onboarding-form.mp4"
           type="video/mp4"
+          playsInline
           className="d-none d-md-block"
         ></video>
         <div className="container not-fullscreen py-5">

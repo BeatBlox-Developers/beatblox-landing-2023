@@ -86,7 +86,7 @@ export default function Onboarding() {
               </button>
               {benefits}
             </div>
-            <div className="col-12 col-md-6 offset-md-1 pt-3 text-center">
+            <div className="col-12 col-md-6 offset-md-1 pt-3">
               <img
                 className="img-fluid"
                 src={haveYourSpotData.image}
@@ -104,6 +104,7 @@ export default function Onboarding() {
           controls={false}
           loop
           muted
+          playsInline
           src="/videos/onboarding-form.mp4"
           type="video/mp4"
           className="d-none d-md-block"
