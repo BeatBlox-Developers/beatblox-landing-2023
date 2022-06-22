@@ -59,6 +59,9 @@ export default function Home () {
         <Link href="https://play.decentraland.org/?island=I1cequ&position=41%2C43&realm=unicorn">
           <a target="_blank" rel="noreferrer">Decentraland</a>
         </Link>
+        <Link href="/onboarding">
+          <a>On-Boarding</a>
+        </Link>
         <Link href="/auction-house">
           <a>Auction House</a>
         </Link>

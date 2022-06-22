@@ -210,6 +210,11 @@ h6{
 
 $nav-link-font-size: 1.124rem;
 
+nav{
+  &.active {
+    background-color: black;
+  }
+}
 .navbar-collapse.collapse{
   display: none;
 }
@@ -335,9 +340,6 @@ a {
 
 .section{
   height:63%;
-}
-section .row{
-  height: 100%;
 }
 .wrapper{
   padding: 5rem !important;
@@ -586,4 +588,13 @@ section.section-video .overlay {
   background-color: black;
   opacity: 0.5;
   z-index: 1;
+}
+.switcher {
+  a{
+    font-size: 1.25rem;
+    padding-right: 1rem;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
 }
