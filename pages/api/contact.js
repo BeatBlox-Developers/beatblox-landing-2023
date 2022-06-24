@@ -16,8 +16,8 @@ export default async (req, res) => {
   `;
 
   await mail.send({
-    to: 'emadobao@gmail.com',
-    from: 'onboarding@beatblox.org',
+    to: 'onboarding@beatblox.org',
+    from: 'sender@beatblox.org',
     subject: `Onboarding Request | ${body.action}`,
     text: message,
     html: message.replace(/\r\n/g, '<br>'),
