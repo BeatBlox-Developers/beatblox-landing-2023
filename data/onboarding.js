@@ -18,11 +18,15 @@ export const playAtTheMetaverseData = {
   fields: [
     { label: 'Name:', name: 'name' },
     { label: 'Email:', name: 'email' },
-    { label: 'RRSS:', name: 'rrss' },
-    { label: 'Preview of content:', name: 'preview' },
+    { label: 'Instagram:', name: 'instagram' },
+    { label: 'Website:', name: 'website' },
+    { label: 'Preview of content:', name: 'preview', description: '(Youtube Link)' },
+  ],
+  fields_extra: [
+    { label: 'Tracklist:', name: 'tracklist' },
     { label: 'About You:', name: 'about' },
-  ]
-};
+  ],
+}
 export const joinOurCatalogData = {
   video: '/videos/join.mp4',
   video_mobile: '/videos/join-mobile.mp4',
@@ -43,10 +47,14 @@ export const joinOurCatalogData = {
   fields: [
     { label: 'Name:', name: 'name' },
     { label: 'Email:', name: 'email' },
-    { label: 'RRSS:', name: 'rrss' },
-    { label: 'Preview of content:', name: 'preview' },
-  ]
-};
+    { label: 'Instagram:', name: 'instagram' },
+    { label: 'Website:', name: 'website' },
+    { label: 'Preview of content:', name: 'preview', description: '(SoundCloud or MixCloud Link)' },
+  ],
+  fields_extra: [
+    { label: 'About:', name: 'about' },
+  ],
+}
 export const haveYourSpotData = {
   video: '/videos/huts.mp4',
   video_mobile: '/videos/huts-mobile.mp4',
@@ -64,7 +72,10 @@ export const haveYourSpotData = {
   fields: [
     { label: 'Name:', name: 'name' },
     { label: 'Email:', name: 'email' },
-    { label: 'RRSS:', name: 'rrss' },
-    { label: 'Preview of content:', name: 'preview' },
-  ]
-};
+    { label: 'Instagram:', name: 'instagram' },
+    { label: 'Website:', name: 'website' },
+  ],
+  fields_extra: [
+    { label: 'About:', name: 'about' },
+  ],
+}
