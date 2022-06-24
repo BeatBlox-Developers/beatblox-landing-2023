@@ -2,6 +2,8 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import Link from 'next/link';
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
+import { useSwiper } from 'swiper/react';
+
 
 export const Navigation = () => {
   const [navbar, setNavbar] = useState(false); 
@@ -77,4 +79,14 @@ export const RenderVideo = (props) => {
       src={props.video}
       type="video/mp4"/>
   );
+}
+
+
+export const SwiperButtonPrev = ({children}) => {
+  const swiper = useSwiper();
+  return <button type="button" className="btn btn-lg btn-outline-light mt-3 rounded-pill" onClick={() => swiper.slidePrev()}>{children}</button>;
+}
+export const SwiperButtonNext = ({children}) => {
+  const swiper = useSwiper();
+  return <button type="button" className="btn btn-lg btn-outline-light mt-3 rounded-pill" onClick={() => swiper.slideNext()}>{children}</button>;
 }

@@ -1,36 +1,54 @@
 import Head from "next/head";
+import React from 'react';
 import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { joinOurCatalogData } from '../../data/onboarding';
-import { Navigation, Switcher } from '../../components/Common';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+import { useState, useEffect } from "react";
+import { isMobile } from "react-device-detect";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import Link from 'next/link';
+import {
+  Navigation,
+  Switcher,
+  RenderVideo,
+  SwiperButtonPrev,
+  SwiperButtonNext,
+} from '../../components/Common';
+import { joinOurCatalogData as data } from '../../data/onboarding';
+
+const schema = yup.object({
+  name: yup.string().required(),
+  email: yup.string().email().required(),
+  instagram: yup.string().url().required(),
+  website: yup.string().url().required(),
+  preview: yup.string().url().required(),
+  about: yup.string().required(),
+  acceptTOS: yup.bool().oneOf([true], 'Accept terms of service is required')
+}).required();
 
 export default function Onboarding() {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const [swiperIndex, setSwiperIndex] = useState(0);
+  const [hasBeenSent, setHasBeenSent] = useState(false);
+  const [section, setSection] = useState(false);
+  const { register, handleSubmit, formState:{ errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
+
   const onSubmit = async (data) => {
-    console.log(data);
+    const action = 'Join our catalog';
     await fetch('/api/contact', {
       method: 'POST',
       body: JSON.stringify(data)
     }).then((res) => {
-      console.log("Response received");
+      // console.log("Response received");
       if (res.status === 200) {
-        console.log("Response succeeded!");
+        // console.log("Response succeeded!");
+        setSwiperIndex(2);
+        hasBeenSent(true);
       }
     });
   }
-  const benefits = joinOurCatalogData.benefits.map((benefit, index) => {
-    return (
-      <p key={index}>{benefit}</p>
-    );
-  });
-  const fields = joinOurCatalogData.fields.map((item, index) => {
-    return (
-      <div key={index} className="mb-3">
-        <h4>{item.label}</h4>
-        <input className="form-control rounded-0" {...register(`${item.name}`)} />    
-      </div> 
-    );
-  });
 
   return (
     <div>
@@ -41,83 +59,128 @@ export default function Onboarding() {
       </Head>
       <Navigation />
       <section className="section-video d-flex align-items-center">
-        <video
-          autoPlay={true}
-          controls={false}
-          loop
-          muted
-          src={joinOurCatalogData.video}
-          type="video/mp4"
-          className="d-none d-md-block"
-        ></video>
+        { !isMobile && ( <RenderVideo video={ data.video }/> )}
         <div className="container d-flex align-items-center py-5">
           <div className="d-flex flex-column">
             <div className="row mb-5 d-block d-md-none">
-              <video
-                autoPlay={true}
-                controls={false}
-                loop
-                muted
-                src={joinOurCatalogData.video_mobile}
-                type="video/mp4"
-              ></video>
+              { isMobile && ( <RenderVideo video={ data.video_mobile }/> )}
             </div>
-            <Switcher />
+            <Switcher theme="white"/>
             <div className="row px-5 px-md-0 mt-0 mt-md-5">
               <div className="col-12 col-md-8">
-                <h1>{joinOurCatalogData.title}</h1>
-                <h3 className="text-uppercase">{joinOurCatalogData.subtitle}</h3>
-                <h4 className="mt-5">{joinOurCatalogData.description}</h4>
-                <button className="btn btn-outline-light rounded-pill mt-5">
-                  <h4 className="m-0 p-1">Explore the Benefits</h4>
-                </button>
+                <h1>{data.title}</h1>
+                <h3 className="text-uppercase">{data.subtitle}</h3>
+                <h4 className="mt-5">{data.description}</h4>
+                <Link href="#benefits">
+                  <button className="btn btn-outline-light rounded-pill mt-5">
+                    <h4 className="m-0 p-1">Explore the Benefits</h4>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-white pt-5">
+      <section id="benefits" className="section-video bg-white pt-md-5">
         <div className="container not-fullscreen py-5 mt-5">
-          <Switcher />
+          <Switcher theme="black"/>
           <div className="row pb-5 my-5 px-5 px-md-0">
             <div className="col-12 col-md-5 pt-3 text-black py-5 mb-5">
               <button className="btn btn-dark rounded-pill mb-5">
                 <h4 className="m-0 p-1">BENEFITS</h4>
               </button>
-              {benefits}
+              { data.benefits.map((benefit, index) => {
+                return (
+                  <p key={index}>{benefit}</p>
+                );
+              })}
             </div>
             <div className="col-12 col-md-6 offset-md-1 pt-3">
               <img
                 className="img-fluid"
-                src={joinOurCatalogData.image}
+                src={data.image}
               ></img>
-              <button className="btn btn-dark rounded-pill mt-5">
-                <h4 className="m-0 p-1">Be part now</h4>
-              </button>
+              <Link href="#be-part">
+                <button className="btn btn-dark rounded-pill mt-5">
+                  <h4 className="m-0 p-1">Be part now</h4>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
-      <section className="section-video mb-5">
+      <section id="be-part" className="section-video mb-5">
         <video
           autoPlay={true}
           controls={false}
           loop
           muted
-          playsInline
           src="/videos/onboarding-form.mp4"
           type="video/mp4"
+          playsInline
           className="d-none d-md-block"
         ></video>
         <div className="container not-fullscreen py-5">
-          <Switcher />
+          <Switcher theme="white"/>
           <div className="row px-5 px-md-0 py-5">
-            <div className="col-12 col-md-4 pt-3">
+            <div className="col-12 col-md-6 col-lg-4 pt-3">
               <form onSubmit={handleSubmit(onSubmit)}>
-                {fields}
-                {errors.exampleRequired && <span>This field is required</span>}
-                <input className="btn btn-lg btn-light mt-3 rounded-pill" type="submit" />
+                <Swiper
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  className="swiper-form"
+                  onSlideChange={(swiper) => setSwiperIndex(swiper.activeIndex)}
+                >
+                  <div className="d-flex justify-content-end">
+                    { swiperIndex === 1 && ( <SwiperButtonPrev>Back</SwiperButtonPrev> )}
+                    { swiperIndex === 0 && ( <SwiperButtonNext>Continue</SwiperButtonNext> )}
+                    { swiperIndex === 1 && ( <input className="btn btn-lg btn-light mt-3 rounded-pill" type="submit" /> )}
+                  </div>
+                  { hasBeenSent && (
+                    <React.Fragment>
+                      <h4>Your On-Boarding request has been sent</h4>
+                      <p className="text-muted">Our team will be contacting you soon.</p>
+                    </React.Fragment>
+                  )}
+                  { !hasBeenSent && (
+                    <>
+                      <SwiperSlide>
+                        { data.fields.map((item, index) => {
+                          return (
+                            <div key={index} className="w-100 mb-3">
+                              <h4>{item.label} <small className="text-muted">{item.description || ''}</small></h4>
+                              <input className="form-control rounded-0 mb-1" {...register(`${item.name}`)} /> 
+                              <small className="text-danger">{errors[item.name]?.message }</small>
+                            </div> 
+                          );
+                        })}
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        { data.fields_extra?.map((item, index) => {
+                          return (
+                            <div key={index} className="w-100 mb-3">
+                              <h4>{item.label} <small className="text-muted">{item.description || ''}</small></h4>
+                              <textarea rows="5" className="form-control rounded-0 mb-1" {...register(`${item.name}`)} /> 
+                              <small className="text-danger">{errors[item.name]?.message }</small>
+                            </div> 
+                          );
+                        })}
+                        <div className="form-check form-switch w-100">
+                          <input name="acceptTOS" className="form-check-input" type="checkbox" {...register('acceptTOS')}/>
+                          <label htmlFor="acceptTOS" className="form-check-label">Accept Terms and Conditions</label>
+                          <br/>
+                          <small className="text-danger">{errors.acceptTOS?.message }</small>
+                        </div>                        
+                      </SwiperSlide>
+                    </>
+                  )}
+                </Swiper>
               </form>
+            </div>
+            <div className="col-12 col-md-6 col-lg-4 offset-lg-2 pt-3 d-none d-lg-block">
+              <div className={ `step-` + swiperIndex + ` d-flex align-items-center justify-content-center form-mask d-flex justify-content-center align-items-cente`}>
+                <img src="/images/onboarding/onboarding-form.jpg"></img>
+              </div>
             </div>
           </div>
         </div>

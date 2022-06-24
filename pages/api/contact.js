@@ -8,14 +8,15 @@ export default async (req, res) => {
   const message = `
     Name: ${body.name}\r\n
     Email: ${body.email}\r\n
-    RRSS: ${body.rrss}\r\n
+    instagram: ${body.instagram}\r\n
+    website: ${body.website}\r\n
     Preview: ${body.preview}\r\n
     Tracklist: ${body.tracklist}\r\n
     About: ${body.about}
   `;
 
   await mail.send({
-    to: 'emanuel@beatblox.org',
+    to: 'emadobao@gmail.com',
     from: 'onboarding@beatblox.org',
     subject: `Onboarding Request | ${body.action}`,
     text: message,
