@@ -20,10 +20,10 @@ import { playAtTheMetaverseData as data } from '../../data/onboarding';
 const schema = yup.object({
   name: yup.string().required(),
   email: yup.string().email().required(),
-  instagram: yup.string().url().required(),
-  website: yup.string().url().required(),
+  instagram: yup.string().url(),
+  website: yup.string().url(),
   preview: yup.string().url().required(),
-  tracklist: yup.string().required(),
+  tracklist: yup.string(),
   about: yup.string().required(),
   acceptTOS: yup.bool().oneOf([true], 'Accept terms of service is required')
 }).required();
@@ -168,7 +168,11 @@ export default function Onboarding() {
                         })}
                         <div className="form-check form-switch w-100">
                           <input name="acceptTOS" className="form-check-input" type="checkbox" {...register('acceptTOS')}/>
-                          <label htmlFor="acceptTOS" className="form-check-label">Accept Terms and Conditions</label>
+                          <label htmlFor="acceptTOS" className="form-check-label">
+                            <Link href="/terms-of-service">
+                              <a target="_blank" rel="noreferrer">Accept Terms of service</a>
+                            </Link>
+                          </label>
                           <br/>
                           <small className="text-danger">{errors.acceptTOS?.message }</small>
                         </div>                        
