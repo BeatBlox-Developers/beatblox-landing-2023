@@ -43,10 +43,10 @@ export const Switcher = (props) => {
   return(
     <div className="row pb-5 px-5 px-md-0 switcher d-none d-md-block">
       <div className={ props.theme === 'black' ? 'text-black' : 'text-white' }>
-        <Link href="play-at-the-metaverse">
+        <Link href="perform-in-the-metaverse">
           <a className={ router.pathname === '/onboarding/play-at-the-metaverse' ? 'text-decoration-underline' : '' }
             rel="noreferrer">
-              Play at the metaverse
+              Perform in the metaverse
           </a>
         </Link>
         <Link href="/onboarding/join-our-catalog">

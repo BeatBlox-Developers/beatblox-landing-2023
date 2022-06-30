@@ -138,7 +138,7 @@ export default function Onboarding() {
                   </div>
                   { hasBeenSent && (
                     <React.Fragment>
-                      <h4>Your On-Boarding request has been sent</h4>
+                      <h4>Your Onboarding request has been sent</h4>
                       <p className="text-muted">Our team will be contacting you soon.</p>
                     </React.Fragment>
                   )}
