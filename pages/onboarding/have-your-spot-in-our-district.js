@@ -67,7 +67,7 @@ export default function Onboarding() {
             </div>
             <Switcher theme="white"/>
             <div className="row px-5 px-md-0 mt-0 mt-md-5">
-              <div className="col-12 col-md-7">
+              <div className="col-12 col-md-6">
                 <h1>{data.title}</h1>
                 <h3 className="text-uppercase">{data.subtitle}</h3>
                 <h4 className="mt-5">{data.description}</h4>
