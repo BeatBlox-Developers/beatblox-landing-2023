@@ -28,7 +28,7 @@ export const Navigation = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto my-2 my-lg-0">
             <Nav.Link href="/onboarding">
-              <u>On-Boarding</u>
+              <u>Onboarding</u>
             </Nav.Link>
             <Nav.Link href="/">Back Home</Nav.Link>
           </Nav>
