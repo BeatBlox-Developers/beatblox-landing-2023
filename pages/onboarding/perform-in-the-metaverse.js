@@ -37,7 +37,7 @@ export default function Onboarding() {
   });
 
   const onSubmit = async (data) => {
-    const action = 'Play at the metaverse';
+    const action = 'Perform in the metaverse';
     await fetch('/api/contact', {
       method: 'POST',
       body: JSON.stringify(data)
@@ -103,7 +103,7 @@ export default function Onboarding() {
               ></img>
               <Link href="#be-part">
                 <button className="btn btn-dark rounded-pill mt-5">
-                  <h4 className="m-0 p-1">Be part now</h4>
+                  <h4 className="m-0 p-1">Apply now</h4>
                 </button>
               </Link>
             </div>
@@ -139,7 +139,7 @@ export default function Onboarding() {
                   </div>
                   { hasBeenSent && (
                     <React.Fragment>
-                      <h4>Your On-Boarding request has been sent</h4>
+                      <h4>Your Onboarding request has been sent</h4>
                       <p className="text-muted">Our team will be contacting you soon.</p>
                     </React.Fragment>
                   )}

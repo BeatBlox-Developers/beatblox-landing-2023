@@ -17,15 +17,15 @@ export default function Onboarding() {
             <div className="row py-5 my-3 d-block d-md-none"></div>
             <div className="row text-center">
               <div className="col-12">
-                <h1>BeatBlox<span className="text-outline"> on-boarding</span></h1>
+                <h1>BeatBlox<span className="text-outline"> onboarding</span></h1>
               </div>
             </div>
             <div className="row px-5 px-md-0 mt-5">
               <div className="col-md-4 text-center">
                 <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-perform.svg"></img>
-                <Link href="/onboarding/play-at-the-metaverse">
+                <Link href="/onboarding/perform-in-the-metaverse">
                   <a className="btn btn-lg btn-outline-light rounded-pill mt-1 py-3 px-5">
-                    Play at the metaverse
+                    Perform in the metaverse
                   </a>
                 </Link>
                 <h5 className="pt-5 text-muted">
