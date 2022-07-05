@@ -41,24 +41,24 @@ export const Navigation = () => {
 export const Switcher = (props) => {
   const router = useRouter();
   return(
-    <div className="row pb-5 px-5 px-md-0 switcher d-none d-md-block">
+    <div className="row px-5 px-md-0 switcher d-none d-md-block">
       <div className={ props.theme === 'black' ? 'text-black' : 'text-white' }>
         <Link href="perform-in-the-metaverse">
-          <a className={ router.pathname === '/onboarding/perform-in-the-metaverse' ? 'text-decoration-underline' : '' }
+          <a className={ router.pathname === '/onboarding/perform-in-the-metaverse' ? 'text-white text-decoration-underline' : '' }
             rel="noreferrer">
               Perform in the metaverse
           </a>
         </Link>
         <Link href="/onboarding/join-our-catalog">
           <a className={
-            router.pathname === "/onboarding/join-our-catalog" ? "text-decoration-underline" : "" }
+            router.pathname === "/onboarding/join-our-catalog" ? "text-white text-decoration-underline" : "" }
             rel="noreferrer">
               Join our catalog
           </a>
         </Link>
         <Link href="/onboarding/have-your-spot-in-our-district">
           <a className={
-            router.pathname === "/onboarding/have-your-spot-in-our-district" ? "text-decoration-underline" : "" }
+            router.pathname === "/onboarding/have-your-spot-in-our-district" ? "text-white text-decoration-underline" : "" }
             rel="noreferrer">
               Have your spot in our district
           </a>
