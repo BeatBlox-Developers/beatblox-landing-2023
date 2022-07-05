@@ -107,8 +107,10 @@ export default function Onboarding() {
       )}
       { isMobile && (
         <section className="section-video d-flex align-items-center d-flex d-md-none">
-          <div className="container d-flex align-items-center py-5">
-            <RenderVideo video={ data.video_benefits_mobile }/>
+          <div className="container align-items-center py-5">
+            <div className="row">
+              <RenderVideo video={ data.video_benefits_mobile }/>
+            </div>
             <div className="row w-100 px-5 px-md-0">
               <div className="col-12 col-md-5 offset-md-6 pt-3 text-white py-5 mb-5">
                 <button className="btn btn-dark rounded-pill mb-5">
