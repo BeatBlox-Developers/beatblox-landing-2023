@@ -44,8 +44,7 @@ export default function Onboarding() {
       // console.log("Response received");
       if (res.status === 200) {
         // console.log("Response succeeded!");
-        setSwiperIndex(2);
-        hasBeenSent(true);
+        setHasBeenSent(true);
       }
     });
   }
@@ -153,9 +152,9 @@ export default function Onboarding() {
                   onSlideChange={(swiper) => setSwiperIndex(swiper.activeIndex)}
                 >
                   <div className="d-flex justify-content-end">
-                    { swiperIndex === 1 && ( <SwiperButtonPrev>Back</SwiperButtonPrev> )}
-                    { swiperIndex === 0 && ( <SwiperButtonNext>Continue</SwiperButtonNext> )}
-                    { swiperIndex === 1 && ( <input className="btn btn-lg btn-light mt-3 rounded-pill" style={{ marginLeft : 5}} type="submit" /> )}
+                    { (swiperIndex === 1 && !hasBeenSent) && ( <SwiperButtonPrev>Back</SwiperButtonPrev> )}
+                    { (swiperIndex === 0 && !hasBeenSent) && ( <SwiperButtonNext>Continue</SwiperButtonNext> )}
+                    { (swiperIndex === 1 && !hasBeenSent) && ( <input className="btn btn-lg btn-light mt-3 rounded-pill" style={{ marginLeft : 5}} type="submit" /> )}
                   </div>
                   { hasBeenSent && (
                     <React.Fragment>

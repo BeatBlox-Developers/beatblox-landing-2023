@@ -26,7 +26,7 @@ export const playAtTheMetaverseData = {
   ],
   fields_extra: [
     { label: 'Content to be showcased *:', name: 'preview', type: 'input', description: '(Pre-recorded video link to YouTube, Vimeo, etc. We recommend at least 30 mins length of content. Optimal 60-120 mins)' },
-    { label: "Content's tracklist *:", type: 'textarea', name: 'tracklist' },
+    { label: "Content's tracklist:", type: 'textarea', name: 'tracklist' },
     { label: "Content's description *:", type: 'textarea', name: 'description', description: '(About this set, album, etc)' },
   ],
 }
