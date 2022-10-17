@@ -12,7 +12,7 @@ const Team = () => {
                 Emiliano Zapata
               </h4>
               <p className="text-muted text-small">
-                Founder, Electrical Enginee
+                Founder, Electrical Engineer
                 & Music Producer
               </p>
             </div>
@@ -52,11 +52,8 @@ const Team = () => {
               </h4>
               
               <p className="m-0 mt-1">TIMOTEO LACROZE  <span className="text-muted text-small">Founder & Director</span></p>
-              <p className="m-0 mt-1">DIEGO LISTA  <span className="text-muted text-small">Visual Artist & 3D Modeling</span></p>
               <p className="m-0 mt-1">JUAN I. SCHELLER  <span className="text-muted text-small">Art Director & PM</span></p>
               <p className="m-0 mt-1">LUCILA SUTTON  <span className="text-muted text-small">Graphic Designer</span></p>
-              <p className="m-0 mt-1">VALERIA QUIROS  <span className="text-muted text-small">Strategist</span></p>
-              <p className="m-0 mt-1">MANUEL BELEN  <span className="text-muted text-small">RRSS Specialist</span></p>
               <p className="m-0 mt-1">LEONARDO LAURENZA <span className="text-muted text-small">Data Specialist</span></p>
             </div>
           </div>
