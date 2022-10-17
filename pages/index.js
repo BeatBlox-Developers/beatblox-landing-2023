@@ -68,9 +68,6 @@ export default function Home () {
         <Link href="/faqs">
           <a>FAQs</a>
         </Link>
-        <Link href="/onboarding">
-          <a className="btn btn-light rounded-pill">On Boarding</a>
-        </Link>
         <button href="#" onClick={() => goToSection(2)}>Early Supporter NFT</button>
       </Modal>
     );
