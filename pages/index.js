@@ -3,6 +3,9 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 import About from '../components/About';
+import Player from '../components/Player';
+import Marketplace from '../components/Marketplace';
+import Onboarding from '../components/Onboarding';
 import Features from '../components/Features';
 import Roadmap from '../components/Roadmap';
 import Contact from '../components/Contact';
@@ -16,6 +19,7 @@ import 'swiper/css/mousewheel';
 import 'swiper/css/effect-fade';
 import { Navbar, Nav, Container, Modal } from 'react-bootstrap';
 import { isMobile } from "react-device-detect";
+import District from '../components/District';
 
 export default function Home () {
 
@@ -29,21 +33,6 @@ export default function Home () {
   const goToSection = (section) => {
     mainSwiper.slideTo(section);
     setShowNav(false);
-  }
-  const RenderVideo = (props) => {
-    const vidSrc = '/videos/' + props.video + '.mp4';
-    const vidClass = 'video-'+ props.video;
-    return (
-      <video
-        className={vidClass}
-        autoPlay={true}
-        controls={false}
-        loop
-        muted
-        playsInline
-        src={vidSrc}
-        type="video/mp4"/>
-    );
   }
 
   const NavModal = (props) => {
@@ -100,55 +89,12 @@ export default function Home () {
         show={showNav}
         onHide={() => setShowNav(false)}
       />
-      <Swiper
-        modules={[Pagination, A11y, Mousewheel, Controller]}
-        spaceBetween={0}
-        slidesPerView={1}
-        direction={"vertical"}
-        mousewheel={true}
-        pagination={{
-          type: "progressbar",
-        }}
-        scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => setMainSwiper(swiper)}
-        className="main-swiper"
-        controller={{ control: controlledSwiper }}
-        speed={800}
-      >
-        <SwiperSlide><About mainSwiper={mainSwiper}/></SwiperSlide>
-        <SwiperSlide><Features/></SwiperSlide>
-        <SwiperSlide><Minting/></SwiperSlide>
-        <SwiperSlide><Roadmap/></SwiperSlide>
-        <SwiperSlide><Contact/></SwiperSlide>
-        <SwiperSlide><Team/></SwiperSlide>
-      </Swiper>
+      <About/>
+      <Player/>
+      <Marketplace/>
+      <District/>
+      <Onboarding/>
 
-      <Swiper
-        spaceBetween={0}
-        effect={"fade"}
-        modules={[EffectFade, Controller]}
-        className="video-swiper"
-        onSwiper={setControlledSwiper}
-      >
-        <SwiperSlide>
-          <RenderVideo video="about"/>
-        </SwiperSlide>
-        <SwiperSlide>
-          <RenderVideo video="features"/>
-        </SwiperSlide>
-        <SwiperSlide>
-          <RenderVideo video={ isMobile ? "early-supporters-mobile" : "early-supporters"}/>
-        </SwiperSlide>
-        <SwiperSlide>
-          <RenderVideo video={ isMobile ? "roadmap-mobile" : "roadmap"}/>
-        </SwiperSlide>
-        <SwiperSlide>
-          <RenderVideo video="contact"/>
-        </SwiperSlide>
-        <SwiperSlide>
-          <RenderVideo video={ isMobile ? "team-mobile" : "team"}/>
-        </SwiperSlide>
-      </Swiper>
       <div className="bottomNav py-3 px-5 px-md-0 d-none d-md-flex">
         <div className='container d-flex justify-content-between py-5'>
           <div>
