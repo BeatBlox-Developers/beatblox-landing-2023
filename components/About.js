@@ -24,7 +24,7 @@ const About = () => {
             </h1>
             <h4>
               Empowering music creators and their audiences through blockchain technology,
-              interactive experiences and the power of communities
+              <br/>interactive experiences and the power of communities
             </h4>
           </div>
         </div>

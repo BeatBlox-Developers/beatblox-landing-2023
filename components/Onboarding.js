@@ -21,37 +21,45 @@ const Marketplace = () => {
         </div>
         <div className="row px-5 px-md-0 mt-5">
           <div className="col-md-4 text-center">
-            <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-perform.svg"></img>
             <Link href="/onboarding/perform-in-the-metaverse">
-              <a className="btn btn-lg btn-outline-light rounded-pill mt-1 py-3 px-5">
-                Perform in the metaverse
+              <a>
+                <div className="bg-dark-30 rounded-lg mt-1 py-3 px-5">
+                  <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-catalog.svg"></img>
+                  <h4>Join our<br/>catalog </h4>
+                  <p className="text-small pt-3">
+                    Make your content unique and collectible
+                  </p>
+                </div>
               </a>
             </Link>
-            <h5 className="pt-5 text-muted">
-              Bring your sound into virtuality.
-            </h5>
           </div>
           <div className="col-md-4 text-center">
-            <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-catalog.svg"></img>
-            <Link href="/onboarding/join-our-catalog">
-              <a className="btn btn-lg btn-outline-light rounded-pill mt-1 py-3 px-5">
-                Join our catalog
+            <Link href="/onboarding/perform-in-the-metaverse">
+              <a>
+                <div className="bg-dark-30 rounded-lg mt-1 py-3 px-5">
+                  <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-perform.svg"></img>
+                  <h4>Perform in<br/>the Metaverse</h4>
+                  <p className="text-small pt-3">
+                    Bring your sound into virtuality
+                  </p>
+                </div>
               </a>
             </Link>
-            <h5 className="pt-5 text-muted">
-              Make your content unique and collectible.
-            </h5>
+            
           </div>
+          
           <div className="col-md-4 text-center">
-            <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-huts.svg"></img>
-            <Link href="/onboarding/have-your-spot-in-our-district">
-              <a className="btn btn-lg btn-outline-light rounded-pill mt-1 py-3 px-5">
-                Have your spot in our district
+            <Link href="/onboarding/perform-in-the-metaverse">
+              <a>
+                <div className="bg-dark-30 rounded-lg mt-1 py-3 px-5">
+                  <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-huts.svg"></img>
+                  <h4>Have your spot<br/>in our district</h4>
+                  <p className="text-small pt-3">
+                    Build your presence in the Metaverse
+                  </p>
+                </div>
               </a>
             </Link>
-            <h5 className="pt-5 text-muted">
-              Build your presence in the Metaverse.
-            </h5>
           </div>
         </div>
       </div>

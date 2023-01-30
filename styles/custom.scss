@@ -74,10 +74,16 @@ html, body{
 .bg-dark-30{
   background-color: rgba(0,0,0,0.3);
 }
+.bg-light{
+  background-color: #F5F4F2 !important;
+}
 $gray-900: #141515;
 .img-icon{
   width: 2rem !important;
   margin-right: 1rem;
+}
+.rounded-lg{
+  border-radius: 1.5rem;
 }
 
 .main-swiper{
@@ -343,7 +349,7 @@ a {
 * {
   box-sizing: border-box;
 }
-section{
+section.full-height{
   min-height: 100%;
 }
 .section{

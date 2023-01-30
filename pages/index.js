@@ -10,7 +10,9 @@ import Features from '../components/Features';
 import Roadmap from '../components/Roadmap';
 import Contact from '../components/Contact';
 import Minting from '../components/Minting';
+import Footer from '../components/Footer';
 import Team from '../components/Team';
+import News from '../components/News';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Mousewheel, EffectFade, Controller } from 'swiper';
 import 'swiper/css';
@@ -75,10 +77,24 @@ export default function Home () {
             <img src="/images/logo.svg" alt=""/>
           </Navbar.Brand>
           <Nav className="ms-md-auto my-2 my-lg-0">
-            <button className="btn btn-light text-dark rounded-pill d-none d-md-block" href="#" onClick={() => mainSwiper.slideTo(2)}>Early Supporter NFT</button>
             <Link href="/collection">
-              <a className="d-none d-md-flex btn btn-outline-light btn-icon rounded-pill">
-                <img className="m-0" src="/images/nft.svg"></img>
+              <a className="d-none d-md-flex py-3 px-4">
+                Player
+              </a>
+            </Link>
+            <Link href="/collection">
+              <a className="d-none d-md-flex py-3 px-4">
+                Marketplace
+              </a>
+            </Link>
+            <Link href="/collection">
+              <a className="d-none d-md-flex py-3 px-4">
+                Virtual District
+              </a>
+            </Link>
+            <Link href="/collection">
+              <a className="d-none d-md-flex py-3 px-4">
+                Onboarding
               </a>
             </Link>
             <button className="btn btn-outline-light rounded-pill" onClick={() => setShowNav(prevCheck => !prevCheck)}>menu</button>
@@ -94,12 +110,13 @@ export default function Home () {
       <Marketplace/>
       <District/>
       <Onboarding/>
+      <Roadmap/>
+      <Team/>
+      <News/>
+      <Footer/>
 
       <div className="bottomNav py-3 px-5 px-md-0 d-none d-md-flex">
         <div className='container d-flex justify-content-between py-5'>
-          <div>
-            <button className="btn btn-outline-light rounded-pill" onClick={handleShow}>Video</button>
-          </div>
           <Modal
             show={show}
             onHide={handleClose}
@@ -113,15 +130,6 @@ export default function Home () {
               </div>
             </Modal.Body>
           </Modal>
-          <div>
-            <button className="btn btn-outline-light rounded-pill btn-icon btn-music">
-              <img src="/images/music.svg"/>
-            </button>
-            <a href="https://discord.gg/GcQjuUvwbm" target="_blank" rel="noreferrer" className="btn btn-outline-light rounded-pill btn-icon ml-1">
-              <img src="/images/discord.svg"/>
-              Discord
-            </a>
-          </div>
         </div>
       </div>
     </div>

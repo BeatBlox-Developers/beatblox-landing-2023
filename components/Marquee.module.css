@@ -1,0 +1,41 @@
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marqueeContentLeft {
+  display: flex;
+  list-style: none;
+  animation: scrollingLeft 20s linear infinite;
+}
+.marqueeContentRight {
+  display: flex;
+  list-style: none;
+  animation: scrollingRight 20s linear infinite;
+}
+
+.marqueeItem {
+  flex-shrink: 0;
+  margin: 0.5rem;
+}
+.marqueeItem img{
+  border-radius: 5%;
+  width: 100%;
+}
+
+@keyframes scrollingLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes scrollingRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
