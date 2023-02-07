@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link'
+import styles from "./Onboarding.module.css";
 
 const Marketplace = () => {
   return (
@@ -23,12 +24,12 @@ const Marketplace = () => {
           <div className="col-md-4 text-center">
             <Link href="/onboarding/perform-in-the-metaverse">
               <a>
-                <div className="bg-dark-30 rounded-lg mt-1 py-3 px-5">
+                <div className={styles.item}>
                   <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-catalog.svg"></img>
                   <h4>Join our<br/>catalog </h4>
-                  <p className="text-small pt-3">
+                  <h6 className="text-small pt-3">
                     Make your content unique and collectible
-                  </p>
+                  </h6>
                 </div>
               </a>
             </Link>
@@ -36,12 +37,12 @@ const Marketplace = () => {
           <div className="col-md-4 text-center">
             <Link href="/onboarding/perform-in-the-metaverse">
               <a>
-                <div className="bg-dark-30 rounded-lg mt-1 py-3 px-5">
+                <div className={styles.item}>
                   <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-perform.svg"></img>
                   <h4>Perform in<br/>the Metaverse</h4>
-                  <p className="text-small pt-3">
+                  <h6 className="text-small pt-3">
                     Bring your sound into virtuality
-                  </p>
+                  </h6>
                 </div>
               </a>
             </Link>
@@ -51,12 +52,12 @@ const Marketplace = () => {
           <div className="col-md-4 text-center">
             <Link href="/onboarding/perform-in-the-metaverse">
               <a>
-                <div className="bg-dark-30 rounded-lg mt-1 py-3 px-5">
+                <div className={styles.item}>
                   <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-huts.svg"></img>
                   <h4>Have your spot<br/>in our district</h4>
-                  <p className="text-small pt-3">
+                  <h6 className="text-small pt-3">
                     Build your presence in the Metaverse
-                  </p>
+                  </h6>
                 </div>
               </a>
             </Link>

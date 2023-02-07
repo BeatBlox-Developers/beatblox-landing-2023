@@ -1,0 +1,13 @@
+.item {
+  border-bottom-right-radius: 4rem;
+  background-color: #D9D8DD;
+  padding: 6rem 3rem;
+  transition: all 500ms ease;
+}
+.item img{
+    mix-blend-mode: multiply;
+}
+.item:hover {
+    border-top-left-radius: 4rem;
+    
+}
