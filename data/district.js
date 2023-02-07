@@ -1,26 +1,32 @@
 export const sections = [
     {
         name: 'District',
-        src: 'images/district/DistrictGral.jpg'
+        poster: 'images/district/DistrictGral.jpg',
+        src: 'videos/district/DistritoRender.mp4'
     },
     {
         name: 'Huts',
-        src: 'images/district/Huts.jpg'
+        poster: 'images/district/Huts.jpg',
+        src: 'videos/district/huts.mp4'
     },
     {
         name: 'Mountain Club',
-        src: 'images/district/MountainClub.jpg'
+        poster: 'images/district/MountainClub.jpg',
+        src: 'videos/district/MountainClub.mp4'
     },
     {
         name: 'Open Air Venue',
-        src: 'images/district/OpenAirVenue.jpg'
+        poster: 'images/district/OpenAirVenue.jpg',
+        src: 'videos/district/OpenAirVenue.mp4'
     },
     {
         name: 'Record Store',
-        src: 'images/district/RecordStore.jpg'
+        poster: 'images/district/RecordStore.jpg',
+        src: 'videos/district/RecordStore.mp4'
     },
     {
         name: 'Render District',
-        src: 'images/district/RenderDistrict.jpg'
+        poster: 'images/district/RenderDistrict.jpg',
+        src: 'videos/district/DistritoRender.mp4'
     },
 ]
