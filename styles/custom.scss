@@ -74,9 +74,7 @@ html, body{
 .bg-dark-30{
   background-color: rgba(0,0,0,0.3);
 }
-.bg-light{
-  background-color: #F5F4F2 !important;
-}
+
 $gray-900: #141515;
 .img-icon{
   width: 2rem !important;
@@ -138,8 +136,8 @@ $gray-900: #141515;
     filter: invert(1);
   }
 }
-$link-color: #ef4208;
-$link-hover-color: $link-color;
+$link-color: #fff;
+$link-hover-color: #fff;
 
 p{
   font-size: 1.188rem;
@@ -175,7 +173,9 @@ h6{
   -webkit-text-stroke: 1px #fff;
   text-stroke: 1px #fff;
 }
-
+.text-small{
+ font-size: 1rem !important;
+}
 // Navbar 
 
 .navModal{
@@ -668,4 +668,15 @@ section.section-video .overlay {
   a:hover{
     text-decoration: underline;
   }
+}
+footer{
+  background-color: #D9D8DD  !important;
+  color: #6D6D6D !important
+}
+footer img{
+  width: 3rem;
+}
+.district-box{
+  overflow: hidden;
+  border-radius: 1rem !important;
 }

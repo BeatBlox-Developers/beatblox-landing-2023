@@ -2,7 +2,7 @@ import React from 'react';
 
 const Marketplace = () => {
   return (
-    <section className="section-video py-5 d-flex align-items-center">
+    <section id="marketplace" className="section-video py-5 d-flex align-items-center">
       <video
         autoPlay={true}
         controls={false}

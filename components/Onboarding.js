@@ -4,7 +4,7 @@ import styles from "./Onboarding.module.css";
 
 const Marketplace = () => {
   return (
-    <section className="section-video py-5 d-flex align-items-center">
+    <section id="onboarding" className="section-video py-5 d-flex align-items-center">
       <video
         autoPlay={true}
         controls={false}
@@ -17,7 +17,7 @@ const Marketplace = () => {
       <div className="container">
         <div className="row text-center">
           <div className="col-12">
-            <h3>Be part of BeatBlox</h3>
+            <h2>Be part of BeatBlox</h2>
           </div>
         </div>
         <div className="row px-5 px-md-0 mt-5">
@@ -27,8 +27,8 @@ const Marketplace = () => {
                 <div className={styles.item}>
                   <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-catalog.svg"></img>
                   <h4>Join our<br/>catalog </h4>
-                  <h6 className="text-small pt-3">
-                    Make your content unique and collectible
+                  <h6 className="text-small py-3">
+                    Make your content<br/>unique and collectible
                   </h6>
                 </div>
               </a>
@@ -40,8 +40,8 @@ const Marketplace = () => {
                 <div className={styles.item}>
                   <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-perform.svg"></img>
                   <h4>Perform in<br/>the Metaverse</h4>
-                  <h6 className="text-small pt-3">
-                    Bring your sound into virtuality
+                  <h6 className="text-small py-3">
+                    Bring your sound<br/>into virtuality
                   </h6>
                 </div>
               </a>
@@ -55,8 +55,8 @@ const Marketplace = () => {
                 <div className={styles.item}>
                   <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-huts.svg"></img>
                   <h4>Have your spot<br/>in our district</h4>
-                  <h6 className="text-small pt-3">
-                    Build your presence in the Metaverse
+                  <h6 className="text-small py-3">
+                    Build your presence<br/>in the Metaverse
                   </h6>
                 </div>
               </a>

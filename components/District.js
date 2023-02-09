@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
@@ -18,7 +18,7 @@ const District = () => {
   };
   return (
     <>
-      <section className="py-5 d-flex align-items-center">
+      <section id="district" className="py-5 d-flex align-items-center">
         <div className="container">
           <div className="row">
             <div className="col-6">
@@ -73,7 +73,7 @@ const District = () => {
                 {items.map((item, index) => {
                   return (
                     <SwiperSlide key={index}>
-                      <div>
+                      <div className="district-box">
                         <video
                           poster={item.poster}
                           onMouseOver={(event) => event.target.play()}
