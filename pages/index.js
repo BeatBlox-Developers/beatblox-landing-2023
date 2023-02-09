@@ -14,6 +14,7 @@ import Minting from '../components/Minting';
 import Footer from '../components/Footer';
 import Team from '../components/Team';
 import News from '../components/News';
+import MarqueeSm from '../components/MarqueeSm';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Mousewheel, EffectFade, Controller } from 'swiper';
 import 'swiper/css';
@@ -42,6 +43,7 @@ export default function Home () {
       </Head>
       <Navigation/>
       <About/>
+      <MarqueeSm/>
       <Player/>
       <Marketplace/>
       <District/>

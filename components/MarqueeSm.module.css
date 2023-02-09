@@ -1,21 +1,14 @@
 .marquee {
   width: 100%;
   overflow: hidden;
-}
-.marquee.gradient{
   background: rgb(221,128,84);
   background: linear-gradient(90deg, rgba(221,128,84,1) 0%, rgba(239,192,182,1) 32%, rgba(164,191,236,1) 100%);
 }
 
-.marqueeContentLeft {
+.marqueeContent {
   display: flex;
   list-style: none;
   animation: scrollingLeft 20s linear infinite;
-}
-.marqueeContentRight {
-  display: flex;
-  list-style: none;
-  animation: scrollingRight 20s linear infinite;
 }
 
 .marqueeItem {
@@ -23,8 +16,8 @@
   margin: 0.5rem;
 }
 .marqueeItem img{
-  border-radius: 5%;
-  width: 100%;
+  height: 24px;
+  
 }
 
 @keyframes scrollingLeft {

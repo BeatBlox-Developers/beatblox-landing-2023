@@ -1,6 +1,7 @@
 import { Navbar, Nav, Container, Modal } from "react-bootstrap";
 import Link from 'next/link';
 import { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 const Navigation = () => {
   const [navbar, setNavbar] = useState(false); 
@@ -50,33 +51,46 @@ const Navigation = () => {
 
   return(
     <>
-      <Navbar variant="dark" fixed="top" expand="lg" className="py-5 px-5 px-md-0">
+      <Navbar
+        variant="dark"
+        fixed="top"
+        expand="lg"
+        className="py-3 px-md-0"
+        style={{
+          backgroundColor: navbar ? '#000' : 'transparent'
+        }}>
         <Container>
           <Navbar.Brand href="#home">
             <img src="/images/logo.svg" alt=""/>
           </Navbar.Brand>
           <Nav className="ms-md-auto my-2 my-lg-0">
-            <Link href="/collection">
+            <Link href="#player">
               <a className="d-none d-md-flex py-3 px-4">
                 Player
               </a>
             </Link>
-            <Link href="/collection">
+            <Link href="#marketplace">
               <a className="d-none d-md-flex py-3 px-4">
                 Marketplace
               </a>
             </Link>
-            <Link href="/collection">
+            <Link href="#district">
               <a className="d-none d-md-flex py-3 px-4">
                 Virtual District
               </a>
             </Link>
-            <Link href="/collection">
+            <Link href="#onboarding">
               <a className="d-none d-md-flex py-3 px-4">
                 Onboarding
               </a>
             </Link>
-            <button className="btn btn-outline-light rounded-pill" onClick={() => setShowNav(prevCheck => !prevCheck)}>menu</button>
+            {isMobile &&
+              <button
+                className="btn btn-outline-light rounded-pill"
+                onClick={() => setShowNav(prevCheck => !prevCheck)}>
+                  menu
+              </button>
+            }
           </Nav>
         </Container>
       </Navbar>

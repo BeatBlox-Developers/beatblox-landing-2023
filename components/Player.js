@@ -7,7 +7,7 @@ import { artists as items } from '../data/artists';
 const Player = () => {
   return (
     <>
-      <section className="full-height section-video py-5 d-flex align-items-center">
+      <section id="player" className="full-height section-video py-5 d-flex align-items-center">
         <video
           autoPlay={true}
           controls={false}
@@ -19,8 +19,8 @@ const Player = () => {
         />
         <div className="container">
           <div className="row">
-            <div className="col-5"></div>
-            <div className="col-10 col-md-7">
+            <div className="col-12 col-md-5"></div>
+            <div className="col-12 col-md-7">
               <div className='row'>
                 <div className='col text-black'>
                   <h1 className="pt-3">

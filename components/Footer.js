@@ -1,33 +1,33 @@
-import React from 'react';
+import React, { useRef, useEffect, useState} from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-light py-5 d-flex align-items-center">
-      <div className='container py-3'>
+    <footer className="py-5 d-flex align-items-center">
+      <div className='container py-5'>
         <div className='row'>
-          <div className='col-8 text-left d-flex flex-column justify-content-between'>
-            <h2 className='text-dark'>
-              B
+          <div className='col-2 text-left d-flex flex-column justify-content-between'>
+            <h2 className='mb-1'>
+              <img src="/images/beatblox-logo-footer.svg"/>
             </h2>
-            <p className='text-dark'>
+            <p className='mb-1 small'>
               All rights reserved <br/>
               2022 © BeatBlox 
             </p>
           </div>
-          <div className='col-4 text-left'>
+          <div className='col-4 offset-6 text-left'>
             <div className='row'>
               <div className='col-6'>
-                <p className='text-dark'>Instagram</p>
-                <p className='text-dark'>Discord</p>
-                <p className='text-dark'>Twitter</p>
-                <p className='text-dark'>Linkedin</p>
-                <p className='text-dark'>YouTube</p>
+                <p className='mb-1'>Instagram</p>
+                <p className='mb-1'>Discord</p>
+                <p className='mb-1'>Twitter</p>
+                <p className='mb-1'>Linkedin</p>
+                <p className='mb-1'>YouTube</p>
               </div>
               <div className='col-6'>
-                <p className='text-dark'>Contact</p>
-                <p className='text-dark'>FAQs</p>
-                <p className='text-dark'>Terms & Conditions</p>
-                <p className='text-dark'>Privacy Policy</p>
+                <p className='mb-1'>Contact</p>
+                <p className='mb-1'>FAQs</p>
+                <p className='mb-1'>Terms & Conditions</p>
+                <p className='mb-1'>Privacy Policy</p>
               </div>
             </div>
             
