@@ -36,7 +36,7 @@
 }
 
 // Default variable overrides
-$body-bg: #000;
+$body-bg: #fff;
 $body-color: #fff;
 $font-family-sans-serif:      "Nuckle", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $border-radius-lg:            1rem;
@@ -60,7 +60,7 @@ $container-max-widths: (
 ) !default;
 
 html, body{
-  font-size: 9px;
+  font-size: 16px;
 }
 .container, .container-fluid{
   height: 63%;
@@ -140,13 +140,15 @@ $link-color: #fff;
 $link-hover-color: #fff;
 
 p{
-  font-size: 1.188rem;
+  font-size: 1rem;
   line-height: 1.3 !important;
 }
 h1{
   font-family: 'Nuckle';
   font-size: 3.5rem !important;
+  line-height: 1;
 }
+
 h2{
   font-family: 'Nuckle';
   font-size: 3.75rem !important;
@@ -299,7 +301,7 @@ video{
     font-size: 1.873rem !important;
   }
 }
-@media (min-width: 1400px) {  
+@media (min-width: 1200px) {  
   html, body{
     font-size: 16px !important;
   }
@@ -550,6 +552,7 @@ section.section-video {
   position: relative;
   background-color: black;
   width: 100%;
+  overflow: hidden;
 }
 .section-onboarding{
   background-image: url('/images/onboarding/bg-onboarding.jpg');
@@ -615,33 +618,16 @@ section.section-video {
   }
 }
 
-@media (min-width: 992px) { 
-  section.section-video, section.section-onboarding {
-    min-height: 100vh;
-    width: 100%;
-    overflow: hidden;
-  }
-  section.section-video video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: auto;
-    width: 100%;
-    height: auto;
-    z-index: 0;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-  }
+section.section-video{
+  min-height: 100vh;
 }
 section.section-video video {
-  min-width: 100%;
-  min-height: auto;
-  width: 100%;
-  height: auto;
+  min-width: auto;
+  min-height: 100%;
+  width: auto;
+  height: 100%;
   z-index: 0;
+  position: absolute;
 }
 
 section.section-video .container {
@@ -659,6 +645,26 @@ section.section-video .overlay {
   opacity: 0.5;
   z-index: 1;
 }
+@media (min-width: 992px) { 
+  section.section-video, section.section-onboarding {
+    width: 100%;
+    overflow: hidden;
+  }
+  section.section-video video {
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: auto;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
 .switcher {
   a{
     font-size: 1.25rem;
@@ -671,7 +677,9 @@ section.section-video .overlay {
 }
 footer{
   background-color: #D9D8DD  !important;
-  color: #6D6D6D !important
+  color: #6D6D6D !important;
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
 }
 footer img{
   width: 3rem;
@@ -679,4 +687,93 @@ footer img{
 .district-box{
   overflow: hidden;
   border-radius: 1rem !important;
+}
+
+/* Marquees */
+
+.marquee-data {
+  width: 100%;
+  overflow: hidden;
+  background: rgb(221,128,84);
+  background: linear-gradient(90deg, rgba(221,128,84,1) 0%, rgba(239,192,182,1) 32%, rgba(164,191,236,1) 100%);
+}
+.marquee-data-item {
+  margin: 0.5rem;
+  width: 200px;
+}
+.marquee-data-item img{
+  height: 24px;
+}
+.marquee-artists {
+  width: 100%;
+}
+.marquee-artists-item {
+  width: 240px;
+  margin: 0.5rem;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.marquee-artists-item img{
+  width: 100%;
+  height: auto;
+}
+.marquee-team {
+  width: 100%;
+}
+.marquee-team-item {
+  width: 180px;
+  margin: 0 2rem;
+}
+.marquee-team-item img{
+  width: 100%;
+  height: auto;
+  border-radius: 50rem;
+}
+.marquee-partners {
+  width: 100%;
+}
+.marquee-partners-item {
+  width: 200px;
+  margin: 2rem;
+  
+}
+.marquee-partners-item img{
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+#district{
+  background-color: #000;
+}
+#team{
+  background-color: #D9D8DD;
+}
+#partners{
+  background-color: #fff;
+}
+#earlysup{
+  background-image: url('/images/earlysupporters/bg.jpg');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+#earlysup .blur{
+  background-image: url('/images/earlysupporters/blur.png');
+  background-position: center;
+  background-size: cover;
+  min-height: 100px;
+}
+#earlysup .nft{
+  background-color: #000;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  right: 4%;
+  width: 250px;
+  height: 250px;
+  border: 2px solid #D9D8DD;
+}
+#player{
+  background-color: #D9D8DD;
 }

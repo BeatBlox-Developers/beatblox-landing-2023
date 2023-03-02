@@ -21,13 +21,13 @@ const News = () => {
     <>
       <section className="bg-white py-5 d-flex align-items-center">
         <div className='container'>
-          <div className='row align-items-center'>
+          <div className='row align-items-center py-5'>
             <div className='col-4 offset-md-4 text-center'>
               <h2 className='text-dark mb-0'>
                 News
               </h2>
             </div>
-            <div className='col-4'>
+            <div className='col-4 offset-4 offset-md-0'>
               <div className="d-flex justify-content-end">
                 <button
                   className="btn btn-outline-dark rounded-circle"

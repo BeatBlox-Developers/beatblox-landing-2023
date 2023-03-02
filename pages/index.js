@@ -15,6 +15,9 @@ import Footer from '../components/Footer';
 import Team from '../components/Team';
 import News from '../components/News';
 import MarqueeSm from '../components/MarqueeSm';
+import Partners from '../components/Partners';
+import District from '../components/District';
+import EarlySUP from '../components/EarlySUP';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Mousewheel, EffectFade, Controller } from 'swiper';
 import 'swiper/css';
@@ -23,7 +26,6 @@ import 'swiper/css/mousewheel';
 import 'swiper/css/effect-fade';
 import { Navbar, Nav, Container, Modal } from 'react-bootstrap';
 import { isMobile } from "react-device-detect";
-import District from '../components/District';
 
 export default function Home () {
 
@@ -48,9 +50,11 @@ export default function Home () {
       <Marketplace/>
       <District/>
       <Onboarding/>
+      <EarlySUP/>
       <Roadmap/>
       <Team/>
       <News/>
+      <Partners/>
       <Footer/>
 
       <div className="bottomNav py-3 px-5 px-md-0 d-none d-md-flex">
