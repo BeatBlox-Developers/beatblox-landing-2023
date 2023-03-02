@@ -24,13 +24,12 @@ const District = () => {
             <div className="col-6">
               <h3>
                 Experience the next
-                <br />
                 musical landscape
               </h3>
             </div>
             <div className="d-flex col-6 align-items-end">
               <div className="w-100 d-flex justify-content-between">
-                <div className="rounded-pill border border-color-white px-3 py-2">
+                <div className="d-none d-md-block rounded-pill border border-color-white px-3 py-2">
                   Decentraland
                 </div>
                 <div className="">
@@ -52,7 +51,7 @@ const District = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="bg-black">
         <div className="container-fluid pb-5">
           <div className="row pt-3">
             <div className="col px-4">
@@ -79,7 +78,6 @@ const District = () => {
                           onMouseOver={(event) => event.target.play()}
                           onMouseOut={(event) => {
                             event.target.pause();
-                            event.target.currentTime = 0;
                           }}
                           src={item.src}
                           loop

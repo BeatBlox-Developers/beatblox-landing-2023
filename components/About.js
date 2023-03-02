@@ -22,7 +22,7 @@ const About = () => {
               A new musical<br />
               ecosystem
             </h1>
-            <h4>
+            <h4 className="mt-5">
               Empowering music creators and their audiences through blockchain technology,
               <br/>interactive experiences and the power of communities
             </h4>

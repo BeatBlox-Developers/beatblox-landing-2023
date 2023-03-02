@@ -1,10 +1,12 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper';
-import Marquee from './Marquee'
+import Marquee from "react-fast-marquee";
 import { artists as items } from '../data/artists';
+import { isMobile } from "react-device-detect";
 
 const Player = () => {
+  // const video = isMobile ? 'videos/player.mp4' : 'videos/player.mp4';
   return (
     <>
       <section id="player" className="full-height section-video py-5 d-flex align-items-center">
@@ -41,14 +43,32 @@ const Player = () => {
         </div>
       </section>
       <section className='bg-light text-center py-5'>
-        <h3 className="text-black py-5">Artists of the week</h3>
-        <Marquee
-          rtl={true}
-          items={items}
-        />
-        <button className='my-5 btn btn-dark btn-lg rounded-pill'>
-          Discover More
-        </button>
+        <div className='contaiiner-fluid'>
+          <div className='row'>
+            <h3 className="text-black py-5">Artists of the week</h3>
+          </div>
+          <div className='row'>
+            <Marquee
+              gradient={false}
+              className="marquee-artists"
+            >
+              {items.map((item, index) => {
+                return (
+                  <div className="marquee-artists-item" key={index}>
+                    <img src={item.src}/>
+                  </div>
+                )
+              })}
+            </Marquee>
+          </div>
+          <div className='row my-5 '>
+            <div className='col-6 mx-auto'>
+              <button className='btn btn-dark btn-lg rounded-pill'>
+                Discover More
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );

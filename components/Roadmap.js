@@ -21,7 +21,7 @@ const Roadmap = () => {
       <div className="container py-5">
         <div className="row text-center">
           <div className="col-12">
-            <h3 className='text-black'>Our future at a glance</h3>
+            <h2 className='text-black'>Our future at a glance</h2>
           </div>
         </div>
         <div className="row d-flex">
