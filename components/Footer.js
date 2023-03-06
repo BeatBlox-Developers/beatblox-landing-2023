@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="py-5 d-flex align-items-center">
       <div className='container py-5'>
         <div className='row'>
-          <div className='col-2 text-left d-flex flex-column justify-content-between'>
+          <div className='col-6 col-md-2 text-left d-flex flex-column justify-content-between'>
             <h2 className='mb-1'>
               <img src="/images/beatblox-logo-footer.svg"/>
             </h2>
@@ -14,7 +14,7 @@ const Footer = () => {
               2022 © BeatBlox 
             </p>
           </div>
-          <div className='col-4 offset-6 text-left'>
+          <div className='col-6 col-md-4 offset-md-6 text-left'>
             <div className='row'>
               <div className='col-6'>
                 <p className='mb-1'>Instagram</p>

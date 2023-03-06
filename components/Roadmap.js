@@ -24,19 +24,16 @@ const Roadmap = () => {
             <h2 className='text-black'>Our future at a glance</h2>
           </div>
         </div>
-        <div className="row d-flex">
-
+        <div className="row justify-content-center">
           {items.map((item, index) => {
           return (
-            <div className='col' key={index}>
-              <div className='btn btn-light rounded-lg'>
+            <div className='col-6 col-md-3 text-center my-1' key={index}>
+              <div className='btn btn-light rounded-pill p-3'>
                 {item.title}
               </div>
             </div>
           )
         })}
-
-          
         </div>
       </div>
     </section>

@@ -19,7 +19,7 @@ const Navigation = () => {
   const [showNav, setShowNav] = useState(false);
   const [loadCount, setLoadCount] = useState(0);
   const goToSection = (section) => {
-    mainSwiper.slideTo(section);
+    section.scrollIntoView()  
     setShowNav(false);
   }
   const NavModal = (props) => {
@@ -30,21 +30,12 @@ const Navigation = () => {
         centered
         className="navModal text-black text-center"
       >
-        <button href="#" onClick={() => goToSection(0)}>About Us</button>
-        <button href="#" onClick={() => goToSection(3)}>Roadmap</button>
-        <Link href="https://play.decentraland.org/?island=I1cequ&position=41%2C43&realm=unicorn">
-          <a target="_blank" rel="noreferrer">Decentraland</a>
-        </Link>
-        <Link href="/onboarding">
-          <a>On Boarding</a>
-        </Link>
-        <Link href="/auction-house">
-          <a>Auction House</a>
-        </Link>
-        <Link href="/faqs">
-          <a>FAQs</a>
-        </Link>
-        <button href="#" onClick={() => goToSection(2)}>Early Supporter NFT</button>
+        <button className="text-right" onClick={() => goToSection('#player')}>Player</button>
+        <button className="text-right" onClick={() => goToSection('#marketplace')}>Marketplace</button>
+        <button className="text-right" onClick={() => goToSection('#district')}>Virtual Music District</button>
+        <button className="text-right" onClick={() => goToSection('#player')}>Join BeatBlox</button>
+        <button className="text-right" onClick={() => goToSection('#player')}>Early Supporter NFT</button>
+
       </Modal>
     );
   }
@@ -63,7 +54,7 @@ const Navigation = () => {
           <Navbar.Brand href="#home">
             <img src="/images/logo.svg" alt=""/>
           </Navbar.Brand>
-          <Nav className="ms-md-auto my-2 my-lg-0">
+          <Nav className="ms-md-auto my-2 my-lg-0 d-flex align-items-center">
             <Link href="#player">
               <a className="d-none d-md-flex py-3 px-4">
                 Player
@@ -76,21 +67,19 @@ const Navigation = () => {
             </Link>
             <Link href="#district">
               <a className="d-none d-md-flex py-3 px-4">
-                Virtual District
+                Virtual Music District
               </a>
             </Link>
             <Link href="#onboarding">
               <a className="d-none d-md-flex py-3 px-4">
-                Onboarding
+                Join BeatBlox
               </a>
             </Link>
-            {isMobile &&
-              <button
-                className="btn btn-outline-light rounded-pill"
-                onClick={() => setShowNav(prevCheck => !prevCheck)}>
-                  menu
-              </button>
-            }
+            <button
+              className="btn"
+              onClick={() => setShowNav(prevCheck => !prevCheck)}>
+                <img style={{width: '60px'}} src="/images/hamb.svg"/>
+            </button>
           </Nav>
         </Container>
       </Navbar>

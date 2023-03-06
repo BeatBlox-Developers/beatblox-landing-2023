@@ -22,7 +22,7 @@ const Team = () => {
               return (
                 <div className="marquee-team-item text-black" key={index}>
                   <img src={item.src}/>
-                  <p className="border-top border-dark pt-3 mt-3 text-uppercase">{item.name}</p>
+                  <p className="border-top border-dark pt-3 mt-3 mb-0 text-uppercase">{item.name}</p>
                   <p className='text-muted'>{item.position}</p>
                 </div>
               )
