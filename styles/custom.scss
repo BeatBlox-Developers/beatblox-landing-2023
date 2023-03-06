@@ -60,7 +60,7 @@ $container-max-widths: (
 ) !default;
 
 html, body{
-  font-size: 16px;
+  font-size: 14px;
 }
 .container, .container-fluid{
   height: 63%;
@@ -98,7 +98,7 @@ $gray-900: #141515;
 
 @media (min-width: 992px) {  
   html, body{
-    font-size: 11px;
+    font-size: 14px;
   }
   .img-icon{
     width: 3.125rem !important;
@@ -107,6 +107,14 @@ $gray-900: #141515;
     .swiper-wrapper{
       padding: 0 !important;
     }
+  }
+  #earlysup .nft {
+    width: 250px !important;
+    height: 250px !important;
+  }
+  footer{
+    border-top-left-radius: 5rem !important;
+    border-top-right-radius: 5rem !important;
   }
 }
 
@@ -176,7 +184,7 @@ h6{
   text-stroke: 1px #fff;
 }
 .text-small{
- font-size: 1rem !important;
+ font-size: 0.9rem !important;
 }
 // Navbar 
 
@@ -193,8 +201,8 @@ h6{
     padding: 3rem;
     a, button{
       color: #fff;
-      font-size: 3rem;
-      text-align: left;
+      font-size: 2rem;
+      text-align: right;
       background: transparent;
       outline: 0;
       border: none;
@@ -287,7 +295,7 @@ video{
     .modal-content {
       padding: 0rem;
       a, button{
-        font-size: 4.875rem;
+        font-size: 3rem;
       }
     }
   }
@@ -679,8 +687,8 @@ section.section-video .overlay {
 footer{
   background-color: #D9D8DD  !important;
   color: #6D6D6D !important;
-  border-top-left-radius: 5rem;
-  border-top-right-radius: 5rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
 }
 footer img{
   width: 3rem;
@@ -691,6 +699,7 @@ footer img{
 }
 
 /* Marquees */
+
 
 .marquee-data {
   width: 100%;
@@ -717,6 +726,10 @@ footer img{
 .marquee-artists-item img{
   width: 100%;
   height: auto;
+}
+#team .marquee{
+  display: flex;
+  align-items: start;
 }
 .marquee-team {
   width: 100%;
@@ -771,10 +784,12 @@ footer img{
   border-radius: 50%;
   position: absolute;
   right: 4%;
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   border: 2px solid #D9D8DD;
 }
+
 #player{
   background-color: #D9D8DD;
 }
+

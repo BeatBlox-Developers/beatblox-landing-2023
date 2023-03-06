@@ -64,6 +64,17 @@ const News = () => {
                 // }}
                 // speed={800}
                 loop={true}
+                breakpoints={{ 
+                  1200: {
+                    slidesPerView: 5,
+                  },
+                  768: {
+                    slidesPerView: 4,
+                  },
+                  480: {
+                    slidesPerView: 2,
+                  },
+                }}
               >
                 {items.map((item, index) => {
                   return (
