@@ -19,20 +19,17 @@ const District = () => {
   return (
     <>
       <section id="district" className="py-5 d-flex align-items-center">
-        <div className="container">
+        <div className="container px-5 px-sm-0">
           <div className="row">
-            <div className="col-6 col-md-4">
+            <div className="col-8 col-md-4">
               <h3 className="mb-0">
                 Experience the next
                 musical landscape
               </h3>
             </div>
-            <div className="d-flex col-6 offset-md-2 align-items-end">
+            <div className="d-flex mt-5 mt-md-0 col-12 col-md-6 offset-md-2 align-items-end">
               <div className="w-100 d-flex justify-content-between">
-                <div className="d-md-none rounded-pill border border-color-white px-3 py-2">
-                  DCL
-                </div>
-                <div className="d-none d-md-block rounded-pill border border-color-white px-3 py-2">
+                <div className="rounded-pill border border-color-white px-3 py-2">
                   Decentraland
                 </div>
                 <div className="">

@@ -10,10 +10,10 @@ const Navigation = () => {
   }, []);
   const changeBackground = () => {
     if (window.scrollY >= 80) {
-      setNavbar(true);
+      setNavbar('navbar-shrink');
     }
     else{
-      setNavbar(false);
+      setNavbar('');
     }
   }
   const [showNav, setShowNav] = useState(false);
@@ -46,12 +46,9 @@ const Navigation = () => {
         variant="dark"
         fixed="top"
         expand="lg"
-        className="py-3 px-md-0"
-        style={{
-          backgroundColor: navbar ? '#000' : 'transparent'
-        }}>
-        <Container>
-          <Navbar.Brand href="#home">
+        className={`py-3 px-md-0 ` + navbar}>
+        <Container className="px-5 px-sm-0">
+          <Navbar.Brand href="#home" className="ms-3 ms-md-0">
             <img src="/images/logo.svg" alt=""/>
           </Navbar.Brand>
           <Nav className="ms-md-auto my-2 my-lg-0 d-flex align-items-center">
@@ -78,7 +75,7 @@ const Navigation = () => {
             <button
               className="btn"
               onClick={() => setShowNav(prevCheck => !prevCheck)}>
-                <img style={{width: '60px'}} src="/images/hamb.svg"/>
+                <img style={{width: '30px'}} src="/images/hamb.svg"/>
             </button>
           </Nav>
         </Container>

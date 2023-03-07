@@ -19,7 +19,7 @@ const Player = () => {
           src='videos/player.mp4'
           type="video/mp4"
         />
-        <div className="container">
+        <div className="container px-5 px-sm-0">
           <div className="row">
             <div className="col-12 col-md-5"></div>
             <div className="col-12 col-md-7">
@@ -43,7 +43,7 @@ const Player = () => {
         </div>
       </section>
       <section className='bg-light text-center py-5'>
-        <div className='contaiiner-fluid'>
+        <div className='container-fluid'>
           <div className='row'>
             <h3 className="text-black py-5">Artists of the week</h3>
           </div>
@@ -63,7 +63,7 @@ const Player = () => {
           </div>
           <div className='row my-5 '>
             <div className='col-6 mx-auto'>
-              <button className='btn btn-dark btn-lg rounded-pill'>
+              <button className='btn btn-outline-dark btn-lg rounded-pill'>
                 Discover More
               </button>
             </div>

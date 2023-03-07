@@ -18,7 +18,7 @@ const Roadmap = () => {
         src='videos/roadmap.mp4'
         type="video/mp4"
       />
-      <div className="container py-5">
+      <div className="container py-5 px-5 px-sm-0">
         <div className="row text-center">
           <div className="col-12">
             <h2 className='text-black'>Our future at a glance</h2>
@@ -27,7 +27,7 @@ const Roadmap = () => {
         <div className="row justify-content-center">
           {items.map((item, index) => {
           return (
-            <div className='col-6 col-md-3 text-center my-1' key={index}>
+            <div className='col-12 col-md-3 text-center my-1' key={index}>
               <div className='btn btn-light rounded-pill p-3'>
                 {item.title}
               </div>
