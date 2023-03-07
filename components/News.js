@@ -20,7 +20,7 @@ const News = () => {
   return (
     <>
       <section className="bg-white py-5 d-flex align-items-center">
-        <div className='container'>
+        <div className='container px-5 px-sm-0'>
           <div className='row align-items-center py-5'>
             <div className='col-4 offset-md-4 text-center'>
               <h2 className='text-dark mb-0'>

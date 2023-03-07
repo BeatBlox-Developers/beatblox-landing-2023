@@ -11,9 +11,9 @@ const MarqueeSm = () => {
     >
       {items.map((item, index) => {
         return (
-          <div className="marquee-data-item d-flex align-items-center justify-content-center px-1 py-3" key={index}>
+          <div className="marquee-data-item d-flex align-items-center justify-content-center px-1 py-2" key={index}>
             <img src="/images/beatblox-logo-iso.svg" alt=""/>
-            <h5 className="my-0 ms-3 text-black">{item}</h5>
+            <h6 className="my-0 ms-3 text-black">{item}</h6>
           </div>
         )
       })}

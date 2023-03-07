@@ -60,7 +60,7 @@ $container-max-widths: (
 ) !default;
 
 html, body{
-  font-size: 14px;
+  font-size: 14px !important;
 }
 .container, .container-fluid{
   height: 63%;
@@ -73,6 +73,10 @@ html, body{
 }
 .bg-dark-30{
   background-color: rgba(0,0,0,0.3);
+}
+
+.bg-dark-50{
+  background-color: rgba(0,0,0,0.5);
 }
 
 $gray-900: #141515;
@@ -107,6 +111,12 @@ $gray-900: #141515;
     .swiper-wrapper{
       padding: 0 !important;
     }
+  }
+  #earlysup{
+    background-image: url('/images/earlysupporters/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
   }
   #earlysup .nft {
     width: 250px !important;
@@ -167,7 +177,7 @@ h3{
 }
 h4{
   font-family: 'Nuckle';
-  font-size: 1.436rem !important;
+  font-size: 2rem !important;
   line-height: 1.3 !important;
 }
 h5{
@@ -227,9 +237,14 @@ h6{
 $nav-link-font-size: 1.124rem;
 
 nav{
+  background-color: rgba(0,0,0,0.8);
+  border: 1px solid #6c6c6c;
+  border-radius: 1rem;
+  margin: 3rem;
   &.active {
     background-color: black;
   }
+  transition: all 300ms ease;
 }
 .navbar-collapse.collapse{
   display: none;
@@ -270,6 +285,21 @@ video{
   opacity: 0.7;
 }
 @media (min-width: 992px) {  
+  nav{
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 2rem 0;
+  }
+  .navbar-shrink{
+    margin: 0;
+    background-color: rgba(0,0,0,0.8);
+  }
+  h4{
+    font-family: 'Nuckle';
+    font-size: 1.436rem !important;
+    line-height: 1.3 !important;
+  }
   video{
     width: 100%;
     height: auto;
@@ -687,14 +717,16 @@ section.section-video .overlay {
 footer{
   background-color: #D9D8DD  !important;
   color: #6D6D6D !important;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
 }
 footer img{
   width: 3rem;
 }
 .district-box{
-  overflow: hidden;
+  position: relative;
+}
+.district-box video{
+  width: 100% !important;
+  height: auto !important;
   border-radius: 1rem !important;
 }
 
@@ -766,11 +798,12 @@ footer img{
 #partners{
   background-color: #fff;
 }
-#earlysup{
-  background-image: url('/images/earlysupporters/bg.jpg');
-  background-position: center;
-  background-size: cover;
-  position: relative;
+#earlysup .content{
+  z-index: 2;
+}
+#earlysup video{
+  width: 100% !important;
+  height: auto !important;
 }
 #earlysup .blur{
   background-image: url('/images/earlysupporters/blur.png');

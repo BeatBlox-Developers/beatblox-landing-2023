@@ -1,5 +1,7 @@
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
+const src = isMobile ? 'videos/mobile/marketplace.mp4' : 'videos/marketplace.mp4' 
 const Marketplace = () => {
   return (
     <section id="marketplace" className="section-video py-5 d-flex align-items-center">
@@ -9,10 +11,10 @@ const Marketplace = () => {
         loop
         muted
         playsInline
-        src='videos/mobile/marketplace.mp4'
+        src={src}
         type="video/mp4"
       />
-      <div className="container">
+      <div className="container  px-5 px-sm-0">
         <div className="row">
           <div className="col-10 col-md-6">
             <div className='row'>
