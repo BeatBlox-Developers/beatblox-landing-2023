@@ -30,11 +30,11 @@ const Navigation = () => {
         centered
         className="navModal text-black text-center"
       >
-        <button className="text-right" onClick={() => goToSection('#player')}>Player</button>
-        <button className="text-right" onClick={() => goToSection('#marketplace')}>Marketplace</button>
-        <button className="text-right" onClick={() => goToSection('#district')}>Virtual Music District</button>
-        <button className="text-right" onClick={() => goToSection('#player')}>Join BeatBlox</button>
-        <button className="text-right" onClick={() => goToSection('#player')}>Early Supporter NFT</button>
+        <button className="" onClick={() => goToSection('#player')}>Player</button>
+        <button className="" onClick={() => goToSection('#marketplace')}>Marketplace</button>
+        <button className="" onClick={() => goToSection('#district')}>Virtual Music District</button>
+        <button className="" onClick={() => goToSection('#player')}>Join BeatBlox</button>
+        <button className="" onClick={() => goToSection('#player')}>Early Supporter NFT</button>
 
       </Modal>
     );
@@ -48,7 +48,7 @@ const Navigation = () => {
         expand="lg"
         className={`py-3 px-md-0 ` + navbar}>
         <Container className="px-5 px-sm-0">
-          <Navbar.Brand href="#home" className="ms-3 ms-md-0">
+          <Navbar.Brand href="#home" className="ms-2 ms-md-0">
             <img src="/images/logo.svg" alt=""/>
           </Navbar.Brand>
           <Nav className="ms-md-auto my-2 my-lg-0 d-flex align-items-center">
