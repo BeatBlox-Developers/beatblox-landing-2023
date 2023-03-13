@@ -23,7 +23,7 @@ const Marketplace = () => {
                 <AnimationOnScroll animateIn="animate__fadeInUp">
                   <h1 className="pt-3">
                     Support<br/>
-                    & collect
+                    <span className='font-family-sans'>&</span> collect
                   </h1>
                 </AnimationOnScroll>
                 <h4>
