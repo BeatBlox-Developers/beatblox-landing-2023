@@ -126,6 +126,10 @@ $gray-900: #141515;
     border-top-left-radius: 5rem !important;
     border-top-right-radius: 5rem !important;
   }
+  .video-normal{
+    width: 100% !important;
+    height: auto !important;
+  }
 }
 
 .bottomNav{
@@ -660,7 +664,7 @@ section.section-video {
 section.section-video{
   min-height: 100vh;
 }
-section.section-video video {
+section.section-video > video {
   min-width: auto;
   min-height: 100%;
   width: auto;
@@ -689,7 +693,7 @@ section.section-video .overlay {
     width: 100%;
     overflow: hidden;
   }
-  section.section-video video {
+  section.section-video > video {
     top: 50%;
     left: 50%;
     min-width: 100%;
@@ -824,5 +828,9 @@ footer img{
 
 #player{
   background-color: #D9D8DD;
+  .video-normal{
+    width: 100% !important;
+    height: auto !important;
+  }
 }
 

@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { milestones as items } from '../data/roadmap';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const Roadmap = () => {
   return (
@@ -28,9 +29,12 @@ const Roadmap = () => {
           {items.map((item, index) => {
           return (
             <div className='col-12 col-md-3 text-center my-1' key={index}>
-              <div className='btn btn-light rounded-pill p-3'>
-                {item.title}
-              </div>
+              <AnimationOnScroll animateIn="animate__fadeInUp">
+                <div className='btn btn-light rounded-pill p-3'>
+                  {item.title}
+                </div>
+              </AnimationOnScroll>
+              
             </div>
           )
         })}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { isMobile } from 'react-device-detect';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const src = isMobile ? 'videos/mobile/marketplace.mp4' : 'videos/marketplace.mp4' 
 const Marketplace = () => {
@@ -19,10 +20,12 @@ const Marketplace = () => {
           <div className="col-10 col-md-6">
             <div className='row'>
               <div className='col'>
-                <h1 className="pt-3">
-                  Support<br/>
-                  & collect
-                </h1>
+                <AnimationOnScroll animateIn="animate__fadeInUp">
+                  <h1 className="pt-3">
+                    Support<br/>
+                    & collect
+                  </h1>
+                </AnimationOnScroll>
                 <h4>
                   Access unique curated content and utility
                   by engaging with your favorite artists
