@@ -39,7 +39,7 @@ const Player = () => {
                 <div className='col text-black'>
                   <AnimationOnScroll animateIn="animate__fadeInUp">
                     <h1 className="pt-3">
-                      Listen &<br />
+                      Listen <span className='font-family-sans'>&</span><br />
                       Take Part
                     </h1>
                     <h4 className="pt-3">
