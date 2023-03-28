@@ -70,6 +70,9 @@ const Player = () => {
                 return (
                   <div className="marquee-artists-item" key={index}>
                     <img src={item.src}/>
+                    <a href="#" className='hover'>
+                      {item.name}
+                    </a>
                   </div>
                 )
               })}
