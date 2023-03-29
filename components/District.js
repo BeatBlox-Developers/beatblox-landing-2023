@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
@@ -18,17 +18,16 @@ const District = () => {
   };
   return (
     <>
-      <section className="py-5 d-flex align-items-center">
-        <div className="container">
+      <section id="district" className="py-5 d-flex align-items-center">
+        <div className="container px-5 px-sm-0">
           <div className="row">
-            <div className="col-6">
-              <h3>
+            <div className="col-8 col-md-4">
+              <h3 className="mb-0">
                 Experience the next
-                <br />
                 musical landscape
               </h3>
             </div>
-            <div className="d-flex col-6 align-items-end">
+            <div className="d-flex mt-5 mt-md-0 col-12 col-md-6 offset-md-2 align-items-end">
               <div className="w-100 d-flex justify-content-between">
                 <div className="rounded-pill border border-color-white px-3 py-2">
                   Decentraland
@@ -52,17 +51,26 @@ const District = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="bg-black">
         <div className="container-fluid pb-5">
           <div className="row pt-3">
             <div className="col px-4">
               <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={20}
-                slidesPerView={2}
+                slidesPerView={1}
                 onSwiper={(swiper) => {
                   districtSwiper.current = swiper;
                 }}
+                breakpoints={{ 
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  480: {
+                    slidesPerView: 1,
+                  },
+                }}
+                className="swiper-district"
                 // autoplay={{
                 //   delay: 5200,
                 //   disableOnInteraction: true,
@@ -73,13 +81,12 @@ const District = () => {
                 {items.map((item, index) => {
                   return (
                     <SwiperSlide key={index}>
-                      <div>
+                      <div className="district-box">
                         <video
                           poster={item.poster}
                           onMouseOver={(event) => event.target.play()}
                           onMouseOut={(event) => {
                             event.target.pause();
-                            event.target.currentTime = 0;
                           }}
                           src={item.src}
                           loop

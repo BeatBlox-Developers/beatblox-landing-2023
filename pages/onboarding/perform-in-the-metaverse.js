@@ -69,12 +69,12 @@ export default function Onboarding() {
             <Switcher theme="white"/>
             <div className="row px-5 px-md-0 mt-0 mt-md-5">
               <div className="col-12 col-md-7">
-                <h1>{data.title}</h1>
-                <h3 className="text-uppercase">{data.subtitle}</h3>
-                <h4 className="mt-5">{data.description}</h4>
+                <h2>{data.title}</h2>
+                <h4 className="text-uppercase">{data.subtitle}</h4>
+                <h5 className="mt-3">{data.description}</h5>
                 <Link href="#benefits">
-                  <button className="btn btn-outline-light rounded-pill mt-5">
-                    <h4 className="m-0 p-1">Explore the Benefits</h4>
+                  <button className="btn btn-outline-light rounded-pill mt-3">
+                    <h5 className="m-0 p-1">Explore the Benefits</h5>
                   </button>
                 </Link>
               </div>
@@ -89,7 +89,7 @@ export default function Onboarding() {
             <div className="row w-100 px-5 px-md-0">
               <div className="col-12 col-md-5 offset-md-6 pt-3 text-white py-5 mb-5">
                 <button className="btn btn-dark rounded-pill mb-5">
-                  <h4 className="m-0 p-1">BENEFITS</h4>
+                  <h5 className="m-0 p-1">BENEFITS</h5>
                 </button>
                 { data.benefits.map((benefit, index) => {
                   return (
@@ -98,7 +98,7 @@ export default function Onboarding() {
                 })}
                 <Link href="#be-part">
                   <button className="btn btn-light rounded-pill mt-5">
-                    <h4 className="m-0 p-1">Apply now</h4>
+                    <h5 className="m-0 p-1">Apply now</h5>
                   </button>
                 </Link>
               </div>
@@ -115,7 +115,7 @@ export default function Onboarding() {
             <div className="row w-100 px-5 px-md-0">
               <div className="col-12 col-md-5 offset-md-6 pt-3 text-white py-5 mb-5">
                 <button className="btn btn-dark rounded-pill mb-5">
-                  <h4 className="m-0 p-1">BENEFITS</h4>
+                  <h5 className="m-0 p-1">BENEFITS</h5>
                 </button>
                 { data.benefits.map((benefit, index) => {
                   return (
@@ -124,7 +124,7 @@ export default function Onboarding() {
                 })}
                 <Link href="#be-part">
                   <button className="btn btn-light rounded-pill mt-5">
-                    <h4 className="m-0 p-1">Apply now</h4>
+                    <h5 className="m-0 p-1">Apply now</h5>
                   </button>
                 </Link>
               </div>

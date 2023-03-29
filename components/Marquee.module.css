@@ -2,6 +2,10 @@
   width: 100%;
   overflow: hidden;
 }
+.marquee.gradient{
+  background: rgb(221,128,84);
+  background: linear-gradient(90deg, rgba(221,128,84,1) 0%, rgba(239,192,182,1) 32%, rgba(164,191,236,1) 100%);
+}
 
 .marqueeContentLeft {
   display: flex;

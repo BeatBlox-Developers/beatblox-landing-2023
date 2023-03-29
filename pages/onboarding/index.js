@@ -13,14 +13,14 @@ export default function Onboarding() {
       <Navigation />
       <section className="section-onboarding d-flex align-items-center py-5 py-md-0">
         <div className="container py-5">
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column py-5">
             <div className="row py-5 my-3 d-block d-md-none"></div>
-            <div className="row text-center">
+            <div className="row text-center pt-5">
               <div className="col-12">
                 <h1>BeatBlox<span className="text-outline"> onboarding</span></h1>
               </div>
             </div>
-            <div className="row px-5 px-md-0 mt-5">
+            <div className="row px-5 px-md-0">
               <div className="col-md-4 text-center">
                 <img className="img-fluid w-50 d-block mx-auto" src="/images/onboarding/icon-perform.svg"></img>
                 <Link href="/onboarding/perform-in-the-metaverse">

@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/css';
@@ -19,15 +19,15 @@ const News = () => {
   };
   return (
     <>
-      <section className="bg-white py-5 d-flex align-items-center">
-        <div className='container'>
-          <div className='row align-items-center'>
+      <section className="bg-white pt-5 pb-2 py-md-5 d-flex align-items-center">
+        <div className='container px-5 px-sm-0'>
+          <div className='row align-items-center py-5'>
             <div className='col-4 offset-md-4 text-center'>
               <h2 className='text-dark mb-0'>
                 News
               </h2>
             </div>
-            <div className='col-4'>
+            <div className='col-4 offset-4 offset-md-0'>
               <div className="d-flex justify-content-end">
                 <button
                   className="btn btn-outline-dark rounded-circle"
@@ -54,7 +54,7 @@ const News = () => {
               <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={20}
-                slidesPerView={5}
+                slidesPerView={2}
                 onSwiper={(swiper) => {
                   newsSwiper.current = swiper;
                 }}
@@ -64,6 +64,14 @@ const News = () => {
                 // }}
                 // speed={800}
                 loop={true}
+                breakpoints={{ 
+                  1200: {
+                    slidesPerView: 5,
+                  },
+                  768: {
+                    slidesPerView: 4,
+                  }
+                }}
               >
                 {items.map((item, index) => {
                   return (
