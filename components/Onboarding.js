@@ -50,7 +50,7 @@ const Marketplace = () => {
                       <div className='col-4 col-md-6 mx-auto p-4 p-md-5'>
                         <img className="img-fluid w-100 d-block mx-auto" src={item.src}></img>
                       </div>
-                      <div className='col-7 col-md-12 mx-auto d-flex align-items-end justify-content-md-center pb-3 pb-md-2'>
+                      <div className='col-7 col-md-12 mx-auto d-flex align-items-center align-items-md-end justify-content-md-center ms-0 ps-0 pb-md-2'>
                         <h4 className='mb-0'>{item.title}</h4>
                       </div>
                       <div className='col-12 d-none d-md-block mb-3'>

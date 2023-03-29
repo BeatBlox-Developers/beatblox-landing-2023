@@ -25,7 +25,7 @@ const Roadmap = () => {
             <h2 className='text-black'>Our future at a glance</h2>
           </div>
         </div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-center pt-5">
           {items.map((item, index) => {
           return (
             <div className='col-12 col-md-3 text-center my-1' key={index}>
