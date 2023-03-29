@@ -19,7 +19,7 @@ const News = () => {
   };
   return (
     <>
-      <section className="bg-white py-5 d-flex align-items-center">
+      <section className="bg-white pt-5 pb-2 py-md-5 d-flex align-items-center">
         <div className='container px-5 px-sm-0'>
           <div className='row align-items-center py-5'>
             <div className='col-4 offset-md-4 text-center'>
@@ -54,7 +54,7 @@ const News = () => {
               <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={20}
-                slidesPerView={5}
+                slidesPerView={2}
                 onSwiper={(swiper) => {
                   newsSwiper.current = swiper;
                 }}
@@ -70,10 +70,7 @@ const News = () => {
                   },
                   768: {
                     slidesPerView: 4,
-                  },
-                  480: {
-                    slidesPerView: 2,
-                  },
+                  }
                 }}
               >
                 {items.map((item, index) => {

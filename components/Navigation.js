@@ -94,8 +94,8 @@ const Navigation = () => {
         variant="dark"
         fixed="top"
         expand="lg"
-        className={`py-3 px-md-0 ` + navbar}>
-        <Container className="px-5 px-sm-0">
+        className={`py-md-3 px-md-0 ` + navbar}>
+        <Container className="px-3 px-sm-0">
           <Navbar.Brand href="#home" className="ms-2 ms-md-0">
             <img src="/images/logo.svg" alt=""/>
           </Navbar.Brand>
@@ -121,9 +121,9 @@ const Navigation = () => {
               </a>
             </Link>
             <button
-              className="btn"
+              className="btn hamburger"
               onClick={() => setShowNav(prevCheck => !prevCheck)}>
-                <img style={{width: '30px'}} src="/images/hamb.svg"/>
+                <img src="/images/hamb.svg"/>
             </button>
           </Nav>
         </Container>
