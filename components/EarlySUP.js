@@ -35,7 +35,7 @@ const EarlySUP = () => {
               <h2>NFT Early<br/>Supporter</h2>
             </div>
             <div className="col-2 d-none d-md-block">
-
+              <img className="w-50" src="/images/flecha.svg" alt="flecha"></img>
             </div>
             <div className="col-9 offset-1 col-md-5 offset-md-0 text-left">
               <h4>Support us by getting our<br/>Early Supporter</h4>
