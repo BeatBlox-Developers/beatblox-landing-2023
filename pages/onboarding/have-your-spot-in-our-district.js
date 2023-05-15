@@ -3,6 +3,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import ReCAPTCHA from 'react-google-recaptcha';
 import { useState, useEffect } from "react";
 import { isMobile } from "react-device-detect";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -20,33 +21,52 @@ import { haveYourSpotData as data } from '../../data/onboarding';
 const schema = yup.object({
   name: yup.string().required(),
   email: yup.string().email().required(),
-  instagram: yup.string().url(),
+  social: yup.string().url(),
   website: yup.string().url(),
-  preview: yup.string().url().required(),
   about: yup.string().required(),
   acceptTOS: yup.bool().oneOf([true], 'Accept terms of service is required')
 }).required();
+
 
 export default function Onboarding() {
   const [swiperIndex, setSwiperIndex] = useState(0);
   const [hasBeenSent, setHasBeenSent] = useState(false);
   const [section, setSection] = useState(false);
-  const { register, handleSubmit, formState:{ errors } } = useForm({
+
+  let recaptchaInstance;
+  const executeCaptcha = (e) => {
+    e.preventDefault();
+    recaptchaInstance.execute();
+  };
+  function onChange() {
+    const data = getValues();
+    console.log(data)
+    // const somedata = {
+    //   ...values,
+    //   'g-recaptcha-response': captchaValue,
+    // }
+    handleSubmit(onSubmit(data))
+  }
+
+  const { register, getValues, handleSubmit, formState:{ errors } } = useForm({
     resolver: yupResolver(schema)
   });
 
   const onSubmit = async (data) => {
     const action = 'Have your spot in our district';
-    await fetch('/api/contact', {
+    await fetch('https://beatblox-cms.herokuapp.com/api/on-boardings', {
       method: 'POST',
-      body: JSON.stringify(data)
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({data:data})
     }).then((res) => {
       // console.log("Response received");
       if (res.status === 200) {
         // console.log("Response succeeded!");
         setHasBeenSent(true);
       }
-    });
+    }).catch((error)=>{
+      console.log(error)
+    })
   }
 
   return (
@@ -130,7 +150,7 @@ export default function Onboarding() {
           </div>
         </section>
       )}
-      <section id="be-part" className="section-video mb-5">
+      <section id="be-part" className="section-video pb-5">
         <video
           autoPlay={true}
           controls={false}
@@ -144,62 +164,57 @@ export default function Onboarding() {
         <div className="container not-fullscreen py-5">
           <div className="row px-5 px-md-0 py-5">
             <div className="col-12 col-md-6 col-lg-4 pt-3">
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <Swiper
-                  spaceBetween={0}
-                  slidesPerView={1}
-                  className="swiper-form"
-                  onSlideChange={(swiper) => setSwiperIndex(swiper.activeIndex)}
-                >
-                  <div className="d-flex justify-content-end">
-                    { (swiperIndex === 1 && !hasBeenSent) && ( <SwiperButtonPrev>Back</SwiperButtonPrev> )}
-                    { (swiperIndex === 0 && !hasBeenSent) && ( <SwiperButtonNext>Continue</SwiperButtonNext> )}
-                    { (swiperIndex === 1 && !hasBeenSent) && ( <input className="btn btn-lg btn-light mt-3 rounded-pill" style={{ marginLeft : 5}} type="submit" /> )}
+              { hasBeenSent && (
+                <React.Fragment>
+                  <h4>Your Onboarding request has been sent</h4>
+                  <p className="text-muted">Our team will be contacting you soon.</p>
+                </React.Fragment>
+              )}
+              { !hasBeenSent && (
+                <form>
+                  <div className="w-100 mb-3">
+                    <h5>Name or project *</h5>
+                    <input className="form-control rounded-0 mb-1" {...register('name')} /> 
+                    <small className="text-danger">{errors['name']?.message }</small>
+                  </div> 
+                  <div className="w-100 mb-3">
+                    <h5>Email *</h5>
+                    <input className="form-control rounded-0 mb-1" {...register('email')} /> 
+                    <small className="text-danger">{errors['email']?.message }</small>
+                  </div> 
+                  <div className="w-100 mb-3">
+                    <h5>Social * <small className="text-muted">(SoundCloud or MixCloud Link)</small></h5>
+                    <input className="form-control rounded-0 mb-1" {...register('social')} /> 
+                    <small className="text-danger">{errors['social']?.message }</small>
+                  </div> 
+                  <div className="w-100 mb-3">
+                    <h5>Website *</h5>
+                    <input className="form-control rounded-0 mb-1" {...register('website')} /> 
+                    <small className="text-danger">{errors['website']?.message }</small>
+                  </div> 
+                  <div className="w-100 mb-3">
+                    <h5>About you *</h5>
+                    <textarea rows="5" className="form-control rounded-0 mb-1" {...register('about')} />
+                  </div> 
+                  <div className="form-check form-switch w-100">
+                    <input name="acceptTOS" className="form-check-input" type="checkbox" {...register('acceptTOS')}/>
+                    <label htmlFor="acceptTOS" className="form-check-label">
+                      <Link href="/files/terms-of-service.pdf">
+                        <a target="_blank" rel="noopener noreferrer" className="text-decoration-underline">Accept Terms of service</a>
+                      </Link>
+                    </label>
+                    <br/>
+                    <small className="text-danger">{errors.acceptTOS?.message }</small>
                   </div>
-                  { hasBeenSent && (
-                    <React.Fragment>
-                      <h4>Your Onboarding request has been sent</h4>
-                      <p className="text-muted">Our team will be contacting you soon.</p>
-                    </React.Fragment>
-                  )}
-                  { !hasBeenSent && (
-                    <>
-                      <SwiperSlide>
-                        { data.fields.map((item, index) => {
-                          return (
-                            <div key={index} className="w-100 mb-3">
-                              <h4>{item.label} <small className="text-muted">{item.description || ''}</small></h4>
-                              <input className="form-control rounded-0 mb-1" {...register(`${item.name}`)} /> 
-                              <small className="text-danger">{errors[item.name]?.message }</small>
-                            </div> 
-                          );
-                        })}
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        { data.fields_extra?.map((item, index) => {
-                          return (
-                            <div key={index} className="w-100 mb-3">
-                              <h4>{item.label} <small className="text-muted">{item.description || ''}</small></h4>
-                              <textarea rows="5" className="form-control rounded-0 mb-1" {...register(`${item.name}`)} /> 
-                              <small className="text-danger">{errors[item.name]?.message }</small>
-                            </div> 
-                          );
-                        })}
-                        <div className="form-check form-switch w-100">
-                          <input name="acceptTOS" className="form-check-input" type="checkbox" {...register('acceptTOS')}/>
-                          <label htmlFor="acceptTOS" className="form-check-label">
-                            <Link href="/files/terms-of-service.pdf">
-                              <a target="_blank" rel="noopener noreferrer" className="text-decoration-underline">Accept Terms of service</a>
-                            </Link>
-                          </label>
-                          <br/>
-                          <small className="text-danger">{errors.acceptTOS?.message }</small>
-                        </div>                        
-                      </SwiperSlide>
-                    </>
-                  )}
-                </Swiper>
-              </form>
+                  <ReCAPTCHA
+                    ref={(e) => (recaptchaInstance = e)}
+                    sitekey="6Lc3MhAmAAAAAChb8quDIhE54cDqNoCRw3mc3G7F"
+                    onChange={onChange}
+                    size="invisible"
+                  />
+                  <input onClick={executeCaptcha} className="btn btn-lg w-100 btn-light mt-3 rounded-pill" type="submit" />
+                </form>
+              )}
             </div>
             <div className="col-12 col-md-6 col-lg-4 offset-lg-3 pt-3 d-none d-lg-block">
               <div className={ `step-` + swiperIndex + ` d-flex align-items-center justify-content-center form-mask d-flex justify-content-center align-items-cente`}>
