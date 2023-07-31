@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
 import Marquee from "react-fast-marquee";
 import { artists as items } from "../data/artists";
 import { isMobile } from "react-device-detect";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { ComingSoonPopUp } from "./ComingSoonPopUp";
 
 const Player = () => {
   // const video = isMobile ? 'videos/player.mp4' : 'videos/player.mp4';
+  const [isPopUpVisible, setIsPopUpVisible] = useState(false);
+  const handleDiscoverClick = () => {
+    setIsPopUpVisible(!isPopUpVisible);
+  };
   return (
     <>
       <section
@@ -50,10 +55,16 @@ const Player = () => {
                       Earn rewards and unlock features while you discover and
                       listen to curated music content.
                     </h4>
-                    <button className="mt-4 btn btn-dark btn-lg rounded-pill">
+                    <button
+                      className="mt-4 btn btn-dark btn-lg rounded-pill"
+                      onClick={handleDiscoverClick}
+                    >
                       Discover
                     </button>
                   </AnimationOnScroll>
+                  {isPopUpVisible && (
+                    <ComingSoonPopUp handleVisibility={handleDiscoverClick} />
+                  )}
                 </div>
               </div>
             </div>
