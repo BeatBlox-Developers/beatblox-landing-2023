@@ -22,14 +22,14 @@ const District = () => {
         <div className="container px-5 px-sm-0">
           <div className="row">
             <div className="col-8 col-md-4">
-              <h3 className="mb-0">
-                Experience the next
-                musical landscape
-              </h3>
+              <h3 className="mb-0">Experience the next musical landscape</h3>
             </div>
             <div className="d-flex mt-5 mt-md-0 col-12 col-md-6 offset-md-2 align-items-end">
               <div className="w-100 d-flex justify-content-between">
-                <div className="rounded-pill border border-color-white px-3 py-2">
+                <div
+                  className="rounded-pill border border-color-white px-3 py-2"
+                  onClick={() => window.open("https://beatblox.market/")}
+                >
                   Decentraland
                 </div>
                 <div className="">
@@ -62,7 +62,7 @@ const District = () => {
                 onSwiper={(swiper) => {
                   districtSwiper.current = swiper;
                 }}
-                breakpoints={{ 
+                breakpoints={{
                   768: {
                     slidesPerView: 2,
                   },
