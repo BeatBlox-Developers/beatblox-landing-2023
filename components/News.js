@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { news as items } from '../data/news';
+import React, { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { news as items } from "../data/news";
 import { ArrowLeft, ArrowRight } from "react-bootstrap-icons";
 import styles from "./News.module.css";
 
@@ -20,14 +20,12 @@ const News = () => {
   return (
     <>
       <section className="bg-white pt-5 pb-2 py-md-5 d-flex align-items-center">
-        <div className='container px-5 px-sm-0'>
-          <div className='row align-items-center py-5'>
-            <div className='col-4 offset-md-4 text-center'>
-              <h2 className='text-dark mb-0'>
-                News
-              </h2>
+        <div className="container px-5 px-sm-0">
+          <div className="row align-items-center py-5">
+            <div className="col-4 offset-md-4 text-center">
+              <h2 className="text-dark mb-0">News</h2>
             </div>
-            <div className='col-4 offset-4 offset-md-0'>
+            <div className="col-4 offset-4 offset-md-0">
               <div className="d-flex justify-content-end">
                 <button
                   className="btn btn-outline-dark rounded-circle"
@@ -43,14 +41,13 @@ const News = () => {
                 </button>
               </div>
             </div>
-
           </div>
         </div>
       </section>
-      <section className='bg-white'>
-        <div className='container-fluid pb-5'>
-          <div className='row pt-3'>
-            <div className='col px-4'>
+      <section className="bg-white">
+        <div className="container-fluid pb-5">
+          <div className="row pt-3">
+            <div className="col px-4">
               <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={20}
@@ -64,23 +61,28 @@ const News = () => {
                 // }}
                 // speed={800}
                 loop={true}
-                breakpoints={{ 
+                breakpoints={{
                   1200: {
                     slidesPerView: 5,
                   },
                   768: {
                     slidesPerView: 4,
-                  }
+                  },
                 }}
               >
                 {items.map((item, index) => {
                   return (
                     <SwiperSlide key={index}>
                       <div className={styles.item}>
-                        <img className="w-100" src={item.src}/>
+                        <img
+                          className="w-100"
+                          style={{ cursor: "pointer" }}
+                          src={item.src}
+                          onClick={() => window.open(item.url)}
+                        />
                       </div>
                     </SwiperSlide>
-                  )
+                  );
                 })}
               </Swiper>
             </div>
@@ -89,5 +91,5 @@ const News = () => {
       </section>
     </>
   );
-}
-export default News
+};
+export default News;
