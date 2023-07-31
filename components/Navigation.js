@@ -70,7 +70,7 @@ const Navigation = () => {
               <ArrowRight />
             </a>
             <a
-              onClick={(e) => handleScroll(e)}
+              onClick={() => window.open("https://beatblox.market/")}
               href="#marketplace"
               className="scrollLink pt-4 d-flex justify-content-between align-items-center"
             >
@@ -78,7 +78,11 @@ const Navigation = () => {
               <ArrowRight />
             </a>
             <a
-              onClick={(e) => handleScroll(e)}
+              onClick={() =>
+                window.open(
+                  "https://play.decentraland.org/?realm=dg&position=40%2C40"
+                )
+              }
               href="#district"
               className="scrollLink pt-4 d-flex justify-content-between align-items-center"
             >
