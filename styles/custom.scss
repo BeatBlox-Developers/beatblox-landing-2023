@@ -278,6 +278,17 @@ h6{
         transition: all 0.3s 0s ease-out;
       }
     }
+    div.navbar-coming-soon-container{width: 100%; text-align: start;}
+    button.navbar-coming-soon-btn{
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      font-size: 14px;
+      border-radius: 15px;
+      padding: 2px 10px;
+      margin-bottom: 15px;
+      margin-left: 5px;
+    }
   }
 }
 
