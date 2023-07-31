@@ -90,7 +90,7 @@ const Navigation = () => {
               <ArrowRight />
             </a>
             <a
-              onClick={(e) => handleScroll(e)}
+              onClick={() => window.open("https://www.beatblox.org/onboarding")}
               href="#onboarding"
               className="scrollLink pt-4 d-flex justify-content-between align-items-center"
             >
@@ -137,13 +137,26 @@ const Navigation = () => {
             </div>
           </div>
           <div className="col-12 text-white d-flex justify-content-start align-items-start mt-3">
-            <a className="social me-3">
+            <a
+              className="social me-3"
+              onClick={() =>
+                window.open("https://discord.com/invite/PJd5jprhX2")
+              }
+            >
               <Discord></Discord>
             </a>
-            <a className="social me-3">
+            <a
+              className="social me-3"
+              onClick={() => window.open("https://twitter.com/beatblox_")}
+            >
               <Twitter></Twitter>
             </a>
-            <a className="social me-3">
+            <a
+              className="social me-3"
+              onClick={() =>
+                window.open("https://www.instagram.com/thebeatblox/")
+              }
+            >
               <Instagram></Instagram>
             </a>
           </div>
