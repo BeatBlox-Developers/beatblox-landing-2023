@@ -1,6 +1,6 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
-import { partners as items } from "../data/partners"
+import { partners as items } from "../data/partners";
 
 const Partners = () => {
   return (
@@ -8,9 +8,7 @@ const Partners = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-12">
-            <h3 className='text-dark mb-0'>
-              With the suopport of
-            </h3>
+            <h3 className="text-dark mb-0">With the support of</h3>
           </div>
         </div>
         <div className="row align-items-center py-5">
@@ -34,4 +32,4 @@ const Partners = () => {
     </section>
   );
 };
-export default Partners
+export default Partners;
