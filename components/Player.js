@@ -74,7 +74,7 @@ const Player = () => {
       <section className="bg-light text-center py-5">
         <div className="container-fluid">
           <div className="row">
-            <h3 className="text-black py-5">Artists of the week</h3>
+            <h3 className="artists text-black py-5">Artists of the week</h3>
           </div>
           <div className="row">
             <Marquee gradient={false} className="marquee-artists">

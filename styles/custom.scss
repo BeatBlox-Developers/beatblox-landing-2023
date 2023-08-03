@@ -1017,3 +1017,10 @@ div.milestones-container {
 div.milestones {
   width: 60%;
 }
+
+/* Artists */
+@media (max-width: 900px) {
+  h3.artists {
+    font-size: 2.2rem !important;
+  }
+}
