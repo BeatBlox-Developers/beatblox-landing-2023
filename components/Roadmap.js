@@ -17,16 +17,13 @@ const Roadmap = () => {
         src="videos/roadmap.mp4"
         type="video/mp4"
       />
-      <div className="container py-5 px-5 px-sm-0">
+      <div className="milestones-container container py-5 px-5 px-sm-0">
         <div className="row text-center">
           <div className="col-12">
             <h2 className="text-black">Our future at a glance</h2>
           </div>
         </div>
-        <div
-          className="row justify-content-center pt-3"
-          style={{ marginLeft: "15rem", marginRight: "15rem" }}
-        >
+        <div className="milestones row justify-content-center pt-3">
           {items.map((item, index) => {
             return (
               <div
