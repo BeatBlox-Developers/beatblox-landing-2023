@@ -28,6 +28,7 @@ const District = () => {
               <div className="w-100 d-flex justify-content-between">
                 <div
                   className="rounded-pill border border-color-white px-3 py-2"
+                  style={{ cursor: "pointer" }}
                   onClick={() => window.open("https://beatblox.market/")}
                 >
                   Decentraland
