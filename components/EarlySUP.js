@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight } from "react-bootstrap-icons";
+import { BsArrowRight } from "react-icons/bs";
 
 const EarlySUP = () => {
   return (
@@ -50,7 +50,7 @@ const EarlySUP = () => {
               </h2>
             </div>
             <div className="col-2 d-none d-md-block">
-              <img className="w-50" src="/images/flecha.svg" alt="flecha"></img>
+              <BsArrowRight size={60} />
             </div>
             <div className="col-9 offset-1 col-md-5 offset-md-0 text-left">
               <h4>
