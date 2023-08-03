@@ -1024,3 +1024,32 @@ div.milestones {
     font-size: 2.2rem !important;
   }
 }
+
+/* Marketplace */
+@media (max-width: 900px) {
+  section#marketplace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  section#marketplace div.container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: fit-content;
+    margin-bottom: 3rem;
+  }
+}
+
+/* NFT early supporters */
+@media (max-width: 900px) {
+  section#earlysup h2 {
+    font-size: 2.2rem !important;
+    margin-bottom: 15rem;
+  }
+  section#earlysup h4 {
+    padding-top: 8rem;
+  }
+}

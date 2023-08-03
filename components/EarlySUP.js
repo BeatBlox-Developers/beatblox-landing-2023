@@ -20,7 +20,7 @@ const EarlySUP = () => {
         <div className="container-fluid content">
           <div className="row align-items-center py-5 text-center">
             <div className="col-12 mb-5">
-              <h2>
+              <h2 className="nft-early-supporter">
                 NFT Early
                 <br />
                 Supporter

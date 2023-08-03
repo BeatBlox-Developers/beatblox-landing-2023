@@ -20,7 +20,7 @@ const Marketplace = () => {
         src={src}
         type="video/mp4"
       />
-      <div className="container  px-5 px-sm-0">
+      <div className="container px-5 px-sm-0">
         <div className="row">
           <div className="col-10 col-md-6">
             <div className="row">
