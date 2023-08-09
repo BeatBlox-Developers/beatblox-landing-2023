@@ -1045,8 +1045,8 @@ div.milestones {
 }
 
 div.fade-in {
-  opacity: 0; /* Set initial opacity to 0 */
-  transform: translateY(60px); /* Set initial translateY value */
+  opacity: 0;
+  transform: translateY(60px); 
   animation: fadeIn 2s ease-in-out forwards;
 }
 
