@@ -1026,13 +1026,17 @@ div.milestones-container {
   }
   @media (max-width: 900px) {
     h2 {
-      font-size: 2.2rem !important;
+      font-size: 3rem !important;
     }
   }
 }
 div.milestones {
   width: 60%;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -1093,7 +1097,14 @@ div.fade-in {
   font-size: 25px;
   color: black;
   background-color: #f9fafb;
+  // background-image: url("/images/BeatBlox_BadgeBackground.png");
   border-radius: 5rem;
+
+  @media (max-width: 900px) {
+    // height: 3rem;
+    width: 100%;
+    font-size: 18px;
+  }
 
   &__container {
     font-weight: 600;
@@ -1110,6 +1121,7 @@ div.fade-in {
       text-align: center;
       list-style: none;
       width: 100%;
+      padding: 0;
 
       animation-name: change;
       animation-duration: 10s;
@@ -1118,7 +1130,7 @@ div.fade-in {
       &__item {
         line-height: 40px;
         white-space: nowrap;
-        margin: 20px 10px;
+        margin: 20px 0px;
         padding: 0px;
       }
     }
