@@ -1024,14 +1024,30 @@ div.milestones-container {
   h2 {
     font-size: 4rem !important;
   }
-  @media (max-width: 900px){
-    h2{
+  @media (max-width: 900px) {
+    h2 {
       font-size: 2.2rem !important;
     }
   }
 }
 div.milestones {
   width: 60%;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+div.fade-in {
+  opacity: 0; /* Set initial opacity to 0 */
+  transform: translateY(60px); /* Set initial translateY value */
+  animation: fadeIn 2s ease-in-out forwards;
 }
 
 /* Artists */
