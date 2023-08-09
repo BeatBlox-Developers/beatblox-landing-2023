@@ -3,6 +3,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { milestones as items } from "../data/roadmap";
+import { ScrollText } from "./ScrollText";
 
 const Roadmap = () => {
   const containerRef = useRef(null);
@@ -56,28 +57,7 @@ const Roadmap = () => {
           </div>
         </div>
         <div className="milestones row justify-content-center pt-3">
-          {items.map((item, index) => {
-            const animationDelay = index * 0.2 + "s";
-
-            return (
-              <div
-                className={`col-12 col-md-6 text-center my-1 
-            ${isVisible ? "fade-in" : ""}`}
-                key={index}
-                style={{
-                  width: "fit-content",
-                  animationDelay: animationDelay,
-                }}
-              >
-                <div
-                  className="btn btn-light rounded-pill p-3"
-                  style={{ animationDelay: animationDelay }}
-                >
-                  {item.title}
-                </div>
-              </div>
-            );
-          })}
+          <ScrollText phrases={items.map((item) => item.title)} />
         </div>
       </div>
     </section>

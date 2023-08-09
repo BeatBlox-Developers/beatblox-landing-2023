@@ -11,7 +11,6 @@ export const milestones = [
   {
     title: "New virtual worlds",
   },
-
   {
     title: "Catalog expansion",
   },
