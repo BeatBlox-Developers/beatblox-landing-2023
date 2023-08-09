@@ -1021,6 +1021,14 @@ div.milestones-container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  h2 {
+    font-size: 4rem !important;
+  }
+  @media (max-width: 900px){
+    h2{
+      font-size: 2.2rem !important;
+    }
+  }
 }
 div.milestones {
   width: 60%;
