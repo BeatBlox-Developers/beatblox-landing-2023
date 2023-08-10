@@ -1097,6 +1097,9 @@ div.fade-in {
   font-size: 25px;
   color: black;
   background-color: #f9fafb;
+  opacity: 0.6;
+  // shadow 
+  box-shadow: 0 10px 32px 0 rgba(31, 38, 135, 0.37);
   // background-image: url("/images/BeatBlox_BadgeBackground.png");
   border-radius: 5rem;
 
