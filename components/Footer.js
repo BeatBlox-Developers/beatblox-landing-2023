@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -52,7 +53,7 @@ const Footer = () => {
               <div className="col-12 col-md-6 pt-5 pt-md-0">
                 <p className="mb-1">Contact</p>
                 <p className="mb-1" style={{ cursor: "default" }}>
-                  <a href="/faqs">FAQs</a>
+                  <Link href="/faqs">FAQs</Link>
                 </p>
                 <p className="mb-1">Terms & Conditions</p>
                 <p className="mb-1">Privacy Policy</p>

@@ -116,9 +116,9 @@ const Navigation = () => {
             </div>
             <div className="row">
               <div className="col-12 text-start">
-                <a className="" href="/faqs">
+                <Link className="" href="/faqs">
                   FAQs
-                </a>
+                </Link>
               </div>
             </div>
             <div className="row">
