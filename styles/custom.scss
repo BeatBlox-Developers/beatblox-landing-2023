@@ -63,6 +63,7 @@ $container-max-widths: (
 html,
 body {
   font-size: 14px !important;
+  background: black !important;
 }
 .container,
 .container-fluid {
@@ -129,8 +130,8 @@ $gray-900: #141515;
     height: 250px !important;
   }
   footer {
-    border-top-left-radius: 5rem !important;
     border-top-right-radius: 5rem !important;
+    border-top-left-radius: 5rem !important;
   }
   .video-normal {
     width: 100% !important;
@@ -421,6 +422,7 @@ video {
   html,
   body {
     font-size: 10px !important;
+    background: black !important;
   }
   h1 {
     font-size: 4.875rem !important;
@@ -1098,7 +1100,7 @@ div.fade-in {
   color: black;
   background-color: #f9fafb;
   opacity: 0.6;
-  // shadow 
+  // shadow
   box-shadow: 0 10px 32px 0 rgba(31, 38, 135, 0.37);
   // background-image: url("/images/BeatBlox_BadgeBackground.png");
   border-radius: 5rem;
