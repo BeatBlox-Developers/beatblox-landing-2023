@@ -1,16 +1,13 @@
-import { Navbar, Nav, Container, Modal } from "react-bootstrap";
-import { useEffect, useState } from "react";
-import { isMobile } from "react-device-detect";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { Container, Modal, Nav, Navbar } from "react-bootstrap";
 import {
+  ArrowRight,
   Discord,
   Instagram,
   Twitter,
   XLg,
-  Youtube,
-  ArrowRight,
 } from "react-bootstrap-icons";
-import Link, { LinkProps } from "next/link";
-import React, { PropsWithChildren } from "react";
 
 const Navigation = () => {
   const [navbar, setNavbar] = useState(false);
@@ -31,7 +28,6 @@ const Navigation = () => {
     e.preventDefault();
     const href = e.target.href;
     const targetId = href.replace(/.*\#/, "");
-    // get the element by id and use scrollIntoView
     const elem = document.getElementById(targetId);
     window.scrollTo({
       top: elem.getBoundingClientRect().top,
@@ -58,20 +54,20 @@ const Navigation = () => {
             ></XLg>
           </div>
           <div className="col-12">
-            <a
-              onClick={(e) => handleScroll(e)}
-              href="#player"
-              className="scrollLink pt-4 d-flex justify-content-between align-items-center"
-            >
-              Player
-              <div className="navbar-coming-soon-container">
-                <button className="navbar-coming-soon-btn">Coming Soon</button>
-              </div>
-              <ArrowRight />
-            </a>
+            <Link onClick={(e) => handleScroll(e)} href="/#player">
+              <a className="scrollLink pt-4 d-flex justify-content-between align-items-center">
+                Player
+                <div className="navbar-coming-soon-container">
+                  <button className="navbar-coming-soon-btn">
+                    Coming Soon
+                  </button>
+                </div>
+                <ArrowRight />
+              </a>
+            </Link>
             <a
               onClick={() => window.open("https://beatblox.market/")}
-              href="#marketplace"
+              href="/#marketplace"
               className="scrollLink pt-4 d-flex justify-content-between align-items-center"
             >
               Marketplace
@@ -174,22 +170,22 @@ const Navigation = () => {
         className={`py-md-3 px-md-0 ` + navbar}
       >
         <Container className="px-3 px-sm-0">
-          <Navbar.Brand href="#home" className="ms-2 ms-md-0">
+          <Navbar.Brand href="/#home" className="ms-2 ms-md-0">
             <img src="/images/logo.svg" alt="" />
           </Navbar.Brand>
           <Nav className="ms-md-auto my-2 my-lg-0 d-flex align-items-center">
-            <Link href="#player" onClick={(e) => handleScroll(e)}>
+            <Link href="/#player" onClick={(e) => handleScroll(e)}>
               <a className="d-none d-md-flex py-3 px-4">Player</a>
             </Link>
-            <Link href="#marketplace" onClick={(e) => handleScroll(e)}>
+            <Link href="/#marketplace" onClick={(e) => handleScroll(e)}>
               <a className="d-none d-md-flex py-3 px-4">Marketplace</a>
             </Link>
-            <Link href="#district" onClick={(e) => handleScroll(e)}>
+            <Link href="/#district" onClick={(e) => handleScroll(e)}>
               <a className="d-none d-md-flex py-3 px-4">
                 Virtual Music District
               </a>
             </Link>
-            <Link href="#onboarding" onClick={(e) => handleScroll(e)}>
+            <Link href="/#onboarding" onClick={(e) => handleScroll(e)}>
               <a className="d-none d-md-flex py-3 px-4">Join BeatBlox</a>
             </Link>
             <button
