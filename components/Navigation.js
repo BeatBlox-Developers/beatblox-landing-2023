@@ -93,14 +93,12 @@ const Navigation = () => {
               Join BeatBlox
               <ArrowRight />
             </a>
-            <a
-              onClick={(e) => handleScroll(e)}
-              href=""
-              className="scrollLink pt-4 d-flex justify-content-between align-items-center"
-            >
-              Early Supporter NFT
-              <ArrowRight />
-            </a>
+            <Link href="/early-supporter-nft">
+              <a className="scrollLink pt-4 d-flex justify-content-between align-items-center">
+                Early Supporter NFT
+                <ArrowRight />
+              </a>
+            </Link>
           </div>
           <div className="col-12 text-white mt-3">
             <div className="row">

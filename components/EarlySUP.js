@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 
 const EarlySUP = () => {
@@ -58,7 +59,9 @@ const EarlySUP = () => {
                 <br />
                 Early Supporter
               </h4>
-              <button className="btn btn-light rounded-pill">Get it now</button>
+              <button className="btn btn-light rounded-pill">
+                <Link href="/early-supporter-nft">Get it now</Link>
+              </button>
             </div>
             <div className="nft">
               <video
