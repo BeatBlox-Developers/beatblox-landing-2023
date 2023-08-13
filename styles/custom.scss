@@ -1217,3 +1217,34 @@ div.fade-in {
 }
 
 /* Rest of the keyframes animations... */
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 1;
+  video {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Early Supporters */
+div.early-supporter {
+  h1 {
+    font-family: "Nuckle";
+    font-size: 2.875rem !important;
+    line-height: 1;
+    cursor: default;
+  }
+  h4 {
+    font-family: "Nuckle";
+    font-size: calc(1.2686rem + 0.2232vw) !important;
+    cursor: default;
+  }
+  h4.benefits {
+    padding-top: 0.8rem;
+    padding-left: 1rem;
+  }
+}
