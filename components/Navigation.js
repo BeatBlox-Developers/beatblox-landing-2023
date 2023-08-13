@@ -65,14 +65,15 @@ const Navigation = () => {
                 <ArrowRight />
               </a>
             </Link>
-            <a
+            <Link
               onClick={() => window.open("https://beatblox.market/")}
               href="/#marketplace"
-              className="scrollLink pt-4 d-flex justify-content-between align-items-center"
             >
-              Marketplace
-              <ArrowRight />
-            </a>
+              <a className="scrollLink pt-4 d-flex justify-content-between align-items-center">
+                Marketplace
+                <ArrowRight />
+              </a>
+            </Link>
             <a
               onClick={() =>
                 window.open(
