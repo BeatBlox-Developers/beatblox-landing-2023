@@ -29,7 +29,11 @@ const District = () => {
                 <div
                   className="rounded-pill border border-color-white px-3 py-2"
                   style={{ cursor: "pointer" }}
-                  onClick={() => window.open("https://beatblox.market/")}
+                  onClick={() =>
+                    window.open(
+                      "https://play.decentraland.org/?realm=dg&position=40%2C40"
+                    )
+                  }
                 >
                   Decentraland
                 </div>
