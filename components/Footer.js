@@ -13,7 +13,7 @@ const Footer = () => {
               </h2>
               <p className="my-1 small">
                 All rights reserved <br />
-                2022 © BeatBlox
+                2023 © BeatBlox
               </p>
             </div>
             <div className="col-12 col-md-4 offset-md-6 text-left">
@@ -22,18 +22,27 @@ const Footer = () => {
                   <p className="mb-0">
                     <a
                       href="https://www.instagram.com/thebeatblox/"
+                      target={"_blank"}
                       className="mb-1"
                     >
                       Instagram
                     </a>
                   </p>
                   <p className="mb-0">
-                    <a href="https://discord.gg/GcQjuUvwbm" className="mb-1">
+                    <a
+                      href="https://discord.gg/GcQjuUvwbm"
+                      target={"_blank"}
+                      className="mb-1"
+                    >
                       Discord
                     </a>
                   </p>
                   <p className="mb-0">
-                    <a href="https://twitter.com/The_Beatblox" className="mb-1">
+                    <a
+                      href="https://twitter.com/The_Beatblox"
+                      target={"_blank"}
+                      className="mb-1"
+                    >
                       Twitter
                     </a>
                   </p>
@@ -41,12 +50,17 @@ const Footer = () => {
                     <a
                       href="https://linkedin.com/company/beatblox"
                       className="mb-1"
+                      target={"_blank"}
                     >
                       Linkedin
                     </a>
                   </p>
                   <p className="mb-0">
-                    <a href="https://youtube.com/thebeatblox" className="mb-1">
+                    <a
+                      href="https://youtube.com/thebeatblox"
+                      target={"_blank"}
+                      className="mb-1"
+                    >
                       YouTube
                     </a>
                   </p>
