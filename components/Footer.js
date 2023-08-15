@@ -22,6 +22,7 @@ const Footer = () => {
                   <p className="mb-0">
                     <a
                       href="https://www.instagram.com/thebeatblox/"
+                      rel="noopener noreferrer"
                       target={"_blank"}
                       className="mb-1"
                     >
@@ -32,6 +33,7 @@ const Footer = () => {
                     <a
                       href="https://discord.gg/GcQjuUvwbm"
                       target={"_blank"}
+                      rel="noopener noreferrer"
                       className="mb-1"
                     >
                       Discord
@@ -41,6 +43,7 @@ const Footer = () => {
                     <a
                       href="https://twitter.com/beatblox_"
                       target={"_blank"}
+                      rel="noopener noreferrer"
                       className="mb-1"
                     >
                       Twitter
@@ -53,6 +56,7 @@ const Footer = () => {
                     <a
                       href="https://www.youtube.com/@beatblox_"
                       target={"_blank"}
+                      rel="noopener noreferrer"
                       className="mb-1"
                     >
                       YouTube
