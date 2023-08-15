@@ -39,7 +39,7 @@ const Footer = () => {
                   </p>
                   <p className="mb-0">
                     <a
-                      href="https://twitter.com/The_Beatblox"
+                      href="https://twitter.com/beatblox_"
                       target={"_blank"}
                       className="mb-1"
                     >
@@ -47,17 +47,11 @@ const Footer = () => {
                     </a>
                   </p>
                   <p className="mb-0">
-                    <a
-                      href="https://linkedin.com/company/beatblox"
-                      className="mb-1"
-                      target={"_blank"}
-                    >
-                      Linkedin
-                    </a>
+                    <a className="mb-1">LinkedIn</a>
                   </p>
                   <p className="mb-0">
                     <a
-                      href="https://youtube.com/thebeatblox"
+                      href="https://www.youtube.com/@beatblox_"
                       target={"_blank"}
                       className="mb-1"
                     >
