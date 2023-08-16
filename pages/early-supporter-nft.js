@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Countdown from "react-countdown";
 import Navigation from "../components/Navigation";
+import { ethers } from "ethers";
 
 const EarlySupporterNFT = () => {
   useEffect(() => {
@@ -17,6 +18,28 @@ const EarlySupporterNFT = () => {
       body.style.overflow = "auto";
     };
   }, []);
+
+  const handleMint = async () => {
+    // Connect to MetaMask
+    await window.ethereum.enable();
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+
+    // // Set up contract information
+    // const contractAddress = 'YOUR_CONTRACT_ADDRESS'; // Replace with your deployed contract address
+    // const contractAbi = [...]; // Replace with your contract ABI
+    //
+    // const contract = new ethers.Contract(contractAddress, contractAbi, signer);
+    //
+    // // Mint tokens
+    // try {
+    //     const tx = await contract.mintTokens(yourRecipientAddress, amountToMint);
+    //     await tx.wait();
+    //     console.log('Tokens minted successfully!');
+    // } catch (error) {
+    //     console.error('Error minting tokens:', error);
+    // }
+  };
 
   return (
     <>
@@ -130,7 +153,9 @@ const EarlySupporterNFT = () => {
             <div className="row" style={{ marginTop: "" }}>
               <div className="col-md-4 w-100">
                 <h3 className="" style={{ width: "100%" }}>
-                  <button className="btn-mint">Mint Early Supporter</button>
+                  <button className="btn-mint" onClick={handleMint}>
+                    Mint Early Supporter
+                  </button>
                 </h3>
               </div>
             </div>
