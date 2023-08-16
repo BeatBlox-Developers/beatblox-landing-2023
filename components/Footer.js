@@ -64,7 +64,9 @@ const Footer = () => {
                   </p>
                 </div>
                 <div className="col-12 col-md-6 pt-5 pt-md-0">
-                  <p className="mb-1">Contact</p>
+                  <p className="mb-1">
+                    <a href="mailto:onboarding@beatblox.org">Contact</a>
+                  </p>
                   <p className="mb-1" style={{ cursor: "default" }}>
                     <Link href="/faqs">FAQs</Link>
                   </p>
