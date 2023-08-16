@@ -699,6 +699,11 @@ section.section-video {
   background-color: black;
   width: 100%;
   overflow: hidden;
+
+  h1.onboarding-title {
+    font-size: 16px !important;
+    color: red;
+  }
 }
 .section-onboarding {
   background-image: url("/images/onboarding/bg-onboarding.jpg");
@@ -1267,4 +1272,17 @@ a.nft-label {
   color: black;
   -webkit-text-stroke: 1px white;
   text-stroke: 1px white;
+}
+section.section-onboarding {
+  h1.onboarding-title {
+    font-size: 3rem !important;
+  }
+  img {
+    width: 25% !important;
+  }
+  a {
+    width: 17rem !important;
+    height: 3rem !important;
+    font-size: 1.5rem !important;
+  }
 }

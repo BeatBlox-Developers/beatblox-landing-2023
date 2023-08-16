@@ -39,16 +39,16 @@ const EarlySupporterNFT = () => {
             className="col-md-6 offset-md-6 d-flex flex-column justify-content-center"
             style={{ zIndex: 2 }}
           >
-            <div className="row">
+            <div className="row" style={{ marginTop: "4.5rem" }}>
               <div className="col">
                 <h1 className="p-0">
-                  Beatblox
+                  BeatBlox
                   <br />
                   Early Supporter <a className="nft-label">NFT</a>
                 </h1>
               </div>
             </div>
-            <div className="row mt-1">
+            <div className="row py-5" style={{ height: "fit-content" }}>
               <div className="col">
                 <div className="rounded-3 bg-gray p-2">
                   <h4 className="text-uppercase benefits">Benefits</h4>
@@ -127,9 +127,9 @@ const EarlySupporterNFT = () => {
                 </div>
               </div>
             </div>
-            <div className="row" style={{ marginTop: "6rem" }}>
+            <div className="row" style={{ marginTop: "" }}>
               <div className="col-md-4 w-100">
-                <h3 className="mt-4" style={{ width: "100%" }}>
+                <h3 className="" style={{ width: "100%" }}>
                   <button className="btn-mint">Mint Early Supporter</button>
                 </h3>
               </div>
