@@ -44,13 +44,13 @@ const EarlySupporterNFT = () => {
                 <h1 className="p-0">
                   Beatblox
                   <br />
-                  Early Supporter NFT
+                  Early Supporter <a className="nft-label">NFT</a>
                 </h1>
               </div>
             </div>
-            <div className="row">
+            <div className="row mt-1">
               <div className="col">
-                <div className="border border-white rounded-3 bg-dark-30 p-2">
+                <div className="rounded-3 bg-gray p-2">
                   <h4 className="text-uppercase benefits">Benefits</h4>
                   <Swiper
                     modules={[NavSwiper, Pagination, Autoplay]}
@@ -127,10 +127,10 @@ const EarlySupporterNFT = () => {
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col-md-4">
-                <h3 className="mt-4">
-                  <Countdown date="2022-03-15T00:00:00" />
+            <div className="row" style={{ marginTop: "6rem" }}>
+              <div className="col-md-4 w-100">
+                <h3 className="mt-4" style={{ width: "100%" }}>
+                  <button className="btn-mint">Mint Early Supporter</button>
                 </h3>
               </div>
             </div>
