@@ -8,6 +8,10 @@ export const Navigation = () => {
   const [navbar, setNavbar] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
+
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
   }, []);
   const changeBackground = () => {
     if (window.scrollY >= 80) {
