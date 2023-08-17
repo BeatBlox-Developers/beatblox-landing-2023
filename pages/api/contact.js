@@ -22,8 +22,7 @@ export default async (req, res) => {
   mg.messages
     .create("sandboxcf138aa4199440c69f096ddc314cb9b1.mailgun.org", {
       from: "sender@beatblox.org",
-      // to: ["onboarding@beatblox.org"],
-      to: ["nicolashussein14@gmail.com"],
+      to: ["onboarding@beatblox.org"],
       subject: `Onboarding Request | ${body.action}`,
       text: message,
       html: message.replace(/\r\n/g, "<br>"),
