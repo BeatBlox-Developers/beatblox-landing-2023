@@ -1,6 +1,10 @@
-const mail = require('@sendgrid/mail');
-
-mail.setApiKey(process.env.SENDGRID_API_KEY);
+const formData = require("form-data");
+const Mailgun = require("mailgun.js");
+const mailgun = new Mailgun(formData);
+const mg = mailgun.client({
+  username: "api",
+  key: process.env.MAILGUN_EMAIL_PRIVATE_KEY,
+});
 
 export default async (req, res) => {
   const body = JSON.parse(req.body);
@@ -15,13 +19,17 @@ export default async (req, res) => {
     About: ${body.about}
   `;
 
-  await mail.send({
-    to: 'onboarding@beatblox.org',
-    from: 'sender@beatblox.org',
-    subject: `Onboarding Request | ${body.action}`,
-    text: message,
-    html: message.replace(/\r\n/g, '<br>'),
-  });
+  mg.messages
+    .create("sandboxcf138aa4199440c69f096ddc314cb9b1.mailgun.org", {
+      from: "sender@beatblox.org",
+      // to: ["onboarding@beatblox.org"],
+      to: ["nicolashussein14@gmail.com"],
+      subject: `Onboarding Request | ${body.action}`,
+      text: message,
+      html: message.replace(/\r\n/g, "<br>"),
+    })
+    .then((msg) => console.log(msg))
+    .catch((err) => console.log(err));
 
-  res.status(200).json({ status: 'Ok' });
-}
+  res.status(200).json({ status: "Ok" });
+};
