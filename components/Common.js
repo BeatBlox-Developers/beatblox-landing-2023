@@ -26,7 +26,6 @@ export const Navigation = () => {
       fixed="top"
       expand="lg"
       className={navbar ? "active py-5 px-5 px-md-0" : "py-5 px-5 px-md-0"}
-      style={{ marginTop: "5px" }}
     >
       <Container>
         <Navbar.Brand href="/">
