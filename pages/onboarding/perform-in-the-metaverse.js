@@ -159,6 +159,7 @@ export default function Onboarding() {
                   shortSwipes={false}
                   className="swiper-form"
                   onSlideChange={(swiper) => setSwiperIndex(swiper.activeIndex)}
+                  allowTouchMove={false}
                 >
                   <div className="d-flex justify-content-end">
                     {swiperIndex === 1 && !hasBeenSent && (

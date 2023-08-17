@@ -151,6 +151,7 @@ export default function Onboarding() {
                   slidesPerView={1}
                   className="swiper-form"
                   onSlideChange={(swiper) => setSwiperIndex(swiper.activeIndex)}
+                  allowTouchMove={false}
                 >
                   <div className="d-flex justify-content-end">
                     { (swiperIndex === 1 && !hasBeenSent) && ( <SwiperButtonPrev>Back</SwiperButtonPrev> )}
