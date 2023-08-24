@@ -1,12 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation as NavSwiper, Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Countdown from "react-countdown";
 import Navigation from "../components/Navigation";
 import { ethers } from "ethers";
+import detectEthereumProvider from "@metamask/detect-provider";
+import { Web3 } from "web3";
+
+// // Import your NFT contract ABI and address on Polygon
+import NFTContractABI from "../public/files/NFTContractABI.json";
+const NFTContractAddress = "0xd3A3F2Be9FB936479ed5370D085bA4b6f1e29487";
+
+// Polygon RPC URL
+const polygonRpcUrl = "https://rpc-mainnet.maticvigil.com";
 
 const EarlySupporterNFT = () => {
   useEffect(() => {
@@ -19,26 +27,34 @@ const EarlySupporterNFT = () => {
     };
   }, []);
 
-  const handleMint = async () => {
-    // Connect to MetaMask
-    await window.ethereum.enable();
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
+  const [provider, setProvider] = useState(null);
+  const [signer, setSigner] = useState(null);
+  const [nftContract, setNFTContract] = useState(null);
+  const [selectedAddress, setSelectedAddress] = useState(null);
 
-    // // Set up contract information
-    // const contractAddress = 'YOUR_CONTRACT_ADDRESS'; // Replace with your deployed contract address
-    // const contractAbi = [...]; // Replace with your contract ABI
-    //
-    // const contract = new ethers.Contract(contractAddress, contractAbi, signer);
-    //
-    // // Mint tokens
-    // try {
-    //     const tx = await contract.mintTokens(yourRecipientAddress, amountToMint);
-    //     await tx.wait();
-    //     console.log('Tokens minted successfully!');
-    // } catch (error) {
-    //     console.error('Error minting tokens:', error);
-    // }
+  const mintNFT = async () => {
+    const web3 = new Web3(window.ethereum);
+    try {
+      await window.ethereum.enable();
+    } catch (error) {
+      alert("You need to allow MetaMask.");
+    }
+    const accounts = await web3.eth.getAccounts();
+    const account = accounts[0];
+    console.log("ABI", NFTContractABI);
+    try {
+      const contract = new web3.eth.Contract(
+        NFTContractABI,
+        NFTContractAddress
+      );
+      const result = await contract.methods.mint(account).send({
+        from: account,
+      });
+
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -153,7 +169,7 @@ const EarlySupporterNFT = () => {
             <div className="row" style={{ marginTop: "" }}>
               <div className="col-md-4 w-100">
                 <h3 className="" style={{ width: "100%" }}>
-                  <button className="btn-mint" onClick={handleMint}>
+                  <button className="btn-mint" onClick={mintNFT}>
                     Mint Early Supporter
                   </button>
                 </h3>
